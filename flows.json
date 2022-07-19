@@ -207,6 +207,22 @@
         "color": "#DDAA99"
     },
     {
+        "id": "accc01d78c5b390d",
+        "type": "group",
+        "z": "58612799aa277ac1",
+        "name": "1st step",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "099f6275bdac6398"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 152,
+        "h": 82
+    },
+    {
         "id": "69dec379bd8db011",
         "type": "file in",
         "z": "a85c93b74d9f6110",
@@ -678,124 +694,14 @@
         ]
     },
     {
-        "id": "fa35383e11d707bc",
-        "type": "subflow:a85c93b74d9f6110",
+        "id": "099f6275bdac6398",
+        "type": "comment",
         "z": "58612799aa277ac1",
-        "name": "",
-        "x": 770,
-        "y": 540,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "ad21bd47b608bc46",
-        "type": "inject",
-        "z": "58612799aa277ac1",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[\"node-red-contrib-ssh-v2-reconnection\"]",
-        "payloadType": "json",
+        "g": "accc01d78c5b390d",
+        "name": "1st step",
+        "info": "## Plan\nPour cette première vidéo le planning est d'installer les premiers outils néccessaire. C'est a dire:\n - Un moyen de communication entre nos machine\n - Un éditeur de code, Visual Studio Code sur l'orangepi et le telephone\n - téléphone : https://www.codewithharry.com/blogpost/install-vs-code-in-android/\n - Un gestionnaire de conteneneur, Docker car c'est le plus fournir et simple à mettre en place sur tout les support. Nous allons le mettre sur l'orangepi et essayer sur le téléphone, je l'ai pas fait encore pour préserver le téléphone.\n - Un gestionnaire d'activité, Dolibarr, car il permet de lié les flux financier et les flux physique. De plus, sont utilisation represente une compétence utilsable dans la vie professsionelle et personnelle. Nous allons le mettre sur l'orangepi\n - Un assistant vocal, Rhasspy car il est le plus modulable que nous alllons également mettre sur l'orangepi et sur le téléphone. Nous allons sur le téléphone installer l'APK même si je n'arrive pas afaire fonctionner le wakeword avec\n - Enfin si on à le temps ce qui métonnerais, nous allons commencer à palier à ce problème.",
         "x": 110,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "66ad82414c5c6fef",
-        "type": "split",
-        "z": "58612799aa277ac1",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 290,
-        "y": 460,
-        "wires": [
-            [
-                "fa35383e11d707bc"
-            ]
-        ]
-    },
-    {
-        "id": "3611d3b5d9bdd1fc",
-        "type": "subflow:5030d00b88df4be5",
-        "z": "58612799aa277ac1",
-        "name": "",
-        "env": [
-            {
-                "name": "test",
-                "value": "coucou",
-                "type": "str"
-            }
-        ],
-        "x": 660,
-        "y": 760,
-        "wires": [
-            [
-                "7f235a10d3d35f26"
-            ]
-        ]
-    },
-    {
-        "id": "cbf43f37d51f060b",
-        "type": "inject",
-        "z": "58612799aa277ac1",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 300,
-        "y": 720,
-        "wires": [
-            [
-                "3611d3b5d9bdd1fc"
-            ]
-        ]
-    },
-    {
-        "id": "7f235a10d3d35f26",
-        "type": "debug",
-        "z": "58612799aa277ac1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 870,
-        "y": 740,
+        "y": 80,
         "wires": []
     }
 ]
