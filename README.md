@@ -1,7 +1,7 @@
 ## TechSCOrangepi
 
 ## Description
-This project is the Node-Red project we use on Orangepi. It works with the other repo TechSCPhone. This one handle all we need for orangepi et the other one handle our phone
+This project is the Node-Red project we use on Orangepi. It works with the others repos TechSCPhone and TechSCBase. This one handle all we need for orangepi and gpio and the other one handle our phone
 This setup is needed to be a full portative solar powered 5V Dolibarr with net connectivity via 3G than can be prodvide by phone.
  
 ## Badges

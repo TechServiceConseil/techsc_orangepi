@@ -168,6 +168,45 @@
         ]
     },
     {
+        "id": "5030d00b88df4be5",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "1c3881de7afa11d5"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 740,
+                "y": 320,
+                "wires": [
+                    {
+                        "id": "1c3881de7afa11d5",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "test",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "69dec379bd8db011",
         "type": "file in",
         "z": "a85c93b74d9f6110",
@@ -612,5 +651,151 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "1c3881de7afa11d5",
+        "type": "change",
+        "z": "5030d00b88df4be5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "test",
+                "pt": "msg",
+                "to": "test",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa35383e11d707bc",
+        "type": "subflow:a85c93b74d9f6110",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "x": 770,
+        "y": 540,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ad21bd47b608bc46",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"node-red-contrib-ssh-v2-reconnection\"]",
+        "payloadType": "json",
+        "x": 110,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "66ad82414c5c6fef",
+        "type": "split",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 290,
+        "y": 460,
+        "wires": [
+            [
+                "fa35383e11d707bc"
+            ]
+        ]
+    },
+    {
+        "id": "3611d3b5d9bdd1fc",
+        "type": "subflow:5030d00b88df4be5",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "env": [
+            {
+                "name": "test",
+                "value": "coucou",
+                "type": "str"
+            }
+        ],
+        "x": 660,
+        "y": 760,
+        "wires": [
+            [
+                "7f235a10d3d35f26"
+            ]
+        ]
+    },
+    {
+        "id": "cbf43f37d51f060b",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 720,
+        "wires": [
+            [
+                "3611d3b5d9bdd1fc"
+            ]
+        ]
+    },
+    {
+        "id": "7f235a10d3d35f26",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 740,
+        "wires": []
     }
 ]
