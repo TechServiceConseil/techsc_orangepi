@@ -1,8 +1,8 @@
-## TechSCOrangepi
+## TechSCPhone
 
 ## Description
-This project is the Node-Red project we use on Orangepi. It works with the other repo TechSCPhone. This one handle all we need for orangepi et the other one handle our phone
-This setup is needed to be a full portative solar powered 5V Dolibarr with net connectivity via 3G than can be prodvide by phone.
+This project is the Node-Red project we use on Phone. It works with the other repo TechSCOrangepi. This one handle all we need for phone et the other one handle our Dolibarr et Rhasspy
+This setup is needed to be a full portative solar powered 5V Dolibarr with net connectivity via 3G than can be prodvide by phone
  
 ## Badges
 On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
