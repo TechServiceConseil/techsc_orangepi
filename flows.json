@@ -1,0 +1,616 @@
+[
+    {
+        "id": "58612799aa277ac1",
+        "type": "tab",
+        "label": "Installation",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a85c93b74d9f6110",
+        "type": "subflow",
+        "name": "Check npm package and install",
+        "info": "",
+        "category": "Administration",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "65a17d791a657925"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1810,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "e542a4f578bab639",
+                        "port": 0
+                    },
+                    {
+                        "id": "590c349ac6befbc2",
+                        "port": 0
+                    },
+                    {
+                        "id": "4e0f0d0c190d2f28",
+                        "port": 0
+                    },
+                    {
+                        "id": "dfeb37b3f9b0c47d",
+                        "port": 0
+                    },
+                    {
+                        "id": "2125494dc219f046",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1670,
+                "y": 440,
+                "wires": [
+                    {
+                        "id": "e542a4f578bab639",
+                        "port": 1
+                    },
+                    {
+                        "id": "efe3592b9fec64fd",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 1690,
+                "y": 500,
+                "wires": [
+                    {
+                        "id": "e542a4f578bab639",
+                        "port": 2
+                    },
+                    {
+                        "id": "efe3592b9fec64fd",
+                        "port": 2
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "path",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "json",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "packageName",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-inbox",
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "install",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "icon": "font-awesome/fa-plus-circle",
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "save",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "icon": "font-awesome/fa-save",
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "saveInDependencies",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {},
+        "color": "#A6BBCF",
+        "inputLabels": [
+            "{path, packageName}"
+        ],
+        "outputLabels": [
+            "stdout",
+            "stderr",
+            "return code"
+        ]
+    },
+    {
+        "id": "69dec379bd8db011",
+        "type": "file in",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "filename": "",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "a4693381465ef0e0"
+            ]
+        ]
+    },
+    {
+        "id": "a4693381465ef0e0",
+        "type": "json",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 260,
+        "wires": [
+            [
+                "fe6df85e1f375046",
+                "07cefca991150ddf"
+            ]
+        ]
+    },
+    {
+        "id": "fe6df85e1f375046",
+        "type": "switch",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "property": "payload.dependencies",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "packageName",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "9673614755cab696"
+            ],
+            [
+                "decd9a59ae4a88b9"
+            ]
+        ]
+    },
+    {
+        "id": "07cefca991150ddf",
+        "type": "debug",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "56d750465e6be7e0",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "path & (path='' ? '' : '/') & 'package.json'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "69dec379bd8db011"
+            ]
+        ]
+    },
+    {
+        "id": "65a17d791a657925",
+        "type": "function",
+        "z": "a85c93b74d9f6110",
+        "name": "Set priority of msg value",
+        "func": "var list = ['path', 'packageName','install', 'save', 'saveInDependencies']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)){\n        msg[element] = env.get(element)\n    }else{\n        if (msg[element] === undefined || msg[element] === null){\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 40,
+        "wires": [
+            [
+                "56d750465e6be7e0"
+            ]
+        ]
+    },
+    {
+        "id": "e542a4f578bab639",
+        "type": "exec",
+        "z": "a85c93b74d9f6110",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 610,
+        "y": 480,
+        "wires": [
+            [
+                "d0b588151f25af9d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "decd9a59ae4a88b9",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "set command in payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(path='' ? '' : 'cd ' & path & ' && ') & 'npm i ' & packageName & (save ? ' --save' : '') & (saveInDependencies ? ' -D' : '')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "[payload]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "26f05760441fb0b6",
+                "e542a4f578bab639"
+            ]
+        ]
+    },
+    {
+        "id": "26f05760441fb0b6",
+        "type": "debug",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9673614755cab696",
+        "type": "debug",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d0b588151f25af9d",
+        "type": "switch",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "low",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "added 1 package",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 870,
+        "y": 400,
+        "wires": [
+            [
+                "3da9f5a55d213f12",
+                "590c349ac6befbc2"
+            ],
+            [
+                "2125494dc219f046"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "efe3592b9fec64fd",
+        "type": "exec",
+        "z": "a85c93b74d9f6110",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1330,
+        "y": 380,
+        "wires": [
+            [
+                "87403198d3eb6d51"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3da9f5a55d213f12",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "set command in payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'cd \"' & path & '\" && ' & 'npm audit fix'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "$append(command)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 380,
+        "wires": [
+            [
+                "efe3592b9fec64fd"
+            ]
+        ]
+    },
+    {
+        "id": "590c349ac6befbc2",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "log",
+                "pt": "msg",
+                "to": "Vulnerability found, i'm trying to run 'npm audit fix'",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87403198d3eb6d51",
+        "type": "switch",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "found 0 vulnerabilities",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1490,
+        "y": 280,
+        "wires": [
+            [
+                "4e0f0d0c190d2f28"
+            ],
+            [
+                "dfeb37b3f9b0c47d"
+            ]
+        ]
+    },
+    {
+        "id": "dfeb37b3f9b0c47d",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "log",
+                "pt": "msg",
+                "to": "I did'nt succed to fix issue. For security reasons i gonne remove the package.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1650,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e0f0d0c190d2f28",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "log",
+                "pt": "msg",
+                "to": "Vulnerability is fixed. Enjoy",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1650,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2125494dc219f046",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "log",
+                "pt": "msg",
+                "to": "Package installed. Enjoy",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    }
+]
