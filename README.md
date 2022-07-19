@@ -26,6 +26,7 @@ This setup is needed to be a full portative solar powered 5V Dolibarr with net c
  - Node-Red installer sur chaque des machines
  - Le mode projet de Node-Red, avec sur chaqune des machines, le projet correspondant cloner
  - Tout est en priorité controllé par le project TechSCOrangepi
+ - Le téléphone sert d'interface prioritaire pour controllé l'orangePi via ssh même si j'utilise la plupart du temps mon PC
 
 ## Quelques choix de contraintes technnique sur l'utilisation et la sélection des outils
  - Nous privilégions toujours une mise à disposition d'application dans le navigateur internet
