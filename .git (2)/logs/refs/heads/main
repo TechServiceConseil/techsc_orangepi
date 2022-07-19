@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 9236cc251998bd5a0b19c2b37d67bc1e3cf2a7da u0_a226 <u0_a226@localhost.(none)> 1658203422 +0200	clone: from gitlab.com:techscteam/techscphone.git
-9236cc251998bd5a0b19c2b37d67bc1e3cf2a7da a8411fdca09e8c64279412f9c167b9ef68862aa4 Techsc <accueil@techsc.fr> 1658210321 +0200	commit: First check of clean project :)
-a8411fdca09e8c64279412f9c167b9ef68862aa4 958135ab70b342f31dd12450d0ac17013c4ff0aa Techsc <accueil@techsc.fr> 1658210660 +0200	commit: Modify name package.json
-958135ab70b342f31dd12450d0ac17013c4ff0aa c6bc95123ffa5e6bece141a5d9483d21170eca78 Techsc <accueil@techsc.fr> 1658210980 +0200	commit: Before that what the decription now it's the name
