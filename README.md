@@ -37,6 +37,10 @@ This setup is needed to be a full portative solar powered 5V Dolibarr with net c
  - Nous privilégions la création de subflows à la création de node spécifique disponible via npm.
  - Nous utilsons un méthodologie de construction de ces subflows particulière afin de garantir un compréhension d'utilisation et une maintenance simplifier
  - Nous utiliserons de manière général plusieur outils pour faire la même chose de manière différentes en fonction de nos compétences et du temps qui est nécessaire pour l'apprendre et le metrre en place. On ne cherche pas forcément à exploiter completement un outil mais plutôt à s'adapter suivant un panel de contrainte d'utilisation
+ - Nous nous efforçons de develloper des fonctionalité accesible de trois manière
+    - Avec la voix
+    - Avec une interace graphique
+    - Avec une requete http     
  - Nous somme kaizen à fond alors dans ce project nous allons travailler sur quelque chose et jamais le finir complétement pour passer à une autre. Par contre, nous allons avancé jusqua quelque chose de fonctionnel à chaque fois. C'est à dire entre 60 et 70% du job
 
 ## Badges
