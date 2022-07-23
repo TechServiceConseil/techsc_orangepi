@@ -1,3 +1,4 @@
 *.backup
 /secrets/
 flows_cred.json
+/node_module

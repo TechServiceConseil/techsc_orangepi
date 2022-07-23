@@ -8,164 +8,12 @@
         "env": []
     },
     {
-        "id": "a85c93b74d9f6110",
-        "type": "subflow",
-        "name": "Check npm package and install",
+        "id": "57297ea9585b5f93",
+        "type": "tab",
+        "label": "Connection",
+        "disabled": false,
         "info": "",
-        "category": "Administration",
-        "in": [
-            {
-                "x": 50,
-                "y": 30,
-                "wires": [
-                    {
-                        "id": "65a17d791a657925"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 1810,
-                "y": 400,
-                "wires": [
-                    {
-                        "id": "e542a4f578bab639",
-                        "port": 0
-                    },
-                    {
-                        "id": "590c349ac6befbc2",
-                        "port": 0
-                    },
-                    {
-                        "id": "4e0f0d0c190d2f28",
-                        "port": 0
-                    },
-                    {
-                        "id": "dfeb37b3f9b0c47d",
-                        "port": 0
-                    },
-                    {
-                        "id": "2125494dc219f046",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 1670,
-                "y": 440,
-                "wires": [
-                    {
-                        "id": "e542a4f578bab639",
-                        "port": 1
-                    },
-                    {
-                        "id": "efe3592b9fec64fd",
-                        "port": 1
-                    }
-                ]
-            },
-            {
-                "x": 1690,
-                "y": 500,
-                "wires": [
-                    {
-                        "id": "e542a4f578bab639",
-                        "port": 2
-                    },
-                    {
-                        "id": "efe3592b9fec64fd",
-                        "port": 2
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "path",
-                "type": "str",
-                "value": "",
-                "ui": {
-                    "type": "input",
-                    "opts": {
-                        "types": [
-                            "str",
-                            "json",
-                            "env"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "packageName",
-                "type": "str",
-                "value": "",
-                "ui": {
-                    "icon": "font-awesome/fa-inbox",
-                    "type": "input",
-                    "opts": {
-                        "types": [
-                            "str",
-                            "env"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "install",
-                "type": "bool",
-                "value": "false",
-                "ui": {
-                    "icon": "font-awesome/fa-plus-circle",
-                    "type": "input",
-                    "opts": {
-                        "types": [
-                            "bool",
-                            "env"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "save",
-                "type": "bool",
-                "value": "true",
-                "ui": {
-                    "icon": "font-awesome/fa-save",
-                    "type": "input",
-                    "opts": {
-                        "types": [
-                            "bool",
-                            "env"
-                        ]
-                    }
-                }
-            },
-            {
-                "name": "saveInDependencies",
-                "type": "bool",
-                "value": "true",
-                "ui": {
-                    "type": "input",
-                    "opts": {
-                        "types": [
-                            "bool",
-                            "env"
-                        ]
-                    }
-                }
-            }
-        ],
-        "meta": {},
-        "color": "#A6BBCF",
-        "inputLabels": [
-            "{path, packageName}"
-        ],
-        "outputLabels": [
-            "stdout",
-            "stderr",
-            "return code"
-        ]
+        "env": []
     },
     {
         "id": "5030d00b88df4be5",
@@ -207,6 +55,156 @@
         "color": "#DDAA99"
     },
     {
+        "id": "a85c93b74d9f6110",
+        "type": "subflow",
+        "name": "Manage npm package",
+        "info": "",
+        "category": "Administration",
+        "in": [
+            {
+                "x": 60,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "65a17d791a657925"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 2880,
+                "y": 640,
+                "wires": [
+                    {
+                        "id": "f0c7f88db9a0a39f",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "path",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "json",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "packageName",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-inbox",
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "action",
+                "type": "str",
+                "value": "install",
+                "ui": {
+                    "icon": "font-awesome/fa-plus-circle",
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "Install"
+                                },
+                                "v": "install"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Uninstall"
+                                },
+                                "v": "uninstall"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Check"
+                                },
+                                "v": "list --depth=0"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Check with dependencies"
+                                },
+                                "v": "list"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "save",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "icon": "font-awesome/fa-save",
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "saveInDependencies",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "removeIfVulnerabilityFound",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {},
+        "color": "#A6BBCF",
+        "inputLabels": [
+            "{path, packageName}"
+        ],
+        "outputLabels": [
+            "payload and log"
+        ]
+    },
+    {
         "id": "accc01d78c5b390d",
         "type": "group",
         "z": "58612799aa277ac1",
@@ -215,109 +213,445 @@
             "label": true
         },
         "nodes": [
-            "099f6275bdac6398"
+            "099f6275bdac6398",
+            "ac9878e5150ff640",
+            "b5969e7614beb79c",
+            "61885aca941ee99a",
+            "a4b1c4a422c3d696",
+            "813181b66cc0bb79",
+            "3b986ba732de0ec3",
+            "feb6423ccda74b39"
+        ],
+        "x": 54,
+        "y": 59
+    },
+    {
+        "id": "03423aacbab5be01",
+        "type": "group",
+        "z": "57297ea9585b5f93",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "217704d4bcad8509",
+            "59676d069a581d48",
+            "a97adb91c59c3879",
+            "c280ced4041a7ec7",
+            "60f468b672d670a2",
+            "fbe6a4c43eea3e9a",
+            "a24271ceb763c696",
+            "aa1e2348a08323c8",
+            "9b0b777f741c8465",
+            "fac21ad93363355e",
+            "d1944d4ac30b8216",
+            "c0a7b9314d6f5b3c",
+            "9cd7edf4b42d2e4f"
         ],
         "x": 34,
-        "y": 39,
-        "w": 152,
-        "h": 82
+        "y": 19,
+        "w": 1392,
+        "h": 182
     },
     {
-        "id": "69dec379bd8db011",
-        "type": "file in",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "filename": "",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 440,
-        "y": 180,
-        "wires": [
-            [
-                "a4693381465ef0e0"
-            ]
-        ]
-    },
-    {
-        "id": "a4693381465ef0e0",
-        "type": "json",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 510,
-        "y": 260,
-        "wires": [
-            [
-                "fe6df85e1f375046",
-                "07cefca991150ddf"
-            ]
-        ]
-    },
-    {
-        "id": "fe6df85e1f375046",
-        "type": "switch",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "property": "payload.dependencies",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "hask",
-                "v": "packageName",
-                "vt": "msg"
-            },
-            {
-                "t": "else"
-            }
+        "id": "b8f8611163248bdd",
+        "type": "group",
+        "z": "57297ea9585b5f93",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "9910400a70e3748f",
+            "cfef9b965281e35e",
+            "3879658cfc8f39a6",
+            "99e6f7120bc13cf8",
+            "5dcd97a52a9af266",
+            "a46c53a4f25125bf",
+            "ec2f91b7c82fe538"
         ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 670,
-        "y": 260,
+        "x": 34,
+        "y": 219,
+        "w": 1032,
+        "h": 182
+    },
+    {
+        "id": "18e263da0ce661a2",
+        "type": "group",
+        "z": "57297ea9585b5f93",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "f899bfee50c2c5f6",
+            "5fe632846e1697cf",
+            "9a20901ecac67666",
+            "8db83594bc604f4d",
+            "684d60b75c1cc9da",
+            "44c756161c28b0e2",
+            "e447acc281039160",
+            "8b3802d31611155a",
+            "7f82046bd9d0371b",
+            "05636ee319db6f24",
+            "dc5517b9df8183b5",
+            "b1ec900404c7af76",
+            "0e66b4ca4d045ec1",
+            "dec0a3c992014ab5",
+            "3d8c166dafde23ec",
+            "07b4fddee5d12ac2",
+            "b70e09ac6ce18c06",
+            "733d567b31de5df5",
+            "dcbb085ee2ecca8b",
+            "628dfb2257610e39",
+            "b48e2307165d3042",
+            "5e50781edb13f822",
+            "c0b40a7272cfab76",
+            "372c7037c1474f67",
+            "7c4def7dc6746056",
+            "9478cafaace3eda1",
+            "5e8044892e24ec72",
+            "aae069b40e843c69",
+            "96f4d0b1004067bd",
+            "5c8e04ee1e796b6d",
+            "09f1ac7ac86f2fa8",
+            "dc269403be70248b",
+            "d7cefaf9832ce681",
+            "31ff77fcf896298c",
+            "5c197adb3ddde210",
+            "2d81644308115d7d",
+            "34bb792c027f4b5b",
+            "127cf7d29cea1234",
+            "668842fefb1ad86b",
+            "c13e09dff09adfbd",
+            "5a947aacab2c4eba",
+            "ca59ca888877673f",
+            "e481703bc59b4c72",
+            "7f4645757907e388",
+            "cc9d36cac2f0dc9e",
+            "9c8aca4bedc48d5e",
+            "7d681acadaecfb5f",
+            "00194ed721a11998",
+            "16bce161060dd6ed",
+            "3554dd2e300a186d",
+            "06366bb54320586d",
+            "1590d913477ecb52",
+            "6b54aac46cb4c9b3",
+            "dff8087ee587c923",
+            "06de75552b3afce3",
+            "265694c368031b88",
+            "3b9751a158948df4",
+            "052108423e0562a3",
+            "55cc69056770aa9f",
+            "38942f94d5ec1b0d",
+            "42bb49f4356c0595"
+        ],
+        "x": 8,
+        "y": 479,
+        "w": 4738,
+        "h": 2008
+    },
+    {
+        "id": "c0b40a7272cfab76",
+        "type": "group",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "style": {
+            "stroke": "#d1b478",
+            "label": true,
+            "fill": "#532c2c"
+        },
+        "nodes": [
+            "037c66ba96df20be",
+            "be4aa8937a2551a3",
+            "b7d03180d0bbb143",
+            "24099d8cac2ab795",
+            "564ff8ef50de58b1",
+            "4d39ba490ae7a81f",
+            "06043ac62e7edf8e",
+            "7de319477688b8ba",
+            "d21d613f143f2ab7",
+            "cf443f9bffa6ce37",
+            "dfd243663d89ff30",
+            "c4460b8e1fb0cacf",
+            "e6cfcb3d10177c46",
+            "4c13d948507fa2d4",
+            "0954a40fa36cb951",
+            "7df4342477554fec",
+            "de809fb1d53be208",
+            "14a8562b30231057",
+            "b7a4354057574cee",
+            "31bd6a557c7a8a3e",
+            "9c0adc0ad65a08c8",
+            "e53439d570dffd07",
+            "a3348e49115feabc",
+            "83df3adbaa2a6c51",
+            "285ddcd6faf866c9",
+            "cc7f04658e10487c",
+            "2c48e3b743c58dc6",
+            "c8f6c212fc68f165",
+            "560fe6956d93cb53",
+            "b7249babe9ca16cc",
+            "1a3ee54e9695a108",
+            "11f3a37337ed7a48",
+            "bdf43fa3a5a439e7",
+            "ea6e70d0667d480d",
+            "86cdf396ce6d4aa0",
+            "ce010bb35af48543",
+            "dd42e2b99a2a7645",
+            "18ecfed882d9cab8",
+            "79291a7a1150f807",
+            "1fbd8cc10ee44cd0",
+            "961702918836aa4d",
+            "ca1a3b161424e5e9",
+            "b2b6c35ccfe6517f",
+            "3ba29ad018e06586",
+            "b8028a182f6e3883"
+        ],
+        "x": 34,
+        "y": 1159,
+        "w": 2252,
+        "h": 862
+    },
+    {
+        "id": "42bb49f4356c0595",
+        "type": "group",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "style": {
+            "stroke": "#d1b478",
+            "label": true,
+            "fill": "#532c2c"
+        },
+        "nodes": [
+            "1955d97621c6194f",
+            "fba7ea4f0c525b8f",
+            "76b45b809532e499",
+            "e9699e2f6a049fe7",
+            "e0c099377c2c48d3",
+            "0dd47cebafd78a73",
+            "b73225bfdbae241a",
+            "9fb37ef2271445f3",
+            "a47933f23ee978d7",
+            "aaea082df6e0d28e",
+            "081925cde061cad5",
+            "650fd2d9cae4f933",
+            "d6f838746286e467",
+            "c295c8cbfb5211dc",
+            "126bdc8d1fe884f0",
+            "b6de463218f1e479",
+            "2fe10cf77563c81c",
+            "abb24d721e50e418",
+            "bf168954b2d4d081",
+            "c831be1d8aab6ac2",
+            "5ab7478a90317b26",
+            "f27df0d26aedf15c",
+            "6f1bc1a7b9c9f095",
+            "497be50704f809a8",
+            "8cb281e27cb12913",
+            "83dcd2bef897c63e",
+            "bb973f9e1bbddecc",
+            "e1b464488f392996",
+            "2dae94e0a5a67ff8"
+        ],
+        "x": 34,
+        "y": 2099,
+        "w": 2312,
+        "h": 362
+    },
+    {
+        "id": "c0a7b9314d6f5b3c",
+        "type": "junction",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "x": 580,
+        "y": 120,
         "wires": [
             [
-                "9673614755cab696"
-            ],
-            [
-                "decd9a59ae4a88b9"
+                "c280ced4041a7ec7",
+                "9b0b777f741c8465"
             ]
         ]
     },
     {
-        "id": "07cefca991150ddf",
-        "type": "debug",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 60,
-        "wires": []
+        "id": "06366bb54320586d",
+        "type": "junction",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "x": 1180,
+        "y": 1120,
+        "wires": [
+            [
+                "4d39ba490ae7a81f"
+            ]
+        ]
     },
     {
-        "id": "56d750465e6be7e0",
+        "id": "6c866437b1f109a0",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1588cad9498681c1",
+        "type": "ui_group",
+        "name": "Connections",
+        "tab": "6c866437b1f109a0",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a1efc069e293d845",
+        "type": "ui_group",
+        "name": "Terminal one shot",
+        "tab": "6c866437b1f109a0",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "297b1964920fbcef",
+        "type": "ui_group",
+        "name": "Terminal dynamique",
+        "tab": "6c866437b1f109a0",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c2ab6d4c108e742b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1c3881de7afa11d5",
         "type": "change",
-        "z": "a85c93b74d9f6110",
+        "z": "5030d00b88df4be5",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "filename",
+                "p": "test",
                 "pt": "msg",
-                "to": "path & (path='' ? '' : '/') & 'package.json'",
-                "tot": "jsonata"
+                "to": "test",
+                "tot": "env"
             }
         ],
         "action": "",
@@ -325,12 +659,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 270,
-        "y": 140,
+        "x": 590,
+        "y": 320,
         "wires": [
-            [
-                "69dec379bd8db011"
-            ]
+            []
         ]
     },
     {
@@ -338,7 +670,7 @@
         "type": "function",
         "z": "a85c93b74d9f6110",
         "name": "Set priority of msg value",
-        "func": "var list = ['path', 'packageName','install', 'save', 'saveInDependencies']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)){\n        msg[element] = env.get(element)\n    }else{\n        if (msg[element] === undefined || msg[element] === null){\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\nreturn msg;",
+        "func": "var list = ['path', 'packageName','action', 'save', 'saveInDependencies']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)){\n        msg[element] = env.get(element)\n    }else{\n        if (msg[element] === undefined || msg[element] === null){\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -348,7 +680,7 @@
         "y": 40,
         "wires": [
             [
-                "56d750465e6be7e0"
+                "decd9a59ae4a88b9"
             ]
         ]
     },
@@ -364,14 +696,19 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 610,
-        "y": 480,
+        "x": 690,
+        "y": 640,
         "wires": [
             [
-                "d0b588151f25af9d"
+                "d0b588151f25af9d",
+                "b8f92dc3100eea4c"
             ],
-            [],
-            []
+            [
+                "b8f92dc3100eea4c"
+            ],
+            [
+                "b8f92dc3100eea4c"
+            ]
         ]
     },
     {
@@ -384,7 +721,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "(path='' ? '' : 'cd ' & path & ' && ') & 'npm i ' & packageName & (save ? ' --save' : '') & (saveInDependencies ? ' -D' : '')",
+                "to": "(path='' ? '' : 'cd ' & path & ' && ') & 'npm ' & action & ' ' & packageName & (save ? ' --save' : '') & (saveInDependencies ? ' -D' : '')",
                 "tot": "jsonata"
             },
             {
@@ -400,48 +737,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
-        "y": 280,
+        "x": 490,
+        "y": 640,
         "wires": [
             [
-                "26f05760441fb0b6",
                 "e542a4f578bab639"
             ]
         ]
-    },
-    {
-        "id": "26f05760441fb0b6",
-        "type": "debug",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1110,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "9673614755cab696",
-        "type": "debug",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 200,
-        "wires": []
     },
     {
         "id": "d0b588151f25af9d",
@@ -468,17 +770,18 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 870,
-        "y": 400,
+        "x": 890,
+        "y": 540,
         "wires": [
             [
-                "3da9f5a55d213f12",
-                "590c349ac6befbc2"
+                "3da9f5a55d213f12"
             ],
             [
-                "2125494dc219f046"
+                "32620eda86c8b32d"
             ],
-            []
+            [
+                "32620eda86c8b32d"
+            ]
         ]
     },
     {
@@ -493,14 +796,18 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1330,
-        "y": 380,
+        "x": 1570,
+        "y": 660,
         "wires": [
             [
                 "87403198d3eb6d51"
             ],
-            [],
-            []
+            [
+                "697904ccdf2908a6"
+            ],
+            [
+                "697904ccdf2908a6"
+            ]
         ]
     },
     {
@@ -529,8 +836,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1130,
-        "y": 380,
+        "x": 1190,
+        "y": 520,
         "wires": [
             [
                 "efe3592b9fec64fd"
@@ -538,29 +845,66 @@
         ]
     },
     {
-        "id": "590c349ac6befbc2",
-        "type": "change",
+        "id": "f0c7f88db9a0a39f",
+        "type": "link in",
         "z": "a85c93b74d9f6110",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "log",
-                "pt": "msg",
-                "to": "Vulnerability found, i'm trying to run 'npm audit fix'",
-                "tot": "str"
-            }
+        "name": "stdout",
+        "links": [
+            "3b612ead7d4a407e",
+            "32620eda86c8b32d",
+            "7e416f0898f1e4bf",
+            "62b10f098bb48847",
+            "7b7d9bdda20dd70c",
+            "b8f92dc3100eea4c",
+            "697904ccdf2908a6",
+            "1b302ebac74189ad",
+            "4646e97d6cdcf57a",
+            "4c889e1c79e3c8ad"
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1090,
-        "y": 320,
+        "x": 2755,
+        "y": 640,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "62b10f098bb48847",
+        "type": "link out",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "f0c7f88db9a0a39f"
+        ],
+        "x": 2075,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "b8f92dc3100eea4c",
+        "type": "link out",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "f0c7f88db9a0a39f"
+        ],
+        "x": 1045,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "697904ccdf2908a6",
+        "type": "link out",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "f0c7f88db9a0a39f"
+        ],
+        "x": 1765,
+        "y": 680,
+        "wires": []
     },
     {
         "id": "87403198d3eb6d51",
@@ -582,29 +926,75 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1490,
-        "y": 280,
+        "x": 1750,
+        "y": 620,
         "wires": [
             [
-                "4e0f0d0c190d2f28"
+                "62b10f098bb48847"
             ],
             [
-                "dfeb37b3f9b0c47d"
+                "62b10f098bb48847"
             ]
         ]
     },
     {
-        "id": "dfeb37b3f9b0c47d",
+        "id": "32620eda86c8b32d",
+        "type": "link out",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "f0c7f88db9a0a39f"
+        ],
+        "x": 1265,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "69dec379bd8db011",
+        "type": "file in",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "filename": "",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 660,
+        "y": 40,
+        "wires": [
+            [
+                "a4693381465ef0e0"
+            ]
+        ]
+    },
+    {
+        "id": "a4693381465ef0e0",
+        "type": "json",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56d750465e6be7e0",
         "type": "change",
         "z": "a85c93b74d9f6110",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "log",
+                "p": "filename",
                 "pt": "msg",
-                "to": "I did'nt succed to fix issue. For security reasons i gonne remove the package.",
-                "tot": "str"
+                "to": "path & (path='' ? '' : '/') & 'package.json'",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -612,85 +1002,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1650,
-        "y": 320,
+        "x": 470,
+        "y": 40,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4e0f0d0c190d2f28",
-        "type": "change",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "log",
-                "pt": "msg",
-                "to": "Vulnerability is fixed. Enjoy",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1650,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2125494dc219f046",
-        "type": "change",
-        "z": "a85c93b74d9f6110",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "log",
-                "pt": "msg",
-                "to": "Package installed. Enjoy",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1070,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1c3881de7afa11d5",
-        "type": "change",
-        "z": "5030d00b88df4be5",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "test",
-                "pt": "msg",
-                "to": "test",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 590,
-        "y": 320,
-        "wires": [
-            []
+            [
+                "69dec379bd8db011"
+            ]
         ]
     },
     {
@@ -699,9 +1016,4218 @@
         "z": "58612799aa277ac1",
         "g": "accc01d78c5b390d",
         "name": "1st step",
-        "info": "## Plan\nPour cette première vidéo le planning est d'installer les premiers outils néccessaire. C'est a dire:\n - Les outils de base de communication entre nos machines  \n - Un éditeur de code, Visual Studio Code sur l'orangepi et le telephone\n    - téléphone : https://www.codewithharry.com/blogpost/install-vs-code-in-android/\n - Un gestionnaire de conteneneur, Docker car c'est le plus fournir et simple à mettre en place sur tout les support. Nous allons le mettre sur l'orangepi et essayer sur le téléphone, je l'ai pas fait encore pour préserver le téléphone.\n - Un gestionnaire d'activité, Dolibarr, car il permet de lié les flux financier et les flux physique. De plus, sont utilisation represente une compétence utilsable dans la vie professsionelle et personnelle. Nous allons le mettre sur l'orangepi\n - Un assistant vocal, Rhasspy car il est le plus modulable que nous alllons également mettre sur l'orangepi et sur le téléphone. Nous allons sur le téléphone installer l'APK même si je n'arrive pas afaire fonctionner le wakeword avec\n - Enfin si on à le temps ce qui métonnerais, nous allons commencer à palier à ce problème.\n\n",
-        "x": 110,
+        "info": "## Plan\nPour cette première vidéo le planning est d'installer les premiers outils néccessaire. C'est a dire:\n - Les outils de base de communication entre nos machines  \n - Un éditeur de code, Visual Studio Code sur l'orangepi et le telephone\n    - téléphone : https://www.codewithharry.com/blogpost/install-vs-code-in-android/\n - Un gestionnaire de conteneneur, Docker car c'est le plus fournir et simple à mettre en place sur tout les support. Nous allons le mettre sur l'orangepi et essayer sur le téléphone, je l'ai pas fait encore pour préserver le téléphone.\n - Un gestionnaire d'activité, Dolibarr, car il permet de lié les flux financier et les flux physique. De plus, sont utilisation represente une compétence utilsable dans la vie professsionelle et personnelle. Nous allons le mettre sur l'orangepi\n - Un assistant vocal, Rhasspy car il est le plus modulable que nous alllons également mettre sur l'orangepi et sur le téléphone. Nous allons sur le téléphone installer l'APK même si je n'arrive pas afaire fonctionner le wakeword avec\n - Enfin si on à le temps ce qui métonnerais, nous allons commencer à palier à ce problème.\n\n## Session 1\n - Installation de node-red-dashboardpour la simplicité.\n - Mise en place du systeme de communication avec le terminal depuis node-red pour gerer les coonections internet et bluetooth\n    - Pour execetuter des commandes avec node-red nous avons plusieur choix possible\n      1. Tout dabords la note exec. Voici un exemple avec la commande nmcli pour la gestion du wifi\n          1. J'ai créer un bouton sur le dashbord qui nous permet de lancer la commande\n          2. Dans la fonction node j'en fait un tableau d'object que je montre avec la node additionel ui-list\n          3. Dans la node ui-list, j'ai parameter une action au click qui nous permet de lancer la commande de connexion\n          4. Dans la node exec, j'ai activer l'options pour ajouter le nom du reseau c'est à dire la propriété SSID de l'obect construit auparavent.Deplus je l'ai mise en mode spawn pour recevoir des message pendant que la commande est en cours\n          5. Enfin, j'ai fait une template node qui nous permet de voir les message cumuler.  \n          - Nous allons essayer cette solution. Je click sur refresh, nous attendons un peu et nous voyons les connnexion. Maintenant je clique sur une et on vois que l'on nous demande un password.\n        Cela pose un problème car nous ne pouvons pas renvoyer un message dans la commande que nous avons lancer. Pour communiquer avec un processus que nous avons lancer il nous faut une autre node addiotonelle, la node daemon qui est ici.\n        Cependant dans cette node nous ne pouvons pas definir de commande ou d'argument dynamiquement. Cela veut dire que lorsque nous cliquons dans notre list, nous ne pouvons pas en recolter l'information pour la mettre dans notre node daemon\n        On va donc essayer une autre solution\n      2. Pour le deuxième essai on va essayer d'utiliser la même fonction que la node exec realise mais dans une fonction node. c'est ce qu'il y a ici.\n          1. J'ai créer un formulaire avec la node form pour mettre une liste de commande separer par entrer\n          2. J'ai créer une function node pour réaliser à la suite les commandes.\n          3. J'ai remis la node template pour voir le resultat\n          - Nous allons essayer cette solution. Nous tapons notre commande pour nous connecter et nous rajoutons notre ssid. Nous cliquons sur submit et on nous demande notre password, nous en sommme au même point que precédement.\n        Maintenant nous tappons la commmande et le ssid et à la ligne le mot de passe. Nous avons perdu la connexion avec le pc et nous devrions être connecter au téléphone.\n        Avec mon telephone je recupére l'adresse ip du téléphone avec la commande \"ifconfig\" et apres je scanne le reseau avec \"nmap mon_ip/24\". Cela me donne l'ip de mon orangepi connecter au telephone.\n        Maintenant nous pouvons aller sur le node-red de l'orange pi avec le téléphone comme cela. Je coupe mon point d'acces avec le téléphone et nous attendons un peu que l'orangepi se reconnecte à la maison pour y avoir de nouveau acces avec l'ordinateur\n        Dans la prochaine video nous ferrons cela avec node-red coté téléphone et on affichera une notification sur le tel avec l'adresse ip.\n      3. Nous avons reussi à nous connecter au téléphone cependant cela ne fonctionne pas de manière dynamique. En effet, cela ne marche toutjours pas avec un click sur la liste. Pour cette raison, nous allons voir la troisième solution, \n      celle de droite qui est un terminal dynamique qui est ici fait avec la node daemon.\n          1. Tout d'abords, comme la node n'est pas parametrable, il nous faut créer un fichier javascript, contenant notre commande à lancer. Pour cela, j'ai utilisé\n          une template node, qui nous permet de récolter l'information de notre node form qui est ici, pour la mettre dans notre fichier javascript qui s'ecrit avec la node write.\n          2. Ensuite, j'ai mis une node change pour definir une propriété start au message qui permet de lancer la node daemon\n          3. Dans la node daemon, j'ai mis node dans la commande \"node\" et le fichier à lancer dans argument. J'ai déchocher auto-start daemon on deploy et j'ai cocher add enter to every message sent\n          4. Pour envoyer un message au processus en cours j'ai mis une autre node form\n          5. Pour terminer notre processus en cours, j'ai mis une node button qui quand il est cliquer envoie un message à la node change.Dedans j'ai defini une propriété kill a msg qui est transmis à la node daemon\n          6. Pour finir j'ai mis un bouton pour repéter la commande.\n          7. Nous laissons de coter la partie du bas pour le moment qui nous servira à gérer une liste de commande.  \n          - Nous allons maintenant tester notre solution. Nous tapons tape donc la commande pour nous connecter aux reseau. Cela demmande le SSID. Nous mettons XperiaXZ_c8a0 et cela nous demande le mot de passe qui est coucoutoi que nous envoyons\n        Nous repetons les commandes pour trouver notre ip et scanner le reseau pour trouver l'ip de notre orangepi. C'est le même que tout à l'heure. Nous retournons donc dans le navigateur internet pour nous coonecter au dashboard.\n        Cela fonctionne. Nous coupons la connexions du téléphone pour retrouver l'orangepi avec le pc.\n - Choix de l'utilisation d'une node ssh\n   - Maintenant que nous pouvons communiquer avec notre machine grâce à un terminal dans node-red nous allons comminquer avec notre téléphone grave à la commande ssh. Pour ce la on pourrait utiliser notre terminal mais si on essaie on voit qu'il y a une erreur.\n   Nous pouvons la contourner mais cela implique de mettre le mot de passe dans la commande ce qui ne serai pas sécuriser. Dans une autre vidéo, nous ferrons un systeme pour crypter le mot de passe, le sauvegarder et l'injecter dans la commande.\n   Pour le moment détaillons le choix de la node ssh. Parmis les node existante :\n   - node-red-contrib-ssh-v3 : pas de port spécifiable donc pas utilisable avec termux\n   - idem pour : node-red-contrib-ssh-coco, node-red-contrib-ssh et node-red-contrib-ssh-v2-reconnection \n   - node-red-contrib-bigssh : pas de changement de status de la node en cas de perte de connection avec le telephone\n   - Pour l'instant le mieux c'est bigssh.\n   - En revanche ce n'est pas parfait car cela nous fait revenir au point de départ concernant le terminal. En effet toute les node ssh sont comme les node exec et non comme les node daemon.\n   C'est à dire pas de communication possible après la commande. Pour cette rasion, nous serrons obliger de remplacer cette node ultérieurement comme nous auront fait le systeme de cryptation du mot de passe.\n - Maintenant qu nous avons notre systeme de terminal, nous pouvons commencer as réaliser les commandes nécessaire lorsque l'on télécharge le projet pour la première fois. Avant cela nous allons voir la dernière fonctionnalité à notre terminal.\nFaire defiler une liste de commande préétablie avec des boutons en fonction du resultat de la commande précedente. \n    1. J'ai donc ajouter une node text pour saisir un tableau de commande\n    2. J'ai ajouter une node change pour definir des variables au niveau du flow ce qui nous permettra d'acceder à nos informations de liste pour tout les messages\n    3. Ensuite, la prochaine node change passe la premières commande à notre text \n    4. Toutes les node fonction \"message for spawn\" servent à formater le message car pour lancer la première commande, la commande doit être séparer des arguments. Maintenant que c'est fait je pense que cela peut être améliorer en modifiant le code javascript qui lance la commande.\n    5. Il y a ensuite les trois bouton pour gerer la liste\n    6. Ce qui est derrière ces bouton sert à modifier l'état des boutons, l'index en cour de la liste et le texte pour la commande suivante\n    7. La liste est compatible avec la parti du dessus, c'est a dire que vous pouvez injecter des commande en cours de liste.\n  - Nous allons maintenant pourvoir dresser une liste de commande à executer pour chaque outil. Cependant en fesant cela je me suis rendu compte que de pourvoir sauvegarder notre liste pourrait être intéressant\n  C'est l'objet de la troisième parti que vous voyer la. J'arrive à ma dead line pour cette vidéo donc je ne détaille pas. Sachez juste que en fesant cela j'ai découvert xterm.js et que dans les prochaines vidéo on remplacera la node template par une fenetre xterm.js pour pouvoir exploiter pleinement le terminal et profitez de notre gestion de liste de commande.\n  Cependant nous avons maintenant un outil pour modifier un script que nous pouvons modifier librement et faire defiler commande par commande. Pour injecter des commandes dans notre outils j'ai ajouter une node link in. Dans le flow Installation nous pouvons maintenant mettre une inject node et une node link out pour charger notre list.\n  Cela nous permetra de facilement d'effectuer nos installations sur nos différente machine et de pouvoir injecter nos mots de passe.\n    1. Nous commencons donc avec Node-Red. Dedans il y a les commandes pour le lancer au démarrage. Pour l'instant c'est juste le laner au démarrage de la machine. Cependant je vais le lancer, Nous voyons que  ",
+        "x": 130,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3b986ba732de0ec3",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7668e9e8bdcf0e7c",
+        "type": "status",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "scope": [
+            "a50d6ceba36c36f7"
+        ],
+        "x": 1120,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4be8a67244d65bf",
+        "type": "exec",
+        "z": "58612799aa277ac1",
+        "command": "ip a",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "get wifi interface name ",
+        "x": 1100,
+        "y": 840,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e959bbe9e0f2b24e",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 830,
+        "y": 840,
+        "wires": [
+            [
+                "f4be8a67244d65bf"
+            ]
+        ]
+    },
+    {
+        "id": "ac9878e5150ff640",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "Install nodejs libary to scan networks and define global variable for the app",
+        "info": "",
+        "x": 340,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b5969e7614beb79c",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "props": [
+            {
+                "p": "packageNames",
+                "v": "[\"xterm\"]",
+                "vt": "json"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "813181b66cc0bb79"
+            ]
+        ]
+    },
+    {
+        "id": "704240ae2d8ef866",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1160,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e835d36dc81cf30",
+        "type": "function",
+        "z": "58612799aa277ac1",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61885aca941ee99a",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4b1c4a422c3d696",
+        "type": "function",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "function 2",
+        "func": "msg.path = msg.projectdir\nfor (let index = 0; index < msg.packageNames.length; index++) {\n    const element = msg.packageNames[index];\n    msg.packageName = element\n    node.send(msg)\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "feb6423ccda74b39"
+            ]
+        ]
+    },
+    {
+        "id": "813181b66cc0bb79",
+        "type": "projectdir",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "a4b1c4a422c3d696"
+            ]
+        ]
+    },
+    {
+        "id": "7bca5ca89647bdfc",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "feb6423ccda74b39",
+        "type": "subflow:a85c93b74d9f6110",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "env": [
+            {
+                "name": "save",
+                "value": "false",
+                "type": "bool"
+            },
+            {
+                "name": "saveInDependencies",
+                "value": "false",
+                "type": "bool"
+            }
+        ],
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "3b986ba732de0ec3"
+            ]
+        ]
+    },
+    {
+        "id": "4bbf9dbd15acc0eb",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "name": "Command for node-red first install",
+        "info": "",
+        "x": 220,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "834065f208af89ab",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"sudo systemctl enable nodered.service\"]",
+        "payloadType": "json",
+        "x": 170,
+        "y": 360,
+        "wires": [
+            [
+                "73013c23ef540790"
+            ]
+        ]
+    },
+    {
+        "id": "73013c23ef540790",
+        "type": "link out",
+        "z": "58612799aa277ac1",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "ca1a3b161424e5e9",
+            "bc746456f276f19a"
+        ],
+        "x": 305,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "217704d4bcad8509",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "59676d069a581d48",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "function 4",
+        "func": "var lines = msg.payload.split('\\n')\nvar connections = []\nfor (let index = 1; index < lines.length-1; index++) {\n    const fields = lines[index];\n    let fieldsA = fields.split(' ')\n    for (let j = 0; j < fieldsA.length; j++) {\n        if(fieldsA[j] === \"\" && fieldsA[j+1] === \"\"){\n            fieldsA.splice(j,1)\n            j--\n        };\n        if(fieldsA[j] !== \"\" && fieldsA[j + 1] !== \"\"){\n            fieldsA[j] = fieldsA[j] + ' ' + fieldsA[j+1]\n            fieldsA.splice(j+1, 1)\n        }\n    }\n    let connection = {}\n    let cleanConnection = fieldsA.filter(field => { return field !== \"\" })\n    if (cleanConnection[0] === \"*\"){\n        connection.icon_name = \"fa-solid fa-wifi\"\n        cleanConnection.splice(0,1)\n    }\n    connection.BSSID = cleanConnection[0]\n    connection.SSID = cleanConnection[1]\n    connection.mode = cleanConnection[2]\n    connection.chan = cleanConnection[3]\n    connection.rate = cleanConnection[4] + ' ' + cleanConnection[5]\n    connection.signal = cleanConnection[6]\n    connection.bars = cleanConnection[7]\n    connection.security = [cleanConnection[8],cleanConnection[9]]\n    //For the lsit node\n    connection.title = connection.SSID\n    connection.description = connection.signal\n    connections.push(connection)\n}\nmsg.connexions = connections\nmsg.payload = connections\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 140,
+        "wires": [
+            [
+                "c0a7b9314d6f5b3c",
+                "d1944d4ac30b8216"
+            ]
+        ]
+    },
+    {
+        "id": "f899bfee50c2c5f6",
+        "type": "file",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "filename": "/home/vicky/.node-red/projects/techscorangepi/child.js",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1280,
+        "y": 740,
+        "wires": [
+            [
+                "7f82046bd9d0371b"
+            ]
+        ]
+    },
+    {
+        "id": "5fe632846e1697cf",
+        "type": "template",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "var cp = require('child_process');\nlet child = cp.spawn('{{command}}', {{{args}}})\nchild.stdout.on('data', function (data) {\n    console.log(`${data}`);\n});\nchild.stderr.on('data', function (data) {\n    console.log(`${data}`);\n});\nprocess.stdin.on('data', function (data) {\n    child.stdin.write(data)\n})\n\nchild.on('close', (code) => {\n    console.log(`child process exited with code ${code}`);\n});\n\n//process.on(\"message\", function (message) {\n//    console.log(`Message from main.js: ${message}`);\n//    cp.stdin.write(message)\n//});\n//cp.stdout.on('data', function (data) {\n//    console.log(`Message from main.js: ${data}`)\n//    process.send(data)\n//});\n",
+        "output": "str",
+        "x": 1000,
+        "y": 740,
+        "wires": [
+            [
+                "f899bfee50c2c5f6"
+            ]
+        ]
+    },
+    {
+        "id": "9a20901ecac67666",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Create file wich launch the command et start daemon",
+        "props": [
+            {
+                "p": "command",
+                "v": "nmcli",
+                "vt": "str"
+            },
+            {
+                "p": "args",
+                "v": "[\"dev\", \"wifi\"]",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 300,
+        "y": 680,
+        "wires": [
+            [
+                "05636ee319db6f24"
+            ]
+        ]
+    },
+    {
+        "id": "9910400a70e3748f",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "b8f8611163248bdd",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8db83594bc604f4d",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2380,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "684d60b75c1cc9da",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2380,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "a97adb91c59c3879",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "fbe6a4c43eea3e9a"
+            ]
+        ]
+    },
+    {
+        "id": "c280ced4041a7ec7",
+        "type": "ui_list",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "group": "1588cad9498681c1",
+        "name": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "lineType": "two",
+        "actionType": "click",
+        "allowHTML": false,
+        "outputs": 1,
+        "topic": "",
+        "x": 670,
+        "y": 120,
+        "wires": [
+            [
+                "a24271ceb763c696",
+                "aa1e2348a08323c8"
+            ]
+        ]
+    },
+    {
+        "id": "60f468b672d670a2",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "",
+        "group": "1588cad9498681c1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-regular fa-rotate-right",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "fbe6a4c43eea3e9a"
+            ]
+        ]
+    },
+    {
+        "id": "fbe6a4c43eea3e9a",
+        "type": "exec",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "command": "nmcli dev wifi",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "59676d069a581d48"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a24271ceb763c696",
+        "type": "exec",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "command": "nmcli --ask dev wifi connect ",
+        "addpay": "payload.SSID",
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1040,
+        "y": 120,
+        "wires": [
+            [
+                "217704d4bcad8509",
+                "fac21ad93363355e"
+            ],
+            [
+                "217704d4bcad8509",
+                "fac21ad93363355e"
+            ],
+            [
+                "217704d4bcad8509",
+                "fac21ad93363355e"
+            ]
+        ]
+    },
+    {
+        "id": "cfef9b965281e35e",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "b8f8611163248bdd",
+        "name": "function 5",
+        "func": " //the array is the arguments\nlet commands = msg.payload.commands.split('\\n')\nlet cmdAndArgs = commands[0].split(' ')\nlet cmd = cmdAndArgs[0]\ncmdAndArgs.splice(0,1)\nlet args = cmdAndArgs\nvar child = cp.spawn(cmd,args);\n//node.send({\"args\":args})\n//node.send({ \"cmd\":cmd})\n//node.send({ \"commands\":commands})\nfor (let index = 1; index < commands.length; index++) {\n    const element = commands[index];\n    child.stdin.write(element+'\\n')\n}\nchild.stdout.on('data', function (data) {\n    msg.payload = data.toString()\n    msg.process = child\n    node.send(msg);\n});\nchild.stderr.on('data', function (data) {\n    msg.payload = data.toString()\n    msg.process = child\n    node.send(msg);\n})\nchild.stdin.end(); \nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cp",
+                "module": "child_process"
+            }
+        ],
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "5dcd97a52a9af266",
+                "a46c53a4f25125bf"
+            ]
+        ]
+    },
+    {
+        "id": "aa1e2348a08323c8",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
         "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9b0b777f741c8465",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "44c756161c28b0e2",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2400,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "e447acc281039160",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Message to stdin",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "devices",
+        "payloadType": "str",
+        "x": 1000,
+        "y": 620,
+        "wires": [
+            [
+                "8b3802d31611155a"
+            ]
+        ]
+    },
+    {
+        "id": "8b3802d31611155a",
+        "type": "daemon",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "command": "node",
+        "args": "/home/vicky/.node-red/projects/techscorangepi/child.js",
+        "autorun": false,
+        "cr": true,
+        "redo": false,
+        "op": "string",
+        "closer": "SIGKILL",
+        "x": 2190,
+        "y": 740,
+        "wires": [
+            [
+                "44c756161c28b0e2",
+                "2d81644308115d7d",
+                "265694c368031b88",
+                "3b9751a158948df4"
+            ],
+            [
+                "8db83594bc604f4d",
+                "265694c368031b88",
+                "3b9751a158948df4"
+            ],
+            [
+                "684d60b75c1cc9da",
+                "44c756161c28b0e2",
+                "265694c368031b88",
+                "3b9751a158948df4"
+            ]
+        ]
+    },
+    {
+        "id": "7f82046bd9d0371b",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "start",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1570,
+        "y": 740,
+        "wires": [
+            [
+                "8b3802d31611155a"
+            ]
+        ]
+    },
+    {
+        "id": "05636ee319db6f24",
+        "type": "json",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "args",
+        "action": "",
+        "pretty": false,
+        "x": 810,
+        "y": 740,
+        "wires": [
+            [
+                "5fe632846e1697cf"
+            ]
+        ]
+    },
+    {
+        "id": "dc5517b9df8183b5",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "stop command",
+        "props": [
+            {
+                "p": "kill",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1420,
+        "y": 940,
+        "wires": [
+            [
+                "8b3802d31611155a"
+            ]
+        ]
+    },
+    {
+        "id": "3879658cfc8f39a6",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "b8f8611163248bdd",
+        "name": "",
+        "props": [
+            {
+                "p": "commands",
+                "v": "[\"bluetoothctl\", \"devices\", \"devices\"]",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "cfef9b965281e35e"
+            ]
+        ]
+    },
+    {
+        "id": "99e6f7120bc13cf8",
+        "type": "ui_form",
+        "z": "57297ea9585b5f93",
+        "g": "b8f8611163248bdd",
+        "name": "",
+        "label": "",
+        "group": "a1efc069e293d845",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "commands",
+                "value": "commands",
+                "type": "multiline",
+                "required": true,
+                "rows": 3
+            }
+        ],
+        "formValue": {
+            "commands": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "9910400a70e3748f",
+                "cfef9b965281e35e"
+            ]
+        ]
+    },
+    {
+        "id": "037c66ba96df20be",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "be4aa8937a2551a3",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2180,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "b7d03180d0bbb143",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "b1ec900404c7af76",
+        "type": "ui_form",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "label": "In command",
+        "group": "297b1964920fbcef",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Message",
+                "value": "message",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Message hidden",
+                "value": "messageHidden",
+                "type": "password",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "message": "",
+            "messageHidden": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 870,
+        "y": 580,
+        "wires": [
+            [
+                "b70e09ac6ce18c06"
+            ]
+        ]
+    },
+    {
+        "id": "0e66b4ca4d045ec1",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Exit command",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#532c2c",
+        "className": "",
+        "icon": "fa-solid fa-ban",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1360,
+        "y": 980,
+        "wires": [
+            [
+                "06de75552b3afce3"
+            ]
+        ]
+    },
+    {
+        "id": "dec0a3c992014ab5",
+        "type": "ui_form",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "label": "Command",
+        "group": "297b1964920fbcef",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "command",
+                "value": "command",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "args",
+                "value": "args",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "command": "",
+            "args": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 230,
+        "y": 740,
+        "wires": [
+            [
+                "3d8c166dafde23ec",
+                "7c4def7dc6746056"
+            ]
+        ]
+    },
+    {
+        "id": "3d8c166dafde23ec",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "function 6",
+        "func": "if(msg.payload.args){\n    msg.args = msg.payload.args.split(' ')\n}\nmsg.command = msg.payload.command\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 740,
+        "wires": [
+            [
+                "05636ee319db6f24",
+                "14a8562b30231057"
+            ]
+        ]
+    },
+    {
+        "id": "07b4fddee5d12ac2",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "kill",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1630,
+        "y": 980,
+        "wires": [
+            [
+                "8b3802d31611155a"
+            ]
+        ]
+    },
+    {
+        "id": "b70e09ac6ce18c06",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.message ? payload.message : payload.messageHidden",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 580,
+        "wires": [
+            [
+                "31ff77fcf896298c",
+                "34bb792c027f4b5b"
+            ]
+        ]
+    },
+    {
+        "id": "733d567b31de5df5",
+        "type": "ui_template",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "group": "297b1964920fbcef",
+        "name": "",
+        "order": 6,
+        "width": "6",
+        "height": "6",
+        "format": "<div id=\"{{'my_'+$id}}\" style=\"{{'color:'+theme.base_color}}\"></div>\n<script>\n    (function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      //$(\"#my_\"+scope.$id).html('<div>'+msg.payload+'</div>');\n      let p = document.createElement(\"p\");\n      p.style.color='white'\n      p.innerHTML= msg.payload\n      $(\"#my_\"+scope.$id).append(p)\n    }\n  });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 2740,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fac21ad93363355e",
+        "type": "ui_template",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "group": "1588cad9498681c1",
+        "name": "",
+        "order": 4,
+        "width": "6",
+        "height": "6",
+        "format": "<div id=\"{{'my_'+$id}}\" style=\"{{'color:'+theme.base_color}}\"></div>\n<script>\n    (function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      //$(\"#my_\"+scope.$id).html('<div>'+msg.payload+'</div>');\n      let p = document.createElement(\"p\");\n      $(\"#my_\"+scope.$id).append(msg.payload, p)\n    }\n  });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1340,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5dcd97a52a9af266",
+        "type": "ui_template",
+        "z": "57297ea9585b5f93",
+        "g": "b8f8611163248bdd",
+        "group": "a1efc069e293d845",
+        "name": "",
+        "order": 4,
+        "width": "6",
+        "height": "6",
+        "format": "<div id=\"{{'my_'+$id}}\" style=\"{{'color:'+theme.base_color}}\"></div>\n<script>\n    (function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      //$(\"#my_\"+scope.$id).html('<div>'+msg.payload+'</div>');\n      let p = document.createElement(\"p\");\n      $(\"#my_\"+scope.$id).append(msg.payload, p)\n    }\n  });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d1944d4ac30b8216",
+        "type": "json",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 830,
+        "y": 160,
+        "wires": [
+            [
+                "fac21ad93363355e"
+            ]
+        ]
+    },
+    {
+        "id": "a46c53a4f25125bf",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "b8f8611163248bdd",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b48e2307165d3042",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1640,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "24099d8cac2ab795",
+        "type": "ui_text_input",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "label": "Command with arguments",
+        "tooltip": "",
+        "group": "297b1964920fbcef",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1550,
+        "y": 1480,
+        "wires": [
+            [
+                "b7d03180d0bbb143",
+                "564ff8ef50de58b1"
+            ]
+        ]
+    },
+    {
+        "id": "564ff8ef50de58b1",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "Format message for spawn",
+        "func": "let fullCommand = msg.payload\nmsg.payload = {}\nif (fullCommand.indexOf(' ')===-1){\n    msg.payload.command = fullCommand\n}else{\n    msg.payload.command = fullCommand.substring(0, fullCommand.indexOf(' '))\n    msg.payload.args = fullCommand.substr(fullCommand.indexOf(' ') + 1)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1840,
+        "y": 1480,
+        "wires": [
+            [
+                "285ddcd6faf866c9"
+            ]
+        ]
+    },
+    {
+        "id": "4d39ba490ae7a81f",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Start list",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-solid fa-play",
+        "payload": "command",
+        "payloadType": "flow",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1480,
+        "wires": [
+            [
+                "037c66ba96df20be",
+                "3d8c166dafde23ec",
+                "a3348e49115feabc",
+                "b7249babe9ca16cc"
+            ]
+        ]
+    },
+    {
+        "id": "06043ac62e7edf8e",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "flow",
+                "to": "$flowContext(\"index\") +1",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 1780,
+        "wires": [
+            [
+                "4c13d948507fa2d4"
+            ]
+        ]
+    },
+    {
+        "id": "7de319477688b8ba",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Continue",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#d1b478",
+        "className": "",
+        "icon": "fa-solid fa-forward",
+        "payload": "command",
+        "payloadType": "flow",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1700,
+        "wires": [
+            [
+                "d21d613f143f2ab7",
+                "31bd6a557c7a8a3e",
+                "b7249babe9ca16cc"
+            ]
+        ]
+    },
+    {
+        "id": "d21d613f143f2ab7",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 30",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "cf443f9bffa6ce37",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.command & (payload.args ? ' ' & payload.args :  '')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 1780,
+        "wires": [
+            [
+                "e6cfcb3d10177c46",
+                "11f3a37337ed7a48",
+                "55cc69056770aa9f"
+            ]
+        ]
+    },
+    {
+        "id": "dfd243663d89ff30",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "commands",
+                "pt": "flow",
+                "to": "$eval(payload)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "flow",
+                "to": "$flowContext('index') ? $flowContext('index') : 0 ",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1280,
+        "wires": [
+            [
+                "c4460b8e1fb0cacf",
+                "14a8562b30231057",
+                "3ba29ad018e06586"
+            ]
+        ]
+    },
+    {
+        "id": "c4460b8e1fb0cacf",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$floxContext('index') ? $flowContext('commands')[$floxContext('index')] : $flowContext('commands')[0]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1280,
+        "wires": [
+            [
+                "24099d8cac2ab795"
+            ]
+        ]
+    },
+    {
+        "id": "e6cfcb3d10177c46",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "property": "index",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "$count($flowContext('commands'))-1",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 810,
+        "y": 1760,
+        "wires": [
+            [
+                "bdf43fa3a5a439e7"
+            ],
+            [
+                "0954a40fa36cb951",
+                "06043ac62e7edf8e"
+            ]
+        ]
+    },
+    {
+        "id": "4c13d948507fa2d4",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 31",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "0954a40fa36cb951",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 33",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "7df4342477554fec",
+        "type": "ui_text_input",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "label": "Commands",
+        "tooltip": "",
+        "group": "297b1964920fbcef",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 150,
+        "y": 1280,
+        "wires": [
+            [
+                "dfd243663d89ff30"
+            ]
+        ]
+    },
+    {
+        "id": "de809fb1d53be208",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 1700,
+        "wires": [
+            [
+                "24099d8cac2ab795"
+            ]
+        ]
+    },
+    {
+        "id": "14a8562b30231057",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 34",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "b7a4354057574cee",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "commands",
+        "payloadType": "flow",
+        "x": 160,
+        "y": 1240,
+        "wires": [
+            [
+                "b2b6c35ccfe6517f"
+            ]
+        ]
+    },
+    {
+        "id": "31bd6a557c7a8a3e",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "property": "payload.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 1720,
+        "wires": [
+            [
+                "9c0adc0ad65a08c8",
+                "07b4fddee5d12ac2"
+            ],
+            [
+                "cf443f9bffa6ce37"
+            ]
+        ]
+    },
+    {
+        "id": "9c0adc0ad65a08c8",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 1700,
+        "wires": [
+            [
+                "24099d8cac2ab795",
+                "1a3ee54e9695a108"
+            ]
+        ]
+    },
+    {
+        "id": "dcbb085ee2ecca8b",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Repeat",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#d1b478",
+        "className": "",
+        "icon": "fa-regular fa-rotate-right",
+        "payload": "lastCommand",
+        "payloadType": "flow",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 400,
+        "y": 900,
+        "wires": [
+            [
+                "9478cafaace3eda1",
+                "aae069b40e843c69"
+            ]
+        ]
+    },
+    {
+        "id": "628dfb2257610e39",
+        "type": "delay",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1080,
+        "y": 800,
+        "wires": [
+            [
+                "3d8c166dafde23ec",
+                "372c7037c1474f67"
+            ]
+        ]
+    },
+    {
+        "id": "9cd7edf4b42d2e4f",
+        "type": "comment",
+        "z": "57297ea9585b5f93",
+        "g": "03423aacbab5be01",
+        "name": "Connections",
+        "info": "",
+        "x": 130,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ec2f91b7c82fe538",
+        "type": "comment",
+        "z": "57297ea9585b5f93",
+        "g": "b8f8611163248bdd",
+        "name": "Terminal one shot",
+        "info": "",
+        "x": 150,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5e50781edb13f822",
+        "type": "comment",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Terminal dynamique",
+        "info": "",
+        "x": 130,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e53439d570dffd07",
+        "type": "comment",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "Part to handle array of command",
+        "info": "",
+        "x": 210,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "8b9bf8042d6d0086",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 60,
+        "y": 2920,
+        "wires": [
+            [
+                "470e7c7b3fdd0dd4"
+            ]
+        ]
+    },
+    {
+        "id": "470e7c7b3fdd0dd4",
+        "type": "credentials",
+        "z": "57297ea9585b5f93",
+        "name": "",
+        "props": [
+            {
+                "value": "password",
+                "type": "msg"
+            }
+        ],
+        "x": 250,
+        "y": 2920,
+        "wires": [
+            [
+                "044736d06695925a"
+            ]
+        ]
+    },
+    {
+        "id": "044736d06695925a",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "['sshpass -p ' & password & ' ssh vicky@127.0.0.1']",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 2920,
+        "wires": [
+            [
+                "f7a7f433f57b1adf"
+            ]
+        ]
+    },
+    {
+        "id": "f7a7f433f57b1adf",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$append(payload,[\"bluetoothctl\"])",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 2920,
+        "wires": [
+            [
+                "f010f011364e052f"
+            ]
+        ]
+    },
+    {
+        "id": "f010f011364e052f",
+        "type": "json",
+        "z": "57297ea9585b5f93",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 50,
+        "y": 2840,
+        "wires": [
+            [
+                "7df4342477554fec"
+            ]
+        ]
+    },
+    {
+        "id": "a3348e49115feabc",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "property": "$count($flowContext('commands'))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 1480,
+        "wires": [
+            [
+                "83df3adbaa2a6c51"
+            ],
+            [
+                "2c48e3b743c58dc6",
+                "86cdf396ce6d4aa0"
+            ]
+        ]
+    },
+    {
+        "id": "83df3adbaa2a6c51",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 1440,
+        "wires": [
+            [
+                "24099d8cac2ab795",
+                "c8f6c212fc68f165"
+            ]
+        ]
+    },
+    {
+        "id": "372c7037c1474f67",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 37",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "285ddcd6faf866c9",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2110,
+        "y": 1480,
+        "wires": [
+            [
+                "be4aa8937a2551a3"
+            ]
+        ]
+    },
+    {
+        "id": "7c4def7dc6746056",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "lastCommand",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 800,
+        "wires": [
+            [
+                "dc269403be70248b"
+            ]
+        ]
+    },
+    {
+        "id": "cc7f04658e10487c",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "lastCommand",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1580,
+        "wires": [
+            [
+                "ce010bb35af48543"
+            ]
+        ]
+    },
+    {
+        "id": "b7249babe9ca16cc",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "Format message for spawn",
+        "func": "let fullCommand = msg.payload.command\nmsg.payload = {}\nif (fullCommand.indexOf(' ')===-1){\n    msg.payload.command = fullCommand\n}else{\n    msg.payload.command = fullCommand.substring(0, fullCommand.indexOf(' '))\n    msg.payload.args = fullCommand.substr(fullCommand.indexOf(' ') + 1)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 1580,
+        "wires": [
+            [
+                "cc7f04658e10487c"
+            ]
+        ]
+    },
+    {
+        "id": "ce010bb35af48543",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 38",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "9478cafaace3eda1",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "daemonStatus",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "stopped",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "running",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 940,
+        "wires": [
+            [
+                "668842fefb1ad86b"
+            ],
+            [
+                "5e8044892e24ec72",
+                "6b54aac46cb4c9b3"
+            ]
+        ]
+    },
+    {
+        "id": "5e8044892e24ec72",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 39",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "ca59ca888877673f",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 40",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3800,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "aae069b40e843c69",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 41",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "96f4d0b1004067bd",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.command & (payload.args ? ' ' & payload.args :  '')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 940,
+        "wires": [
+            [
+                "8b3802d31611155a",
+                "00194ed721a11998"
+            ]
+        ]
+    },
+    {
+        "id": "2c48e3b743c58dc6",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "flow",
+                "to": "$flowContext(\"index\") +1",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$flowContext('commands')[$flowContext('index')]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1480,
+        "wires": [
+            [
+                "24099d8cac2ab795",
+                "560fe6956d93cb53"
+            ]
+        ]
+    },
+    {
+        "id": "c8f6c212fc68f165",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 42",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "560fe6956d93cb53",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 43",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "1a3ee54e9695a108",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 44",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "11f3a37337ed7a48",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 45",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "bdf43fa3a5a439e7",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "flow",
+                "to": "$flowContext(\"index\") +1",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 1700,
+        "wires": [
+            [
+                "de809fb1d53be208"
+            ]
+        ]
+    },
+    {
+        "id": "5a947aacab2c4eba",
+        "type": "status",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "daemon status",
+        "scope": [
+            "8b3802d31611155a"
+        ],
+        "x": 3680,
+        "y": 720,
+        "wires": [
+            [
+                "ca59ca888877673f",
+                "c13e09dff09adfbd"
+            ]
+        ]
+    },
+    {
+        "id": "7d681acadaecfb5f",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "running",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stopped",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 4110,
+        "y": 720,
+        "wires": [
+            [
+                "1590d913477ecb52",
+                "dff8087ee587c923"
+            ],
+            [
+                "7f4645757907e388",
+                "3554dd2e300a186d"
+            ],
+            [
+                "cc9d36cac2f0dc9e"
+            ]
+        ]
+    },
+    {
+        "id": "cc9d36cac2f0dc9e",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 47",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4280,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "e481703bc59b4c72",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 48",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4640,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "7f4645757907e388",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 4280,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "9c8aca4bedc48d5e",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4460,
+        "y": 700,
+        "wires": [
+            [
+                "e481703bc59b4c72",
+                "06366bb54320586d"
+            ]
+        ]
+    },
+    {
+        "id": "5c8e04ee1e796b6d",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "index",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "$count($flowContext('commands'))",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2410,
+        "y": 940,
+        "wires": [
+            [
+                "09f1ac7ac86f2fa8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "09f1ac7ac86f2fa8",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2400,
+        "y": 1000,
+        "wires": [
+            [
+                "7de319477688b8ba"
+            ]
+        ]
+    },
+    {
+        "id": "ea6e70d0667d480d",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "props": [
+            {
+                "p": "enabled",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 1440,
+        "wires": [
+            [
+                "4d39ba490ae7a81f"
+            ]
+        ]
+    },
+    {
+        "id": "86cdf396ce6d4aa0",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 1560,
+        "wires": [
+            [
+                "7de319477688b8ba"
+            ]
+        ]
+    },
+    {
+        "id": "dc269403be70248b",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 860,
+        "wires": [
+            [
+                "dcbb085ee2ecca8b"
+            ]
+        ]
+    },
+    {
+        "id": "d7cefaf9832ce681",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Diseable on deploy",
+        "props": [
+            {
+                "p": "enabled",
+                "v": "false",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 900,
+        "wires": [
+            [
+                "dcbb085ee2ecca8b"
+            ]
+        ]
+    },
+    {
+        "id": "00194ed721a11998",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "c13e09dff09adfbd",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "daemonStatus",
+                "pt": "flow",
+                "to": "status.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3920,
+        "y": 720,
+        "wires": [
+            [
+                "7d681acadaecfb5f"
+            ]
+        ]
+    },
+    {
+        "id": "31ff77fcf896298c",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "daemonStatus",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "stopped",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1390,
+        "y": 580,
+        "wires": [
+            [
+                "5c197adb3ddde210"
+            ],
+            [
+                "8b3802d31611155a"
+            ]
+        ]
+    },
+    {
+        "id": "5c197adb3ddde210",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Format message for spawn",
+        "func": "let fullCommand = msg.payload\nmsg.payload = {}\nif (fullCommand.indexOf(' ')===-1){\n    msg.payload.command = fullCommand\n}else{\n    msg.payload.command = fullCommand.substring(0, fullCommand.indexOf(' '))\n    msg.payload.args = fullCommand.substr(fullCommand.indexOf(' ') + 1)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 580,
+        "wires": [
+            [
+                "3d8c166dafde23ec"
+            ]
+        ]
+    },
+    {
+        "id": "2d81644308115d7d",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "child process exited with",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2530,
+        "y": 740,
+        "wires": [
+            [
+                "052108423e0562a3"
+            ],
+            [
+                "16bce161060dd6ed"
+            ]
+        ]
+    },
+    {
+        "id": "16bce161060dd6ed",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2580,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "34bb792c027f4b5b",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "lastCommand",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1440,
+        "y": 520,
+        "wires": [
+            [
+                "b48e2307165d3042"
+            ]
+        ]
+    },
+    {
+        "id": "127cf7d29cea1234",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Format message for spawn",
+        "func": "let fullCommand = msg.payload\nmsg.payload = {}\nif (fullCommand.indexOf(' ')===-1){\n    msg.payload.command = fullCommand\n}else{\n    msg.payload.command = fullCommand.substring(0, fullCommand.indexOf(' '))\n    msg.payload.args = fullCommand.substr(fullCommand.indexOf(' ') + 1)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 840,
+        "wires": [
+            [
+                "628dfb2257610e39"
+            ]
+        ]
+    },
+    {
+        "id": "668842fefb1ad86b",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "command",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 900,
+        "wires": [
+            [
+                "3d8c166dafde23ec"
+            ],
+            [
+                "127cf7d29cea1234"
+            ]
+        ]
+    },
+    {
+        "id": "3554dd2e300a186d",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4300,
+        "y": 800,
+        "wires": [
+            [
+                "0e66b4ca4d045ec1"
+            ]
+        ]
+    },
+    {
+        "id": "1590d913477ecb52",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4300,
+        "y": 580,
+        "wires": [
+            [
+                "0e66b4ca4d045ec1"
+            ]
+        ]
+    },
+    {
+        "id": "6b54aac46cb4c9b3",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "command",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 980,
+        "wires": [
+            [
+                "96f4d0b1004067bd"
+            ],
+            [
+                "8b3802d31611155a"
+            ]
+        ]
+    },
+    {
+        "id": "dff8087ee587c923",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "index",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 4290,
+        "y": 700,
+        "wires": [
+            [
+                "9c8aca4bedc48d5e"
+            ]
+        ]
+    },
+    {
+        "id": "06de75552b3afce3",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "flow",
+                "to": "null",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1440,
+        "y": 1020,
+        "wires": [
+            [
+                "07b4fddee5d12ac2"
+            ]
+        ]
+    },
+    {
+        "id": "265694c368031b88",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "index",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2390,
+        "y": 860,
+        "wires": [
+            [
+                "5c8e04ee1e796b6d"
+            ]
+        ]
+    },
+    {
+        "id": "dd42e2b99a2a7645",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset index",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#532c2c",
+        "className": "",
+        "icon": "fa-solid fa-trash",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 1900,
+        "wires": [
+            [
+                "18ecfed882d9cab8"
+            ]
+        ]
+    },
+    {
+        "id": "18ecfed882d9cab8",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "flow",
+                "to": "0",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1900,
+        "wires": [
+            [
+                "79291a7a1150f807",
+                "1fbd8cc10ee44cd0",
+                "961702918836aa4d"
+            ]
+        ]
+    },
+    {
+        "id": "79291a7a1150f807",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1900,
+        "wires": [
+            [
+                "7de319477688b8ba",
+                "07b4fddee5d12ac2"
+            ]
+        ]
+    },
+    {
+        "id": "1fbd8cc10ee44cd0",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1940,
+        "wires": [
+            [
+                "4d39ba490ae7a81f"
+            ]
+        ]
+    },
+    {
+        "id": "961702918836aa4d",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "commands[0]",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 1980,
+        "wires": [
+            [
+                "24099d8cac2ab795"
+            ]
+        ]
+    },
+    {
+        "id": "1d1a03e6ebef2856",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "name": "",
+        "props": [
+            {
+                "p": "enabled",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 330,
+        "y": 2720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca1a3b161424e5e9",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "Go to commands",
+        "links": [
+            "73013c23ef540790"
+        ],
+        "x": 145,
+        "y": 1360,
+        "wires": [
+            [
+                "b2b6c35ccfe6517f"
+            ]
+        ]
+    },
+    {
+        "id": "b2b6c35ccfe6517f",
+        "type": "json",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 150,
+        "y": 1320,
+        "wires": [
+            [
+                "7df4342477554fec"
+            ]
+        ]
+    },
+    {
+        "id": "3b9751a158948df4",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2540,
+        "y": 820,
+        "wires": [
+            [
+                "733d567b31de5df5"
+            ]
+        ]
+    },
+    {
+        "id": "3ba29ad018e06586",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "property": "$count($flowContext('commands'))",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 1360,
+        "wires": [
+            [
+                "b8028a182f6e3883"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b8028a182f6e3883",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 1360,
+        "wires": [
+            [
+                "7de319477688b8ba"
+            ]
+        ]
+    },
+    {
+        "id": "052108423e0562a3",
+        "type": "delay",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2670,
+        "y": 660,
+        "wires": [
+            [
+                "07b4fddee5d12ac2"
+            ]
+        ]
+    },
+    {
+        "id": "55cc69056770aa9f",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "daemonStatus",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "running",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stopped",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1510,
+        "y": 1120,
+        "wires": [
+            [
+                "8b3802d31611155a"
+            ],
+            [
+                "38942f94d5ec1b0d"
+            ]
+        ]
+    },
+    {
+        "id": "38942f94d5ec1b0d",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Format message for spawn",
+        "func": "let fullCommand = msg.payload\nmsg.payload = {}\nif (fullCommand.indexOf(' ')===-1){\n    msg.payload.command = fullCommand\n}else{\n    msg.payload.command = fullCommand.substring(0, fullCommand.indexOf(' '))\n    msg.payload.args = fullCommand.substr(fullCommand.indexOf(' ') + 1)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 1060,
+        "wires": [
+            [
+                "3d8c166dafde23ec"
+            ]
+        ]
+    },
+    {
+        "id": "1955d97621c6194f",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Record JSON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 2140,
+        "wires": [
+            [
+                "8cb281e27cb12913"
+            ]
+        ]
+    },
+    {
+        "id": "fba7ea4f0c525b8f",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "debug 52",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "76b45b809532e499",
+        "type": "file",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1740,
+        "y": 2280,
+        "wires": [
+            [
+                "126bdc8d1fe884f0",
+                "bb973f9e1bbddecc"
+            ]
+        ]
+    },
+    {
+        "id": "650fd2d9cae4f933",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Insert last command in list",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 2420,
+        "wires": [
+            [
+                "bf168954b2d4d081"
+            ]
+        ]
+    },
+    {
+        "id": "e9699e2f6a049fe7",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Record as script",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 2180,
+        "wires": [
+            [
+                "5ab7478a90317b26"
+            ]
+        ]
+    },
+    {
+        "id": "e0c099377c2c48d3",
+        "type": "ui_text_input",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "label": "Filename without extension",
+        "tooltip": "absloute or start from $HOME",
+        "group": "297b1964920fbcef",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 320,
+        "y": 2300,
+        "wires": [
+            [
+                "b73225bfdbae241a"
+            ]
+        ]
+    },
+    {
+        "id": "0dd47cebafd78a73",
+        "type": "ui_toast",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 1790,
+        "y": 2160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b73225bfdbae241a",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 2300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fb37ef2271445f3",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "property": "error.message",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Error: ENOENT: no such file or directory",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1070,
+        "y": 2240,
+        "wires": [
+            [
+                "abb24d721e50e418",
+                "f27df0d26aedf15c"
+            ],
+            [
+                "0dd47cebafd78a73"
+            ]
+        ]
+    },
+    {
+        "id": "a47933f23ee978d7",
+        "type": "catch",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "scope": [
+            "aaea082df6e0d28e"
+        ],
+        "uncaught": false,
+        "x": 750,
+        "y": 2240,
+        "wires": [
+            [
+                "fba7ea4f0c525b8f",
+                "c295c8cbfb5211dc"
+            ]
+        ]
+    },
+    {
+        "id": "aaea082df6e0d28e",
+        "type": "file in",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "filename": "payload",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 820,
+        "y": 2140,
+        "wires": [
+            [
+                "081925cde061cad5",
+                "b6de463218f1e479"
+            ]
+        ]
+    },
+    {
+        "id": "081925cde061cad5",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "debug 54",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 2180,
+        "wires": []
+    },
+    {
+        "id": "d6f838746286e467",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$flowContext('filename') & extension",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 2140,
+        "wires": [
+            [
+                "aaea082df6e0d28e"
+            ]
+        ]
+    },
+    {
+        "id": "c295c8cbfb5211dc",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 2240,
+        "wires": [
+            [
+                "9fb37ef2271445f3"
+            ]
+        ]
+    },
+    {
+        "id": "126bdc8d1fe884f0",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "debug 56",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1780,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "2fe10cf77563c81c",
+        "type": "catch",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "scope": [
+            "76b45b809532e499"
+        ],
+        "uncaught": false,
+        "x": 1510,
+        "y": 2360,
+        "wires": [
+            [
+                "c831be1d8aab6ac2",
+                "0dd47cebafd78a73"
+            ]
+        ]
+    },
+    {
+        "id": "c831be1d8aab6ac2",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "debug 58",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1680,
+        "y": 2360,
+        "wires": []
+    },
+    {
+        "id": "b6de463218f1e479",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'File already exit. Content:' & payload",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 2160,
+        "wires": [
+            [
+                "0dd47cebafd78a73"
+            ]
+        ]
+    },
+    {
+        "id": "abb24d721e50e418",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "debug 59",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 2300,
+        "wires": []
+    },
+    {
+        "id": "bf168954b2d4d081",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "function 7",
+        "func": "let commands = flow.get('commands')\ncommands.splice(flow.get('index'), 0, flow.get('lastCommand'))\nflow.set('commands', commands)\nflow.set('index',flow.get('index')+1)\nmsg.payload = commands\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 2420,
+        "wires": [
+            [
+                "b2b6c35ccfe6517f"
+            ]
+        ]
+    },
+    {
+        "id": "5ab7478a90317b26",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "extension",
+                "pt": "msg",
+                "to": ".sh",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 2180,
+        "wires": [
+            [
+                "d6f838746286e467"
+            ]
+        ]
+    },
+    {
+        "id": "f27df0d26aedf15c",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "property": "extension",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": ".sh",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": ".json",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1290,
+        "y": 2260,
+        "wires": [
+            [
+                "497be50704f809a8"
+            ],
+            [
+                "6f1bc1a7b9c9f095"
+            ]
+        ]
+    },
+    {
+        "id": "6f1bc1a7b9c9f095",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "$flowContext('filename')&'.json'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "commands",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1500,
+        "y": 2300,
+        "wires": [
+            [
+                "76b45b809532e499"
+            ]
+        ]
+    },
+    {
+        "id": "497be50704f809a8",
+        "type": "function",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "function 8",
+        "func": "msg.filename = flow.get('filename')+'.sh'\nlet commands = flow.get(\"commands\");\nlet script = \"\"\nfor (let index = 0; index < commands.length; index++) {\n    const element = commands[index];\n    if(index === commands.length - 1){\n        script += element\n    }else{\n        script += element+ '\\n'\n    }\n}\nmsg.payload = script\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1480,
+        "y": 2240,
+        "wires": [
+            [
+                "76b45b809532e499"
+            ]
+        ]
+    },
+    {
+        "id": "8cb281e27cb12913",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "extension",
+                "pt": "msg",
+                "to": ".json",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 2140,
+        "wires": [
+            [
+                "d6f838746286e467"
+            ]
+        ]
+    },
+    {
+        "id": "83dcd2bef897c63e",
+        "type": "exec",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 2090,
+        "y": 2280,
+        "wires": [
+            [
+                "2dae94e0a5a67ff8"
+            ],
+            [
+                "2dae94e0a5a67ff8"
+            ],
+            [
+                "2dae94e0a5a67ff8"
+            ]
+        ]
+    },
+    {
+        "id": "bb973f9e1bbddecc",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "property": "extension",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": ".sh",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": ".json",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1870,
+        "y": 2220,
+        "wires": [
+            [
+                "e1b464488f392996"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e1b464488f392996",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'chmod +x ' & filename",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2020,
+        "y": 2220,
+        "wires": [
+            [
+                "83dcd2bef897c63e"
+            ]
+        ]
+    },
+    {
+        "id": "2dae94e0a5a67ff8",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "42bb49f4356c0595",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2240,
+        "y": 2280,
         "wires": []
     }
 ]
