@@ -1,5 +1,5 @@
 var cp = require('child_process');
-let child = cp.spawn('pulseaudio', ["--start"])
+let child = cp.spawn('bluetoothctl', )
 child.stdout.on('data', function (data) {
     console.log(`${data}`);
 });
