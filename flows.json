@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "4e833f06cac1624c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5030d00b88df4be5",
         "type": "subflow",
         "name": "Subflow 1",
@@ -193,6 +201,20 @@
                         ]
                     }
                 }
+            },
+            {
+                "name": "safeMode",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
             }
         ],
         "meta": {},
@@ -217,13 +239,25 @@
             "ac9878e5150ff640",
             "b5969e7614beb79c",
             "61885aca941ee99a",
-            "a4b1c4a422c3d696",
-            "813181b66cc0bb79",
             "3b986ba732de0ec3",
-            "feb6423ccda74b39"
+            "feb6423ccda74b39",
+            "09da2f49e5f73653",
+            "1a0ee4d754397b65",
+            "90e07e991d03a7f5",
+            "b65237e8d3b302fa",
+            "398286c135d72f4e",
+            "a486d072b002a4d8",
+            "6e315e8005f93db6",
+            "725f5a0cbb20fa86",
+            "2d811df439c064d7",
+            "a31ed93da07587de",
+            "26858a679202fcc1",
+            "f0aa98ca142d18ba"
         ],
         "x": 54,
-        "y": 59
+        "y": 39,
+        "w": 2072,
+        "h": 282
     },
     {
         "id": "03423aacbab5be01",
@@ -359,12 +393,105 @@
             "052108423e0562a3",
             "55cc69056770aa9f",
             "38942f94d5ec1b0d",
-            "42bb49f4356c0595"
+            "42bb49f4356c0595",
+            "ca82925a30c70e70",
+            "d72c1812856c0d1f"
         ],
-        "x": 8,
-        "y": 479,
+        "x": 88,
+        "y": 599,
         "w": 4738,
         "h": 2008
+    },
+    {
+        "id": "9952592d4fff7c8b",
+        "type": "group",
+        "z": "58612799aa277ac1",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "128ae6814df70dd8",
+            "dd4242fd0fb59287",
+            "ae59c916977de493",
+            "d159f4f118348fa4",
+            "c84ab6a104df0ac3",
+            "d629ba9a12ac2bb4",
+            "4a7ec91597ecd7f0",
+            "bf11f93cb7d73fa1",
+            "53f35663a44f527d",
+            "f72a623702e9f368",
+            "305f4811863bf516",
+            "e6c1b0979a8651b6",
+            "6e594e88a90c98c1",
+            "859f7f3f76ccd945",
+            "a432820c7d96bcf4",
+            "dd5a7afc5410247a",
+            "e51ad4b09d2bfe83",
+            "ef0c3783383d6fd2",
+            "633c0f96d16dedf3",
+            "330fe8c90584f514",
+            "1fc95f0261620c4b",
+            "8cae742646b559cf",
+            "ce93a5cfa3e54736",
+            "96668f8c0144d462",
+            "f856cdab579098d8",
+            "c42712e6049f5aad",
+            "592357dc91aa5e77",
+            "15d7fcf601ffe933",
+            "40f7e1e7c55cd034",
+            "b654239533131b2e",
+            "998bd941ca351b8b",
+            "09315ad9c4c9f0a4",
+            "ccb5547533791ab6"
+        ],
+        "x": 54,
+        "y": 919,
+        "w": 1492,
+        "h": 702
+    },
+    {
+        "id": "46c394b9fe31938d",
+        "type": "group",
+        "z": "58612799aa277ac1",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "65be65f0c18bde6c",
+            "8853f4539368887d",
+            "d35856b40d4ffe51",
+            "15fe6a9b748a6092",
+            "5971d165d1b8a667",
+            "0893c7f837f491cd",
+            "55298a4a8bc38ec7",
+            "15cbe60d4ffff951",
+            "e529a5508c89fa15",
+            "fe7422360750cb6c",
+            "fb2f5a5457cc1c7b",
+            "030fec169548bea3",
+            "b8de4704a104b73c",
+            "dcf2c5b5ac2dd430",
+            "cfd60e7ccea45963",
+            "91f62606491c9d51",
+            "e4f8e748553849f6",
+            "67d3b5ce22f3522d"
+        ],
+        "x": 54,
+        "y": 1659,
+        "w": 1312,
+        "h": 542
     },
     {
         "id": "c0b40a7272cfab76",
@@ -424,8 +551,8 @@
             "3ba29ad018e06586",
             "b8028a182f6e3883"
         ],
-        "x": 34,
-        "y": 1159,
+        "x": 514,
+        "y": 1299,
         "w": 2252,
         "h": 862
     },
@@ -471,8 +598,8 @@
             "e1b464488f392996",
             "2dae94e0a5a67ff8"
         ],
-        "x": 34,
-        "y": 2099,
+        "x": 114,
+        "y": 2219,
         "w": 2312,
         "h": 362
     },
@@ -495,8 +622,8 @@
         "type": "junction",
         "z": "57297ea9585b5f93",
         "g": "18e263da0ce661a2",
-        "x": 1180,
-        "y": 1120,
+        "x": 1260,
+        "y": 1240,
         "wires": [
             [
                 "4d39ba490ae7a81f"
@@ -548,12 +675,13 @@
         "id": "c2ab6d4c108e742b",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-custom",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
@@ -564,49 +692,50 @@
             "customTheme": {
                 "name": "Untitled Theme 1",
                 "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                "baseColor": "#3f4c42",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
+                    "default": "#4B7930",
+                    "value": "#3f4c42",
+                    "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
+                    "value": "#3f4c42",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
                     "value": "#111111",
                     "edited": false
                 },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#627666",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
                 "widget-backgroundColor": {
-                    "value": "#0094ce",
+                    "value": "#3f4c42",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -670,7 +799,7 @@
         "type": "function",
         "z": "a85c93b74d9f6110",
         "name": "Set priority of msg value",
-        "func": "var list = ['path', 'packageName','action', 'save', 'saveInDependencies']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)){\n        msg[element] = env.get(element)\n    }else{\n        if (msg[element] === undefined || msg[element] === null){\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\nreturn msg;",
+        "func": "var list = ['path', 'packageName','action', 'save', 'saveInDependencies','safeMode']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)){\n        msg[element] = env.get(element)\n    }else{\n        if (msg[element] === undefined || msg[element] === null){\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -700,8 +829,8 @@
         "y": 640,
         "wires": [
             [
-                "d0b588151f25af9d",
-                "b8f92dc3100eea4c"
+                "b8f92dc3100eea4c",
+                "d0b588151f25af9d"
             ],
             [
                 "b8f92dc3100eea4c"
@@ -774,7 +903,7 @@
         "y": 540,
         "wires": [
             [
-                "3da9f5a55d213f12"
+                "43e09bf625c1ccb0"
             ],
             [
                 "32620eda86c8b32d"
@@ -836,8 +965,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1190,
-        "y": 520,
+        "x": 1270,
+        "y": 480,
         "wires": [
             [
                 "efe3592b9fec64fd"
@@ -876,8 +1005,8 @@
         "links": [
             "f0c7f88db9a0a39f"
         ],
-        "x": 2075,
-        "y": 600,
+        "x": 2275,
+        "y": 620,
         "wires": []
     },
     {
@@ -933,7 +1062,7 @@
                 "62b10f098bb48847"
             ],
             [
-                "62b10f098bb48847"
+                "f7fc04eb893fd2e3"
             ]
         ]
     },
@@ -1011,14 +1140,97 @@
         ]
     },
     {
+        "id": "43e09bf625c1ccb0",
+        "type": "switch",
+        "z": "a85c93b74d9f6110",
+        "name": "",
+        "property": "safeMode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 460,
+        "wires": [
+            [
+                "3da9f5a55d213f12"
+            ]
+        ]
+    },
+    {
+        "id": "24ca775ca6d87de3",
+        "type": "exec",
+        "z": "a85c93b74d9f6110",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 2150,
+        "y": 540,
+        "wires": [
+            [
+                "62b10f098bb48847"
+            ],
+            [
+                "62b10f098bb48847"
+            ],
+            [
+                "62b10f098bb48847"
+            ]
+        ]
+    },
+    {
+        "id": "f7fc04eb893fd2e3",
+        "type": "change",
+        "z": "a85c93b74d9f6110",
+        "name": "set command in payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(path='' ? '' : 'cd ' & path & ' && ') & 'npm ' & 'uninstall ' &  packageName & (save ? ' --save' : '') & (saveInDependencies ? ' -D' : '')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "[payload]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1930,
+        "y": 540,
+        "wires": [
+            [
+                "24ca775ca6d87de3"
+            ]
+        ]
+    },
+    {
         "id": "099f6275bdac6398",
         "type": "comment",
         "z": "58612799aa277ac1",
         "g": "accc01d78c5b390d",
         "name": "1st step",
         "info": "## Plan\nPour cette première vidéo le planning est d'installer les premiers outils néccessaire. C'est a dire:\n - Les outils de base de communication entre nos machines  \n - Un éditeur de code, Visual Studio Code sur l'orangepi et le telephone\n    - téléphone : https://www.codewithharry.com/blogpost/install-vs-code-in-android/\n - Un gestionnaire de conteneneur, Docker car c'est le plus fournir et simple à mettre en place sur tout les support. Nous allons le mettre sur l'orangepi et essayer sur le téléphone, je l'ai pas fait encore pour préserver le téléphone.\n - Un gestionnaire d'activité, Dolibarr, car il permet de lié les flux financier et les flux physique. De plus, sont utilisation represente une compétence utilsable dans la vie professsionelle et personnelle. Nous allons le mettre sur l'orangepi\n - Un assistant vocal, Rhasspy car il est le plus modulable que nous alllons également mettre sur l'orangepi et sur le téléphone. Nous allons sur le téléphone installer l'APK même si je n'arrive pas afaire fonctionner le wakeword avec\n - Enfin si on à le temps ce qui métonnerais, nous allons commencer à palier à ce problème.\n\n## Session 1\n - Installation de node-red-dashboardpour la simplicité.\n - Mise en place du systeme de communication avec le terminal depuis node-red pour gerer les coonections internet et bluetooth\n    - Pour execetuter des commandes avec node-red nous avons plusieur choix possible\n      1. Tout dabords la note exec. Voici un exemple avec la commande nmcli pour la gestion du wifi\n          1. J'ai créer un bouton sur le dashbord qui nous permet de lancer la commande\n          2. Dans la fonction node j'en fait un tableau d'object que je montre avec la node additionel ui-list\n          3. Dans la node ui-list, j'ai parameter une action au click qui nous permet de lancer la commande de connexion\n          4. Dans la node exec, j'ai activer l'options pour ajouter le nom du reseau c'est à dire la propriété SSID de l'obect construit auparavent.Deplus je l'ai mise en mode spawn pour recevoir des message pendant que la commande est en cours\n          5. Enfin, j'ai fait une template node qui nous permet de voir les message cumuler.  \n          - Nous allons essayer cette solution. Je click sur refresh, nous attendons un peu et nous voyons les connnexion. Maintenant je clique sur une et on vois que l'on nous demande un password.\n        Cela pose un problème car nous ne pouvons pas renvoyer un message dans la commande que nous avons lancer. Pour communiquer avec un processus que nous avons lancer il nous faut une autre node addiotonelle, la node daemon qui est ici.\n        Cependant dans cette node nous ne pouvons pas definir de commande ou d'argument dynamiquement. Cela veut dire que lorsque nous cliquons dans notre list, nous ne pouvons pas en recolter l'information pour la mettre dans notre node daemon\n        On va donc essayer une autre solution\n      2. Pour le deuxième essai on va essayer d'utiliser la même fonction que la node exec realise mais dans une fonction node. c'est ce qu'il y a ici.\n          1. J'ai créer un formulaire avec la node form pour mettre une liste de commande separer par entrer\n          2. J'ai créer une function node pour réaliser à la suite les commandes.\n          3. J'ai remis la node template pour voir le resultat\n          - Nous allons essayer cette solution. Nous tapons notre commande pour nous connecter et nous rajoutons notre ssid. Nous cliquons sur submit et on nous demande notre password, nous en sommme au même point que precédement.\n        Maintenant nous tappons la commmande et le ssid et à la ligne le mot de passe. Nous avons perdu la connexion avec le pc et nous devrions être connecter au téléphone.\n        Avec mon telephone je recupére l'adresse ip du téléphone avec la commande \"ifconfig\" et apres je scanne le reseau avec \"nmap mon_ip/24\". Cela me donne l'ip de mon orangepi connecter au telephone.\n        Maintenant nous pouvons aller sur le node-red de l'orange pi avec le téléphone comme cela. Je coupe mon point d'acces avec le téléphone et nous attendons un peu que l'orangepi se reconnecte à la maison pour y avoir de nouveau acces avec l'ordinateur\n        Dans la prochaine video nous ferrons cela avec node-red coté téléphone et on affichera une notification sur le tel avec l'adresse ip.\n      3. Nous avons reussi à nous connecter au téléphone cependant cela ne fonctionne pas de manière dynamique. En effet, cela ne marche toutjours pas avec un click sur la liste. Pour cette raison, nous allons voir la troisième solution, \n      celle de droite qui est un terminal dynamique qui est ici fait avec la node daemon.\n          1. Tout d'abords, comme la node n'est pas parametrable, il nous faut créer un fichier javascript, contenant notre commande à lancer. Pour cela, j'ai utilisé\n          une template node, qui nous permet de récolter l'information de notre node form qui est ici, pour la mettre dans notre fichier javascript qui s'ecrit avec la node write.\n          2. Ensuite, j'ai mis une node change pour definir une propriété start au message qui permet de lancer la node daemon\n          3. Dans la node daemon, j'ai mis node dans la commande \"node\" et le fichier à lancer dans argument. J'ai déchocher auto-start daemon on deploy et j'ai cocher add enter to every message sent\n          4. Pour envoyer un message au processus en cours j'ai mis une autre node form\n          5. Pour terminer notre processus en cours, j'ai mis une node button qui quand il est cliquer envoie un message à la node change.Dedans j'ai defini une propriété kill a msg qui est transmis à la node daemon\n          6. Pour finir j'ai mis un bouton pour repéter la commande.\n          7. Nous laissons de coter la partie du bas pour le moment qui nous servira à gérer une liste de commande.  \n          - Nous allons maintenant tester notre solution. Nous tapons tape donc la commande pour nous connecter aux reseau. Cela demmande le SSID. Nous mettons XperiaXZ_c8a0 et cela nous demande le mot de passe qui est coucoutoi que nous envoyons\n        Nous repetons les commandes pour trouver notre ip et scanner le reseau pour trouver l'ip de notre orangepi. C'est le même que tout à l'heure. Nous retournons donc dans le navigateur internet pour nous coonecter au dashboard.\n        Cela fonctionne. Nous coupons la connexions du téléphone pour retrouver l'orangepi avec le pc.\n - Choix de l'utilisation d'une node ssh\n   - Maintenant que nous pouvons communiquer avec notre machine grâce à un terminal dans node-red nous allons comminquer avec notre téléphone grave à la commande ssh. Pour ce la on pourrait utiliser notre terminal mais si on essaie on voit qu'il y a une erreur.\n   Nous pouvons la contourner mais cela implique de mettre le mot de passe dans la commande ce qui ne serai pas sécuriser. Dans une autre vidéo, nous ferrons un systeme pour crypter le mot de passe, le sauvegarder et l'injecter dans la commande.\n   Pour le moment détaillons le choix de la node ssh. Parmis les node existante :\n   - node-red-contrib-ssh-v3 : pas de port spécifiable donc pas utilisable avec termux\n   - idem pour : node-red-contrib-ssh-coco, node-red-contrib-ssh et node-red-contrib-ssh-v2-reconnection \n   - node-red-contrib-bigssh : pas de changement de status de la node en cas de perte de connection avec le telephone\n   - Pour l'instant le mieux c'est bigssh.\n   - En revanche ce n'est pas parfait car cela nous fait revenir au point de départ concernant le terminal. En effet toute les node ssh sont comme les node exec et non comme les node daemon.\n   C'est à dire pas de communication possible après la commande. Pour cette rasion, nous serrons obliger de remplacer cette node ultérieurement comme nous auront fait le systeme de cryptation du mot de passe.\n - Maintenant qu nous avons notre systeme de terminal, nous pouvons commencer as réaliser les commandes nécessaire lorsque l'on télécharge le projet pour la première fois. Avant cela nous allons voir la dernière fonctionnalité à notre terminal.\nFaire defiler une liste de commande préétablie avec des boutons en fonction du resultat de la commande précedente. \n    1. J'ai donc ajouter une node text pour saisir un tableau de commande\n    2. J'ai ajouter une node change pour definir des variables au niveau du flow ce qui nous permettra d'acceder à nos informations de liste pour tout les messages\n    3. Ensuite, la prochaine node change passe la premières commande à notre text \n    4. Toutes les node fonction \"message for spawn\" servent à formater le message car pour lancer la première commande, la commande doit être séparer des arguments. Maintenant que c'est fait je pense que cela peut être améliorer en modifiant le code javascript qui lance la commande.\n    5. Il y a ensuite les trois bouton pour gerer la liste\n    6. Ce qui est derrière ces bouton sert à modifier l'état des boutons, l'index en cour de la liste et le texte pour la commande suivante\n    7. La liste est compatible avec la parti du dessus, c'est a dire que vous pouvez injecter des commande en cours de liste.\n  - Nous allons maintenant pourvoir dresser une liste de commande à executer pour chaque outil. Cependant en fesant cela je me suis rendu compte que de pourvoir sauvegarder notre liste pourrait être intéressant\n  C'est l'objet de la troisième parti que vous voyer la. J'arrive à ma dead line pour cette vidéo donc je ne détaille pas. Sachez juste que en fesant cela j'ai découvert xterm.js et que dans les prochaines vidéo on remplacera la node template par une fenetre xterm.js pour pouvoir exploiter pleinement le terminal et profitez de notre gestion de liste de commande.\n  Cependant nous avons maintenant un outil pour modifier un script que nous pouvons modifier librement et faire defiler commande par commande. Pour injecter des commandes dans notre outils j'ai ajouter une node link in. Dans le flow Installation nous pouvons maintenant mettre une inject node et une node link out pour charger notre list.\n  Cela nous permetra de facilement d'effectuer nos installations sur nos différente machine et de pouvoir injecter nos mots de passe.\n    1. Nous commencons donc avec Node-Red. Dedans il y a les commandes pour le lancer au démarrage. Pour l'instant c'est juste le laner au démarrage de la machine. Cependant je vais le lancer, Nous voyons que  ",
-        "x": 130,
-        "y": 100,
+        "x": 150,
+        "y": 80,
         "wires": []
     },
     {
@@ -1035,8 +1247,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 180,
+        "x": 1860,
+        "y": 220,
         "wires": []
     },
     {
@@ -1047,8 +1259,8 @@
         "scope": [
             "a50d6ceba36c36f7"
         ],
-        "x": 1120,
-        "y": 1020,
+        "x": 2140,
+        "y": 1620,
         "wires": [
             []
         ]
@@ -1065,8 +1277,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "get wifi interface name ",
-        "x": 1100,
-        "y": 840,
+        "x": 2120,
+        "y": 1440,
         "wires": [
             [],
             [],
@@ -1089,8 +1301,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 830,
-        "y": 840,
+        "x": 1850,
+        "y": 1440,
         "wires": [
             [
                 "f4be8a67244d65bf"
@@ -1104,8 +1316,8 @@
         "g": "accc01d78c5b390d",
         "name": "Install nodejs libary to scan networks and define global variable for the app",
         "info": "",
-        "x": 340,
-        "y": 140,
+        "x": 360,
+        "y": 220,
         "wires": []
     },
     {
@@ -1117,7 +1329,7 @@
         "props": [
             {
                 "p": "packageNames",
-                "v": "[\"xterm\"]",
+                "v": "[\"node-red-dashboard\", \"node-red-contrib-credentials\", \"node-red-node-daemon\", \"node-red-contrib-sox-utils\"]",
                 "vt": "json"
             },
             {
@@ -1130,11 +1342,11 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 180,
+        "x": 170,
+        "y": 260,
         "wires": [
             [
-                "813181b66cc0bb79"
+                "6e315e8005f93db6"
             ]
         ]
     },
@@ -1157,8 +1369,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1160,
-        "y": 940,
+        "x": 2180,
+        "y": 1540,
         "wires": [
             []
         ]
@@ -1174,8 +1386,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 980,
+        "x": 1840,
+        "y": 1580,
         "wires": [
             []
         ]
@@ -1200,49 +1412,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1320,
-        "y": 180,
+        "x": 2020,
+        "y": 260,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "a4b1c4a422c3d696",
-        "type": "function",
-        "z": "58612799aa277ac1",
-        "g": "accc01d78c5b390d",
-        "name": "function 2",
-        "func": "msg.path = msg.projectdir\nfor (let index = 0; index < msg.packageNames.length; index++) {\n    const element = msg.packageNames[index];\n    msg.packageName = element\n    node.send(msg)\n}\nreturn;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "os",
-                "module": "os"
-            }
-        ],
-        "x": 480,
-        "y": 180,
-        "wires": [
-            [
-                "feb6423ccda74b39"
-            ]
-        ]
-    },
-    {
-        "id": "813181b66cc0bb79",
-        "type": "projectdir",
-        "z": "58612799aa277ac1",
-        "g": "accc01d78c5b390d",
-        "name": "",
-        "x": 320,
-        "y": 180,
-        "wires": [
-            [
-                "a4b1c4a422c3d696"
-            ]
         ]
     },
     {
@@ -1264,8 +1437,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 940,
+        "x": 1940,
+        "y": 1540,
         "wires": [
             []
         ]
@@ -1288,11 +1461,12 @@
                 "type": "bool"
             }
         ],
-        "x": 680,
-        "y": 180,
+        "x": 800,
+        "y": 260,
         "wires": [
             [
-                "3b986ba732de0ec3"
+                "398286c135d72f4e",
+                "725f5a0cbb20fa86"
             ]
         ]
     },
@@ -1302,8 +1476,8 @@
         "z": "58612799aa277ac1",
         "name": "Command for node-red first install",
         "info": "",
-        "x": 220,
-        "y": 300,
+        "x": 240,
+        "y": 600,
         "wires": []
     },
     {
@@ -1323,8 +1497,8 @@
         "topic": "",
         "payload": "[\"sudo systemctl enable nodered.service\"]",
         "payloadType": "json",
-        "x": 170,
-        "y": 360,
+        "x": 190,
+        "y": 660,
         "wires": [
             [
                 "73013c23ef540790"
@@ -1335,14 +1509,1704 @@
         "id": "73013c23ef540790",
         "type": "link out",
         "z": "58612799aa277ac1",
-        "name": "link out 1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "ca1a3b161424e5e9"
+        ],
+        "x": 1295,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c6abed77f180ed52",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "name": "Command for docker",
+        "info": "",
+        "x": 200,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "24a91948959304e0",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"sudo systemctl enable nodered.service\"]",
+        "payloadType": "json",
+        "x": 170,
+        "y": 840,
+        "wires": [
+            [
+                "c4d0127ebb81b796"
+            ]
+        ]
+    },
+    {
+        "id": "c4d0127ebb81b796",
+        "type": "link out",
+        "z": "58612799aa277ac1",
+        "name": "link out 2",
         "mode": "link",
         "links": [
             "ca1a3b161424e5e9",
             "bc746456f276f19a"
         ],
-        "x": 305,
-        "y": 360,
+        "x": 1125,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "128ae6814df70dd8",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "For dolibarr",
+        "info": "",
+        "x": 170,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "dd4242fd0fb59287",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "put secret here",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "techscOrangepi",
+        "payloadType": "str",
+        "x": 200,
+        "y": 1220,
+        "wires": [
+            [
+                "4a7ec91597ecd7f0"
+            ]
+        ]
+    },
+    {
+        "id": "ae59c916977de493",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "Setup your dolibarr here",
+        "props": [
+            {
+                "p": "dolContainerName",
+                "v": "dolibarr",
+                "vt": "str"
+            },
+            {
+                "p": "dolPort",
+                "v": "8300",
+                "vt": "str"
+            },
+            {
+                "p": "dolTag",
+                "v": "15",
+                "vt": "str"
+            },
+            {
+                "p": "dolVolumePath",
+                "v": "../../../../dolibarr/dolibarr-docs",
+                "vt": "str"
+            },
+            {
+                "p": "dolCustomVolumePath",
+                "v": "../../../../dolibarr/dolibarr-custom",
+                "vt": "str"
+            },
+            {
+                "p": "mysqlContainerName",
+                "v": "dolibarr-mysql",
+                "vt": "str"
+            },
+            {
+                "p": "mariadTag",
+                "v": "latest",
+                "vt": "str"
+            },
+            {
+                "p": "mysqlVolume",
+                "v": "../../../../dolibarr/mysql-data",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 200,
+        "y": 1040,
+        "wires": [
+            [
+                "ef0c3783383d6fd2",
+                "330fe8c90584f514"
+            ]
+        ]
+    },
+    {
+        "id": "d159f4f118348fa4",
+        "type": "file in",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 660,
+        "y": 1040,
+        "wires": [
+            [
+                "c84ab6a104df0ac3",
+                "8cae742646b559cf"
+            ]
+        ]
+    },
+    {
+        "id": "c84ab6a104df0ac3",
+        "type": "yaml",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "property": "payload",
+        "name": "",
+        "x": 810,
+        "y": 1040,
+        "wires": [
+            [
+                "d629ba9a12ac2bb4",
+                "ce93a5cfa3e54736"
+            ]
+        ]
+    },
+    {
+        "id": "85961ad908a34128",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2140,
+        "y": 1740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d629ba9a12ac2bb4",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.services.dolibarr.image",
+                "pt": "msg",
+                "to": "'tuxgasy/dolibarr:' & dolTag",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.dolibarr.ports[0]",
+                "pt": "msg",
+                "to": "dolPort &':80'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.dolibarr.volumes[0]",
+                "pt": "msg",
+                "to": "dolVolumePath & ':/var/www/documents'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.dolibarr.volumes[1]",
+                "pt": "msg",
+                "to": "dolCustomVolumePath & ':/var/www/html/custom'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.mysql.image",
+                "pt": "msg",
+                "to": "'library/mariadb:' & mariadTag",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.mysql.volumes[0]",
+                "pt": "msg",
+                "to": "mysqlVolume & ':/var/lib/mysql'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.dolibarr.container_name",
+                "pt": "msg",
+                "to": "dolContainerName",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.mysql.container_name",
+                "pt": "msg",
+                "to": "mysqlContainerName",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 1040,
+        "wires": [
+            [
+                "3b986ba732de0ec3",
+                "dd5a7afc5410247a",
+                "96668f8c0144d462"
+            ]
+        ]
+    },
+    {
+        "id": "09da2f49e5f73653",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "Load project directory in global variable",
+        "info": "",
+        "x": 250,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "db6ff932806cc474",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "projectDir",
+                "pt": "global",
+                "to": "projectdir",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 180,
+        "wires": [
+            [
+                "1a0ee4d754397b65"
+            ]
+        ]
+    },
+    {
+        "id": "bbbac82b0e8ca5c5",
+        "type": "projectdir",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "db6ff932806cc474"
+            ]
+        ]
+    },
+    {
+        "id": "90e07e991d03a7f5",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "bbbac82b0e8ca5c5"
+            ]
+        ]
+    },
+    {
+        "id": "1a0ee4d754397b65",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "debug 61",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9e2778ee9680fce3",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "filename": "",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2160,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a7ec91597ecd7f0",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "mysql user",
+        "filename": "$globalContext('projectDir') & '/secrets/mysql_user.secret'",
+        "filenameType": "jsonata",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 430,
+        "y": 1220,
+        "wires": [
+            [
+                "305f4811863bf516"
+            ]
+        ]
+    },
+    {
+        "id": "bf11f93cb7d73fa1",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "mysql password",
+        "filename": "$globalContext('projectDir') & '/secrets/mysql_password.secret'",
+        "filenameType": "jsonata",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 440,
+        "y": 1260,
+        "wires": [
+            [
+                "305f4811863bf516"
+            ]
+        ]
+    },
+    {
+        "id": "53f35663a44f527d",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "dolibarr user",
+        "filename": "$globalContext('projectDir') & '/secrets/dolibarr_admin_username.secret'",
+        "filenameType": "jsonata",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 430,
+        "y": 1300,
+        "wires": [
+            [
+                "305f4811863bf516"
+            ]
+        ]
+    },
+    {
+        "id": "f72a623702e9f368",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "dolibarr password",
+        "filename": "$globalContext('projectDir') & '/secrets/dolibarr_admin_password.secret'",
+        "filenameType": "jsonata",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 450,
+        "y": 1340,
+        "wires": [
+            [
+                "305f4811863bf516"
+            ]
+        ]
+    },
+    {
+        "id": "305f4811863bf516",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "debug 62",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "e6c1b0979a8651b6",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "put secret here",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "techscOrangepiPassword",
+        "payloadType": "str",
+        "x": 200,
+        "y": 1260,
+        "wires": [
+            [
+                "bf11f93cb7d73fa1"
+            ]
+        ]
+    },
+    {
+        "id": "6e594e88a90c98c1",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "put secret here",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "techscOrangepi",
+        "payloadType": "str",
+        "x": 200,
+        "y": 1300,
+        "wires": [
+            [
+                "53f35663a44f527d"
+            ]
+        ]
+    },
+    {
+        "id": "859f7f3f76ccd945",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "put secret here",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "techscOrangepiPassword",
+        "payloadType": "str",
+        "x": 200,
+        "y": 1340,
+        "wires": [
+            [
+                "f72a623702e9f368"
+            ]
+        ]
+    },
+    {
+        "id": "a432820c7d96bcf4",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "'[\"docker-compose -f ' & $globalContext('projectDir') & '/dolibarr/docker-compose.yml up\"]'",
+        "payloadType": "jsonata",
+        "x": 170,
+        "y": 1480,
+        "wires": [
+            [
+                "305f4811863bf516",
+                "b654239533131b2e"
+            ]
+        ]
+    },
+    {
+        "id": "dd5a7afc5410247a",
+        "type": "yaml",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "property": "payload",
+        "name": "",
+        "x": 1190,
+        "y": 1040,
+        "wires": [
+            [
+                "e51ad4b09d2bfe83",
+                "f856cdab579098d8"
+            ]
+        ]
+    },
+    {
+        "id": "e51ad4b09d2bfe83",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1440,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef0c3783383d6fd2",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "$globalContext('projectDir') & '/dolibarr/docker-compose.yml'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 1040,
+        "wires": [
+            [
+                "d159f4f118348fa4"
+            ]
+        ]
+    },
+    {
+        "id": "633c0f96d16dedf3",
+        "type": "template",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "env file for dolibarr",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "DOLI_INSTALL_AUTO=1\nDOLI_DB_HOST=mysql\nDOLI_DB_HOST_PORT=3306\nDOLI_DB_NAME=dolibarr\nDOLI_URL_ROOT=http://localhost:{{dolPort}}\nDOLI_NOCSRFCHECK=0\nWWW_USER_ID=33\nWWW_GROUP_ID=33\nPHP_INI_DATE_TIMEZONE=UTC\nPHP_INI_MEMORY_LIMIT=256M",
+        "output": "str",
+        "x": 690,
+        "y": 1080,
+        "wires": [
+            [
+                "1fc95f0261620c4b",
+                "ccb5547533791ab6"
+            ]
+        ]
+    },
+    {
+        "id": "330fe8c90584f514",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "$globalContext('projectDir') & '/dolibarr/env/dolibarr.env'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 1080,
+        "wires": [
+            [
+                "633c0f96d16dedf3"
+            ]
+        ]
+    },
+    {
+        "id": "1fc95f0261620c4b",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 940,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8cae742646b559cf",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "debug 63",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "ce93a5cfa3e54736",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "96668f8c0144d462",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "debug 65",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "f856cdab579098d8",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "debug 66",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "c42712e6049f5aad",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "Set up your docker compose",
+        "info": "",
+        "x": 220,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "592357dc91aa5e77",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "Create you secret file (no docker swarm so no sercret for now)",
+        "info": "",
+        "x": 320,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "15d7fcf601ffe933",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "Launch the docker-compose",
+        "info": "",
+        "x": 220,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "40f7e1e7c55cd034",
+        "type": "link out",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "ca1a3b161424e5e9",
+            "bc746456f276f19a"
+        ],
+        "x": 505,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "b654239533131b2e",
+        "type": "json",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 390,
+        "y": 1480,
+        "wires": [
+            [
+                "40f7e1e7c55cd034"
+            ]
+        ]
+    },
+    {
+        "id": "998bd941ca351b8b",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "To read ABSOLUTLY",
+        "info": "At this point you must have a dolibarr up on the port you have set\nYou need to to the next buble to security",
+        "x": 200,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "09315ad9c4c9f0a4",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "CREATE AN OTHER USER IN DOLIBARR AND GIVE ADMIN RIGHT WITH NEW CREDENTIAL",
+        "info": "At this point you must have a dolibarr up on the port you have set\nYou need to to the next buble to security",
+        "x": 430,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "ccb5547533791ab6",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "9952592d4fff7c8b",
+        "name": "debug 67",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "65be65f0c18bde6c",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "For Rhasspy",
+        "info": "",
+        "x": 170,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "8853f4539368887d",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "Setup your rhasspy here",
+        "props": [
+            {
+                "p": "portFr",
+                "v": "12101",
+                "vt": "str"
+            },
+            {
+                "p": "portEn",
+                "v": "12102",
+                "vt": "str"
+            },
+            {
+                "p": "volumePath",
+                "v": "$HOME/.config/rhasspy/profiles/profiles",
+                "vt": "str"
+            },
+            {
+                "p": "container_name",
+                "v": "rhasspy",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 1760,
+        "wires": [
+            [
+                "5971d165d1b8a667"
+            ]
+        ]
+    },
+    {
+        "id": "d35856b40d4ffe51",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.services.rhasspy-fr.volumes[0]",
+                "pt": "msg",
+                "to": "volumePath & ':/profiles'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.rhasspy-en.volumes[0]",
+                "pt": "msg",
+                "to": "volumePath & ':/profiles'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.rhasspy-fr.ports[0]",
+                "pt": "msg",
+                "to": "portFr &':12101'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.rhasspy-en.ports[0]",
+                "pt": "msg",
+                "to": "portEn &':12101'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.rhasspy-en.container_name",
+                "pt": "msg",
+                "to": "container_name & '-en'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.services.rhasspy-fr.container_name",
+                "pt": "msg",
+                "to": "container_name & '-fr'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 1760,
+        "wires": [
+            [
+                "030fec169548bea3"
+            ]
+        ]
+    },
+    {
+        "id": "15fe6a9b748a6092",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "debug 68",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "5971d165d1b8a667",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "$globalContext('projectDir') & '/rhasspy/docker-compose.yml'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 1760,
+        "wires": [
+            [
+                "0893c7f837f491cd"
+            ]
+        ]
+    },
+    {
+        "id": "0893c7f837f491cd",
+        "type": "file in",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 660,
+        "y": 1760,
+        "wires": [
+            [
+                "55298a4a8bc38ec7"
+            ]
+        ]
+    },
+    {
+        "id": "55298a4a8bc38ec7",
+        "type": "yaml",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "property": "payload",
+        "name": "",
+        "x": 790,
+        "y": 1760,
+        "wires": [
+            [
+                "d35856b40d4ffe51"
+            ]
+        ]
+    },
+    {
+        "id": "e529a5508c89fa15",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "'[\"docker-compose -f ' & $globalContext('projectDir') & '/rhasspy/docker-compose.yml up\"]'",
+        "payloadType": "jsonata",
+        "x": 170,
+        "y": 1880,
+        "wires": [
+            [
+                "fe7422360750cb6c"
+            ]
+        ]
+    },
+    {
+        "id": "15cbe60d4ffff951",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "Launch the docker-compose",
+        "info": "",
+        "x": 200,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "fb2f5a5457cc1c7b",
+        "type": "link out",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "ca1a3b161424e5e9",
+            "bc746456f276f19a"
+        ],
+        "x": 465,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "fe7422360750cb6c",
+        "type": "json",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 1880,
+        "wires": [
+            [
+                "fb2f5a5457cc1c7b"
+            ]
+        ]
+    },
+    {
+        "id": "030fec169548bea3",
+        "type": "yaml",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "property": "payload",
+        "name": "",
+        "x": 1130,
+        "y": 1760,
+        "wires": [
+            [
+                "b8de4704a104b73c",
+                "15fe6a9b748a6092"
+            ]
+        ]
+    },
+    {
+        "id": "b8de4704a104b73c",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1280,
+        "y": 1760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcf2c5b5ac2dd430",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "To read ABSOLUTLY",
+        "info": "At this point you must have a rhasspy up on the port you have set\n",
+        "x": 180,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "b65237e8d3b302fa",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "debug 69",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "398286c135d72f4e",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "debug 70",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "b2aa0ffd4bc3b846",
+        "type": "rbe",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 510,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a486d072b002a4d8",
+        "type": "delay",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "4",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 260,
+        "wires": [
+            [
+                "1a0ee4d754397b65",
+                "feb6423ccda74b39"
+            ]
+        ]
+    },
+    {
+        "id": "6e315e8005f93db6",
+        "type": "function",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "function 9",
+        "func": "msg.path = global.get(\"projectDir\")\nfor (let index = 0; index < msg.packageNames.length; index++) {\n    const element = msg.packageNames[index];\n    msg.packageName = element\n    node.send(msg)\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "a486d072b002a4d8"
+            ]
+        ]
+    },
+    {
+        "id": "725f5a0cbb20fa86",
+        "type": "switch",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "property": "packageName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "node-red-contrib-sox-utils",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 260,
+        "wires": [
+            [
+                "f0aa98ca142d18ba"
+            ]
+        ]
+    },
+    {
+        "id": "2d811df439c064d7",
+        "type": "file in",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1300,
+        "y": 220,
+        "wires": [
+            [
+                "a31ed93da07587de"
+            ]
+        ]
+    },
+    {
+        "id": "a31ed93da07587de",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "if (process.platform !== 'linux')",
+                "fromt": "str",
+                "to": "if (process.platform !== 'linux' || process.platform !== 'android')",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1480,
+        "y": 260,
+        "wires": [
+            [
+                "26858a679202fcc1"
+            ]
+        ]
+    },
+    {
+        "id": "26858a679202fcc1",
+        "type": "file",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "filename": "",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1680,
+        "y": 240,
+        "wires": [
+            [
+                "3b986ba732de0ec3"
+            ]
+        ]
+    },
+    {
+        "id": "f0aa98ca142d18ba",
+        "type": "change",
+        "z": "58612799aa277ac1",
+        "g": "accc01d78c5b390d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "'.node-red/node_modules/' & packageName & '/sox_play.js' ",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 280,
+        "wires": [
+            [
+                "2d811df439c064d7"
+            ]
+        ]
+    },
+    {
+        "id": "7991a19d69835c5c",
+        "type": "sox-play",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "outputDevice": "0,0",
+        "manualOutput": "",
+        "gain": "0",
+        "startNew": "start",
+        "playStream": false,
+        "inputEncoding": "signed-integer",
+        "inputChannels": 1,
+        "inputRate": 16000,
+        "inputBits": 16,
+        "debugOutput": true,
+        "x": 840,
+        "y": 500,
+        "wires": [
+            [
+                "2a57bc40ec44ac59"
+            ]
+        ]
+    },
+    {
+        "id": "bfbf22de567bb24e",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test.wav",
+        "payloadType": "str",
+        "x": 640,
+        "y": 500,
+        "wires": [
+            [
+                "7991a19d69835c5c"
+            ]
+        ]
+    },
+    {
+        "id": "2a57bc40ec44ac59",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "name": "debug 71",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "e81dc83962f7d46b",
+        "type": "sox-record",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "buttonStart": "msg",
+        "inputs": 1,
+        "inputSource": "default",
+        "manualSource": "0:0",
+        "inputEncoding": "signed-integer",
+        "inputChannels": 1,
+        "inputRate": 16000,
+        "inputBits": 16,
+        "byteOrder": "-L",
+        "encoding": "signed-integer",
+        "channels": 1,
+        "rate": 16000,
+        "bits": 16,
+        "gain": "0",
+        "buffer": "4096",
+        "showDuration": true,
+        "durationType": "limited",
+        "durationLength": "10",
+        "silenceDetection": "nothing",
+        "silenceDuration": "2.0",
+        "silenceThreshold": "2.0",
+        "outputFormat": "file",
+        "manualPath": "test2",
+        "debugOutput": true,
+        "x": 850,
+        "y": 580,
+        "wires": [
+            [
+                "3edb45e1ae2cc323"
+            ],
+            [
+                "3cdbfa3787dc9c5a"
+            ]
+        ]
+    },
+    {
+        "id": "68b1975a4a8ab28d",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "start",
+        "payloadType": "str",
+        "x": 610,
+        "y": 560,
+        "wires": [
+            [
+                "e81dc83962f7d46b"
+            ]
+        ]
+    },
+    {
+        "id": "3edb45e1ae2cc323",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "name": "debug 72",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "3cdbfa3787dc9c5a",
+        "type": "debug",
+        "z": "58612799aa277ac1",
+        "name": "debug 73",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "43eada3da32e26f4",
+        "type": "catch",
+        "z": "58612799aa277ac1",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 900,
+        "y": 420,
+        "wires": [
+            [
+                "2a57bc40ec44ac59"
+            ]
+        ]
+    },
+    {
+        "id": "cfd60e7ccea45963",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "For the sound system",
+        "info": "",
+        "x": 200,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "e4f8e748553849f6",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"sudo systemctl enable pulseaudio.service\"]",
+        "payloadType": "json",
+        "x": 170,
+        "y": 2160,
+        "wires": [
+            [
+                "67d3b5ce22f3522d"
+            ]
+        ]
+    },
+    {
+        "id": "91f62606491c9d51",
+        "type": "comment",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "Launch pulse on start ABSOLUTLY NEEDED FOR SOUND WORK",
+        "info": "Needed because something append with user and pulseaudio because if you start pulseaudio with node-red all works. If you start it otherwise that does'nt work. \nWhen this issue gonna be resolve i gonna move to systemctl on boot",
+        "x": 340,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "67d3b5ce22f3522d",
+        "type": "link out",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "ca1a3b161424e5e9",
+            "bc746456f276f19a"
+        ],
+        "x": 325,
+        "y": 2160,
         "wires": []
     },
     {
@@ -1396,8 +3260,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1280,
-        "y": 740,
+        "x": 1360,
+        "y": 860,
         "wires": [
             [
                 "7f82046bd9d0371b"
@@ -1416,8 +3280,8 @@
         "syntax": "mustache",
         "template": "var cp = require('child_process');\nlet child = cp.spawn('{{command}}', {{{args}}})\nchild.stdout.on('data', function (data) {\n    console.log(`${data}`);\n});\nchild.stderr.on('data', function (data) {\n    console.log(`${data}`);\n});\nprocess.stdin.on('data', function (data) {\n    child.stdin.write(data)\n})\n\nchild.on('close', (code) => {\n    console.log(`child process exited with code ${code}`);\n});\n\n//process.on(\"message\", function (message) {\n//    console.log(`Message from main.js: ${message}`);\n//    cp.stdin.write(message)\n//});\n//cp.stdout.on('data', function (data) {\n//    console.log(`Message from main.js: ${data}`)\n//    process.send(data)\n//});\n",
         "output": "str",
-        "x": 1000,
-        "y": 740,
+        "x": 1080,
+        "y": 860,
         "wires": [
             [
                 "f899bfee50c2c5f6"
@@ -1447,8 +3311,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 300,
-        "y": 680,
+        "x": 380,
+        "y": 800,
         "wires": [
             [
                 "05636ee319db6f24"
@@ -1487,8 +3351,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2380,
-        "y": 680,
+        "x": 2460,
+        "y": 800,
         "wires": []
     },
     {
@@ -1505,8 +3369,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2380,
-        "y": 720,
+        "x": 2460,
+        "y": 840,
         "wires": []
     },
     {
@@ -1711,8 +3575,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2400,
-        "y": 640,
+        "x": 2480,
+        "y": 760,
         "wires": []
     },
     {
@@ -1733,8 +3597,8 @@
         "topic": "",
         "payload": "devices",
         "payloadType": "str",
-        "x": 1000,
-        "y": 620,
+        "x": 1080,
+        "y": 740,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -1754,8 +3618,8 @@
         "redo": false,
         "op": "string",
         "closer": "SIGKILL",
-        "x": 2190,
-        "y": 740,
+        "x": 2270,
+        "y": 860,
         "wires": [
             [
                 "44c756161c28b0e2",
@@ -1796,8 +3660,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1570,
-        "y": 740,
+        "x": 1650,
+        "y": 860,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -1813,8 +3677,8 @@
         "property": "args",
         "action": "",
         "pretty": false,
-        "x": 810,
-        "y": 740,
+        "x": 890,
+        "y": 860,
         "wires": [
             [
                 "5fe632846e1697cf"
@@ -1839,8 +3703,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1420,
-        "y": 940,
+        "x": 1540,
+        "y": 1060,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -1926,8 +3790,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 320,
-        "y": 1440,
+        "x": 800,
+        "y": 1580,
         "wires": []
     },
     {
@@ -1944,8 +3808,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2180,
-        "y": 1440,
+        "x": 2660,
+        "y": 1580,
         "wires": []
     },
     {
@@ -1962,8 +3826,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1600,
-        "y": 1440,
+        "x": 2080,
+        "y": 1580,
         "wires": []
     },
     {
@@ -2004,8 +3868,8 @@
         "topicType": "msg",
         "splitLayout": "",
         "className": "",
-        "x": 870,
-        "y": 580,
+        "x": 950,
+        "y": 700,
         "wires": [
             [
                 "b70e09ac6ce18c06"
@@ -2033,8 +3897,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1360,
-        "y": 980,
+        "x": 1440,
+        "y": 1100,
         "wires": [
             [
                 "06de75552b3afce3"
@@ -2079,8 +3943,8 @@
         "topicType": "msg",
         "splitLayout": "",
         "className": "",
-        "x": 230,
-        "y": 740,
+        "x": 310,
+        "y": 860,
         "wires": [
             [
                 "3d8c166dafde23ec",
@@ -2100,8 +3964,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 620,
-        "y": 740,
+        "x": 700,
+        "y": 860,
         "wires": [
             [
                 "05636ee319db6f24",
@@ -2129,8 +3993,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1630,
-        "y": 980,
+        "x": 1710,
+        "y": 1100,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -2157,8 +4021,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1200,
-        "y": 580,
+        "x": 1280,
+        "y": 700,
         "wires": [
             [
                 "31ff77fcf896298c",
@@ -2182,8 +4046,8 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 2740,
-        "y": 820,
+        "x": 2820,
+        "y": 940,
         "wires": [
             []
         ]
@@ -2281,8 +4145,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1640,
-        "y": 520,
+        "x": 1720,
+        "y": 640,
         "wires": []
     },
     {
@@ -2304,8 +4168,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 1550,
-        "y": 1480,
+        "x": 2030,
+        "y": 1620,
         "wires": [
             [
                 "b7d03180d0bbb143",
@@ -2325,8 +4189,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1840,
-        "y": 1480,
+        "x": 2320,
+        "y": 1620,
         "wires": [
             [
                 "285ddcd6faf866c9"
@@ -2354,8 +4218,8 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 160,
-        "y": 1480,
+        "x": 640,
+        "y": 1620,
         "wires": [
             [
                 "037c66ba96df20be",
@@ -2385,8 +4249,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1140,
-        "y": 1780,
+        "x": 1620,
+        "y": 1920,
         "wires": [
             [
                 "4c13d948507fa2d4"
@@ -2414,8 +4278,8 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 160,
-        "y": 1700,
+        "x": 640,
+        "y": 1840,
         "wires": [
             [
                 "d21d613f143f2ab7",
@@ -2438,8 +4302,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 180,
-        "y": 1760,
+        "x": 660,
+        "y": 1900,
         "wires": []
     },
     {
@@ -2462,8 +4326,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 1780,
+        "x": 1000,
+        "y": 1920,
         "wires": [
             [
                 "e6cfcb3d10177c46",
@@ -2499,8 +4363,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
-        "y": 1280,
+        "x": 840,
+        "y": 1420,
         "wires": [
             [
                 "c4460b8e1fb0cacf",
@@ -2529,8 +4393,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
-        "y": 1280,
+        "x": 1040,
+        "y": 1420,
         "wires": [
             [
                 "24099d8cac2ab795"
@@ -2558,8 +4422,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 810,
-        "y": 1760,
+        "x": 1290,
+        "y": 1900,
         "wires": [
             [
                 "bdf43fa3a5a439e7"
@@ -2584,8 +4448,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 1820,
+        "x": 1700,
+        "y": 1960,
         "wires": []
     },
     {
@@ -2602,8 +4466,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 1800,
+        "x": 1320,
+        "y": 1940,
         "wires": []
     },
     {
@@ -2625,8 +4489,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 150,
-        "y": 1280,
+        "x": 630,
+        "y": 1420,
         "wires": [
             [
                 "dfd243663d89ff30"
@@ -2653,8 +4517,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1240,
-        "y": 1700,
+        "x": 1720,
+        "y": 1840,
         "wires": [
             [
                 "24099d8cac2ab795"
@@ -2675,8 +4539,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 1200,
+        "x": 1020,
+        "y": 1340,
         "wires": []
     },
     {
@@ -2697,8 +4561,8 @@
         "topic": "",
         "payload": "commands",
         "payloadType": "flow",
-        "x": 160,
-        "y": 1240,
+        "x": 640,
+        "y": 1380,
         "wires": [
             [
                 "b2b6c35ccfe6517f"
@@ -2726,8 +4590,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 310,
-        "y": 1720,
+        "x": 790,
+        "y": 1860,
         "wires": [
             [
                 "9c0adc0ad65a08c8",
@@ -2758,8 +4622,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 1700,
+        "x": 1000,
+        "y": 1840,
         "wires": [
             [
                 "24099d8cac2ab795",
@@ -2788,8 +4652,8 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 400,
-        "y": 900,
+        "x": 480,
+        "y": 1020,
         "wires": [
             [
                 "9478cafaace3eda1",
@@ -2815,8 +4679,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1080,
-        "y": 800,
+        "x": 1160,
+        "y": 920,
         "wires": [
             [
                 "3d8c166dafde23ec",
@@ -2853,8 +4717,8 @@
         "g": "18e263da0ce661a2",
         "name": "Terminal dynamique",
         "info": "",
-        "x": 130,
-        "y": 520,
+        "x": 210,
+        "y": 640,
         "wires": []
     },
     {
@@ -2864,8 +4728,8 @@
         "g": "c0b40a7272cfab76",
         "name": "Part to handle array of command",
         "info": "",
-        "x": 210,
-        "y": 1200,
+        "x": 690,
+        "y": 1340,
         "wires": []
     },
     {
@@ -3007,8 +4871,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 410,
-        "y": 1480,
+        "x": 890,
+        "y": 1620,
         "wires": [
             [
                 "83df3adbaa2a6c51"
@@ -3039,8 +4903,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1020,
-        "y": 1440,
+        "x": 1500,
+        "y": 1580,
         "wires": [
             [
                 "24099d8cac2ab795",
@@ -3062,8 +4926,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
-        "y": 820,
+        "x": 1320,
+        "y": 940,
         "wires": []
     },
     {
@@ -3086,8 +4950,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2110,
-        "y": 1480,
+        "x": 2590,
+        "y": 1620,
         "wires": [
             [
                 "be4aa8937a2551a3"
@@ -3114,8 +4978,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 240,
-        "y": 800,
+        "x": 320,
+        "y": 920,
         "wires": [
             [
                 "dc269403be70248b"
@@ -3142,8 +5006,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 1580,
+        "x": 1180,
+        "y": 1720,
         "wires": [
             [
                 "ce010bb35af48543"
@@ -3162,8 +5026,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 1580,
+        "x": 940,
+        "y": 1720,
         "wires": [
             [
                 "cc7f04658e10487c"
@@ -3184,8 +5048,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 1580,
+        "x": 1360,
+        "y": 1720,
         "wires": []
     },
     {
@@ -3211,8 +5075,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 750,
-        "y": 940,
+        "x": 830,
+        "y": 1060,
         "wires": [
             [
                 "668842fefb1ad86b"
@@ -3237,8 +5101,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 1000,
+        "x": 800,
+        "y": 1120,
         "wires": []
     },
     {
@@ -3255,8 +5119,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3800,
-        "y": 680,
+        "x": 3880,
+        "y": 800,
         "wires": []
     },
     {
@@ -3273,8 +5137,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
-        "y": 860,
+        "x": 640,
+        "y": 980,
         "wires": []
     },
     {
@@ -3297,8 +5161,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 940,
+        "x": 1140,
+        "y": 1060,
         "wires": [
             [
                 "8b3802d31611155a",
@@ -3333,8 +5197,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 1480,
+        "x": 1480,
+        "y": 1620,
         "wires": [
             [
                 "24099d8cac2ab795",
@@ -3356,8 +5220,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
-        "y": 1400,
+        "x": 1560,
+        "y": 1540,
         "wires": []
     },
     {
@@ -3374,8 +5238,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 1520,
+        "x": 1520,
+        "y": 1660,
         "wires": []
     },
     {
@@ -3392,8 +5256,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 1660,
+        "x": 1080,
+        "y": 1800,
         "wires": []
     },
     {
@@ -3410,8 +5274,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1740,
+        "x": 1120,
+        "y": 1880,
         "wires": []
     },
     {
@@ -3434,8 +5298,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
-        "y": 1700,
+        "x": 1520,
+        "y": 1840,
         "wires": [
             [
                 "de809fb1d53be208"
@@ -3451,8 +5315,8 @@
         "scope": [
             "8b3802d31611155a"
         ],
-        "x": 3680,
-        "y": 720,
+        "x": 3760,
+        "y": 840,
         "wires": [
             [
                 "ca59ca888877673f",
@@ -3486,8 +5350,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 4110,
-        "y": 720,
+        "x": 4190,
+        "y": 840,
         "wires": [
             [
                 "1590d913477ecb52",
@@ -3516,8 +5380,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 4280,
-        "y": 1000,
+        "x": 4360,
+        "y": 1120,
         "wires": []
     },
     {
@@ -3534,8 +5398,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 4640,
-        "y": 700,
+        "x": 4720,
+        "y": 820,
         "wires": []
     },
     {
@@ -3552,8 +5416,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 4280,
-        "y": 840,
+        "x": 4360,
+        "y": 960,
         "wires": []
     },
     {
@@ -3576,8 +5440,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 4460,
-        "y": 700,
+        "x": 4540,
+        "y": 820,
         "wires": [
             [
                 "e481703bc59b4c72",
@@ -3606,8 +5470,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2410,
-        "y": 940,
+        "x": 2490,
+        "y": 1060,
         "wires": [
             [
                 "09f1ac7ac86f2fa8"
@@ -3635,8 +5499,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2400,
-        "y": 1000,
+        "x": 2480,
+        "y": 1120,
         "wires": [
             [
                 "7de319477688b8ba"
@@ -3661,8 +5525,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 130,
-        "y": 1440,
+        "x": 610,
+        "y": 1580,
         "wires": [
             [
                 "4d39ba490ae7a81f"
@@ -3689,8 +5553,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 180,
-        "y": 1560,
+        "x": 660,
+        "y": 1700,
         "wires": [
             [
                 "7de319477688b8ba"
@@ -3717,8 +5581,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
-        "y": 860,
+        "x": 340,
+        "y": 980,
         "wires": [
             [
                 "dcbb085ee2ecca8b"
@@ -3743,8 +5607,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 210,
-        "y": 900,
+        "x": 290,
+        "y": 1020,
         "wires": [
             [
                 "dcbb085ee2ecca8b"
@@ -3765,8 +5629,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
-        "y": 1000,
+        "x": 1140,
+        "y": 1120,
         "wires": []
     },
     {
@@ -3789,8 +5653,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3920,
-        "y": 720,
+        "x": 4000,
+        "y": 840,
         "wires": [
             [
                 "7d681acadaecfb5f"
@@ -3818,8 +5682,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1390,
-        "y": 580,
+        "x": 1470,
+        "y": 700,
         "wires": [
             [
                 "5c197adb3ddde210"
@@ -3841,8 +5705,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1620,
-        "y": 580,
+        "x": 1700,
+        "y": 700,
         "wires": [
             [
                 "3d8c166dafde23ec"
@@ -3870,8 +5734,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2530,
-        "y": 740,
+        "x": 2610,
+        "y": 860,
         "wires": [
             [
                 "052108423e0562a3"
@@ -3895,8 +5759,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2580,
-        "y": 700,
+        "x": 2660,
+        "y": 820,
         "wires": []
     },
     {
@@ -3919,8 +5783,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1440,
-        "y": 520,
+        "x": 1520,
+        "y": 640,
         "wires": [
             [
                 "b48e2307165d3042"
@@ -3939,8 +5803,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 840,
+        "x": 1100,
+        "y": 960,
         "wires": [
             [
                 "628dfb2257610e39"
@@ -3968,8 +5832,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 890,
-        "y": 900,
+        "x": 970,
+        "y": 1020,
         "wires": [
             [
                 "3d8c166dafde23ec"
@@ -3999,8 +5863,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 4300,
-        "y": 800,
+        "x": 4380,
+        "y": 920,
         "wires": [
             [
                 "0e66b4ca4d045ec1"
@@ -4027,8 +5891,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 4300,
-        "y": 580,
+        "x": 4380,
+        "y": 700,
         "wires": [
             [
                 "0e66b4ca4d045ec1"
@@ -4056,8 +5920,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 890,
-        "y": 980,
+        "x": 970,
+        "y": 1100,
         "wires": [
             [
                 "96f4d0b1004067bd"
@@ -4083,8 +5947,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 4290,
-        "y": 700,
+        "x": 4370,
+        "y": 820,
         "wires": [
             [
                 "9c8aca4bedc48d5e"
@@ -4111,8 +5975,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1440,
-        "y": 1020,
+        "x": 1520,
+        "y": 1140,
         "wires": [
             [
                 "07b4fddee5d12ac2"
@@ -4135,8 +5999,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 2390,
-        "y": 860,
+        "x": 2470,
+        "y": 980,
         "wires": [
             [
                 "5c8e04ee1e796b6d"
@@ -4164,8 +6028,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 170,
-        "y": 1900,
+        "x": 650,
+        "y": 2040,
         "wires": [
             [
                 "18ecfed882d9cab8"
@@ -4192,8 +6056,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
-        "y": 1900,
+        "x": 840,
+        "y": 2040,
         "wires": [
             [
                 "79291a7a1150f807",
@@ -4222,8 +6086,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
-        "y": 1900,
+        "x": 1040,
+        "y": 2040,
         "wires": [
             [
                 "7de319477688b8ba",
@@ -4251,8 +6115,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
-        "y": 1940,
+        "x": 1040,
+        "y": 2080,
         "wires": [
             [
                 "4d39ba490ae7a81f"
@@ -4279,8 +6143,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
-        "y": 1980,
+        "x": 1040,
+        "y": 2120,
         "wires": [
             [
                 "24099d8cac2ab795"
@@ -4317,10 +6181,15 @@
         "g": "c0b40a7272cfab76",
         "name": "Go to commands",
         "links": [
-            "73013c23ef540790"
+            "73013c23ef540790",
+            "c4d0127ebb81b796",
+            "f1203755b971bb67",
+            "40f7e1e7c55cd034",
+            "fb2f5a5457cc1c7b",
+            "67d3b5ce22f3522d"
         ],
-        "x": 145,
-        "y": 1360,
+        "x": 625,
+        "y": 1500,
         "wires": [
             [
                 "b2b6c35ccfe6517f"
@@ -4336,8 +6205,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 150,
-        "y": 1320,
+        "x": 630,
+        "y": 1460,
         "wires": [
             [
                 "7df4342477554fec"
@@ -4364,8 +6233,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2540,
-        "y": 820,
+        "x": 2620,
+        "y": 940,
         "wires": [
             [
                 "733d567b31de5df5"
@@ -4393,8 +6262,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 550,
-        "y": 1360,
+        "x": 1030,
+        "y": 1500,
         "wires": [
             [
                 "b8028a182f6e3883"
@@ -4422,8 +6291,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 1360,
+        "x": 1200,
+        "y": 1500,
         "wires": [
             [
                 "7de319477688b8ba"
@@ -4448,8 +6317,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 2670,
-        "y": 660,
+        "x": 2790,
+        "y": 800,
         "wires": [
             [
                 "07b4fddee5d12ac2"
@@ -4479,8 +6348,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1510,
-        "y": 1120,
+        "x": 1590,
+        "y": 1240,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -4502,8 +6371,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1600,
-        "y": 1060,
+        "x": 1680,
+        "y": 1180,
         "wires": [
             [
                 "3d8c166dafde23ec"
@@ -4531,8 +6400,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 140,
-        "y": 2140,
+        "x": 220,
+        "y": 2260,
         "wires": [
             [
                 "8cb281e27cb12913"
@@ -4553,8 +6422,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
-        "y": 2320,
+        "x": 1060,
+        "y": 2440,
         "wires": []
     },
     {
@@ -4569,8 +6438,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1740,
-        "y": 2280,
+        "x": 1820,
+        "y": 2400,
         "wires": [
             [
                 "126bdc8d1fe884f0",
@@ -4599,8 +6468,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 170,
-        "y": 2420,
+        "x": 250,
+        "y": 2540,
         "wires": [
             [
                 "bf168954b2d4d081"
@@ -4628,8 +6497,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 140,
-        "y": 2180,
+        "x": 220,
+        "y": 2300,
         "wires": [
             [
                 "5ab7478a90317b26"
@@ -4655,8 +6524,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 320,
-        "y": 2300,
+        "x": 400,
+        "y": 2420,
         "wires": [
             [
                 "b73225bfdbae241a"
@@ -4679,8 +6548,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 1790,
-        "y": 2160,
+        "x": 1870,
+        "y": 2280,
         "wires": [
             []
         ]
@@ -4705,8 +6574,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
-        "y": 2300,
+        "x": 620,
+        "y": 2420,
         "wires": [
             []
         ]
@@ -4732,8 +6601,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1070,
-        "y": 2240,
+        "x": 1150,
+        "y": 2360,
         "wires": [
             [
                 "abb24d721e50e418",
@@ -4754,8 +6623,8 @@
             "aaea082df6e0d28e"
         ],
         "uncaught": false,
-        "x": 750,
-        "y": 2240,
+        "x": 830,
+        "y": 2360,
         "wires": [
             [
                 "fba7ea4f0c525b8f",
@@ -4776,8 +6645,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 820,
-        "y": 2140,
+        "x": 900,
+        "y": 2260,
         "wires": [
             [
                 "081925cde061cad5",
@@ -4799,8 +6668,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 2180,
+        "x": 980,
+        "y": 2300,
         "wires": []
     },
     {
@@ -4823,8 +6692,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 620,
-        "y": 2140,
+        "x": 700,
+        "y": 2260,
         "wires": [
             [
                 "aaea082df6e0d28e"
@@ -4851,8 +6720,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 2240,
+        "x": 1000,
+        "y": 2360,
         "wires": [
             [
                 "9fb37ef2271445f3"
@@ -4873,8 +6742,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1780,
-        "y": 2320,
+        "x": 1860,
+        "y": 2440,
         "wires": []
     },
     {
@@ -4887,8 +6756,8 @@
             "76b45b809532e499"
         ],
         "uncaught": false,
-        "x": 1510,
-        "y": 2360,
+        "x": 1590,
+        "y": 2480,
         "wires": [
             [
                 "c831be1d8aab6ac2",
@@ -4910,8 +6779,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1680,
-        "y": 2360,
+        "x": 1760,
+        "y": 2480,
         "wires": []
     },
     {
@@ -4934,8 +6803,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1100,
-        "y": 2160,
+        "x": 1180,
+        "y": 2280,
         "wires": [
             [
                 "0dd47cebafd78a73"
@@ -4956,8 +6825,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
-        "y": 2300,
+        "x": 1380,
+        "y": 2420,
         "wires": []
     },
     {
@@ -4972,8 +6841,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 2420,
+        "x": 500,
+        "y": 2540,
         "wires": [
             [
                 "b2b6c35ccfe6517f"
@@ -5000,8 +6869,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
-        "y": 2180,
+        "x": 410,
+        "y": 2300,
         "wires": [
             [
                 "d6f838746286e467"
@@ -5031,8 +6900,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1290,
-        "y": 2260,
+        "x": 1370,
+        "y": 2380,
         "wires": [
             [
                 "497be50704f809a8"
@@ -5069,8 +6938,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1500,
-        "y": 2300,
+        "x": 1580,
+        "y": 2420,
         "wires": [
             [
                 "76b45b809532e499"
@@ -5089,8 +6958,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1480,
-        "y": 2240,
+        "x": 1560,
+        "y": 2360,
         "wires": [
             [
                 "76b45b809532e499"
@@ -5117,8 +6986,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
-        "y": 2140,
+        "x": 410,
+        "y": 2260,
         "wires": [
             [
                 "d6f838746286e467"
@@ -5138,8 +7007,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 2090,
-        "y": 2280,
+        "x": 2170,
+        "y": 2400,
         "wires": [
             [
                 "2dae94e0a5a67ff8"
@@ -5175,8 +7044,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1870,
-        "y": 2220,
+        "x": 1950,
+        "y": 2340,
         "wires": [
             [
                 "e1b464488f392996"
@@ -5204,8 +7073,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2020,
-        "y": 2220,
+        "x": 2100,
+        "y": 2340,
         "wires": [
             [
                 "83dcd2bef897c63e"
@@ -5226,8 +7095,114 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2240,
-        "y": 2280,
+        "x": 2320,
+        "y": 2400,
+        "wires": []
+    },
+    {
+        "id": "ca82925a30c70e70",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "link in 1",
+        "links": [],
+        "x": 135,
+        "y": 1400,
+        "wires": [
+            [
+                "7df4342477554fec"
+            ]
+        ]
+    },
+    {
+        "id": "d72c1812856c0d1f",
+        "type": "status",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "scope": null,
+        "x": 200,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1fccc223.7ba87e",
+        "type": "inject",
+        "z": "4e833f06cac1624c",
+        "name": "Inject Array",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[0,1,2,3,4,5,6,7,8,9]",
+        "payloadType": "json",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "b2837466.e02a38"
+            ]
+        ]
+    },
+    {
+        "id": "b2837466.e02a38",
+        "type": "split",
+        "z": "4e833f06cac1624c",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 600,
+        "y": 120,
+        "wires": [
+            [
+                "bd97c8ed.a5c8d8"
+            ]
+        ]
+    },
+    {
+        "id": "bd97c8ed.a5c8d8",
+        "type": "delay",
+        "z": "4e833f06cac1624c",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 740,
+        "y": 120,
+        "wires": [
+            [
+                "bd66f03e.bdf0c"
+            ]
+        ]
+    },
+    {
+        "id": "bd66f03e.bdf0c",
+        "type": "debug",
+        "z": "4e833f06cac1624c",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 880,
+        "y": 120,
         "wires": []
     }
 ]
