@@ -1,5 +1,5 @@
 var cp = require('child_process');
-let child = cp.spawn('pulseaudio', ["--start"])
+let child = cp.spawn('killall', ["pulseaudio"])
 child.stdout.on('data', function (data) {
     process.stdout.write(data.toString())
     //console.log(data);
