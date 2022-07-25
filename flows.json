@@ -10,7 +10,7 @@
     {
         "id": "57297ea9585b5f93",
         "type": "tab",
-        "label": "Connection",
+        "label": "Dahsboard",
         "disabled": false,
         "info": "",
         "env": []
@@ -351,7 +351,6 @@
         "nodes": [
             "f899bfee50c2c5f6",
             "5fe632846e1697cf",
-            "9a20901ecac67666",
             "8db83594bc604f4d",
             "684d60b75c1cc9da",
             "44c756161c28b0e2",
@@ -370,7 +369,6 @@
             "372c7037c1474f67",
             "9478cafaace3eda1",
             "5e8044892e24ec72",
-            "aae069b40e843c69",
             "96f4d0b1004067bd",
             "5c8e04ee1e796b6d",
             "09f1ac7ac86f2fa8",
@@ -381,36 +379,23 @@
             "668842fefb1ad86b",
             "c13e09dff09adfbd",
             "5a947aacab2c4eba",
-            "ca59ca888877673f",
             "e481703bc59b4c72",
-            "7f4645757907e388",
-            "cc9d36cac2f0dc9e",
             "9c8aca4bedc48d5e",
             "7d681acadaecfb5f",
-            "00194ed721a11998",
             "16bce161060dd6ed",
             "3554dd2e300a186d",
-            "06366bb54320586d",
             "1590d913477ecb52",
             "6b54aac46cb4c9b3",
             "dff8087ee587c923",
-            "06de75552b3afce3",
             "265694c368031b88",
             "3b9751a158948df4",
-            "052108423e0562a3",
             "42bb49f4356c0595",
-            "ca82925a30c70e70",
-            "d72c1812856c0d1f",
-            "4f9e60570c7f4dbd",
             "447f88e0a835b97a",
             "acf896f91e62ebb9",
-            "5110136cfb5ba8b3",
             "be0d1711cdc49ac1",
             "11735e05573fb370",
-            "04cf2cb39f05fbf5",
             "aa17940305d40738",
             "d9210aa9864f709a",
-            "96733b71745ad798",
             "9c223c328c2c1229",
             "cac216a938770ad4",
             "40fcc77c45bef21d",
@@ -422,7 +407,6 @@
             "e0b42ba5f51af29d",
             "707a42c2835a3c14",
             "f214607e192146ac",
-            "3021fc8fd5f96f2b",
             "b710b47357afff69",
             "2e0f75ce20fba878",
             "11024c778cd30379",
@@ -437,7 +421,6 @@
             "d7280d184dc694b7",
             "b3a2db7da76826cc",
             "acb41c72b270cbac",
-            "385d64860ec615cb",
             "a0aab47871bf4d0e",
             "0a8c19f4df98784d",
             "41b1f0df6391aabf",
@@ -445,12 +428,49 @@
             "9e39d1b269bca6f1",
             "5daf26229a34ec6d",
             "af47437bc74e05a2",
-            "a046801adbd525d4"
+            "a046801adbd525d4",
+            "0675a67dbf5f226d",
+            "74d28e415cac5e4b",
+            "049914dc3aa6e18a",
+            "6acb2b994b6e860f",
+            "f6930578ff860b22",
+            "d0a82e3544f7a8b0",
+            "fbb4165b4fadc15a",
+            "a23460e2039e2240",
+            "f7e50795bbbe828e",
+            "f8cc71cc05ed9b0c",
+            "0a9601a0b978d84a",
+            "c3e5157c333c3465",
+            "66bf2097b327336e",
+            "cfe3b14e2bddbf6a",
+            "ea2b5f79579f1d4a",
+            "81e980f5c7b5363f",
+            "7c99e16850770331",
+            "816b0666cf836929",
+            "8a3271e120fc0949",
+            "c66ed3dda5290e99",
+            "c377f1e581915fd5",
+            "1ac64cb8c2b56f2d",
+            "74dc2426dfad908d",
+            "b0e63695bcd5c315",
+            "ff2965f7510c868d",
+            "b3b58ad074a2b566",
+            "baa2cf368634c41f",
+            "dcdd569d049123a4",
+            "23e2f51aa5001862",
+            "9a99865feeda8c41",
+            "9a24a7fd6de2c5f3",
+            "af71c28ef446236c",
+            "28f99a18b712b8c7",
+            "c2e0b987362039af",
+            "ef08ad9ecb7fca29",
+            "ec3f6ba6983f80ae",
+            "1f43d49576bb375f"
         ],
-        "x": -6,
-        "y": 619,
-        "w": 4992,
-        "h": 2168
+        "x": 74,
+        "y": 439,
+        "w": 3538,
+        "h": 2508
     },
     {
         "id": "9952592d4fff7c8b",
@@ -536,12 +556,14 @@
             "cfd60e7ccea45963",
             "91f62606491c9d51",
             "e4f8e748553849f6",
-            "67d3b5ce22f3522d"
+            "67d3b5ce22f3522d",
+            "fc628bbe4830e99a",
+            "be19391959d36958"
         ],
         "x": 54,
         "y": 1659,
         "w": 1312,
-        "h": 542
+        "h": 582
     },
     {
         "id": "14bc35a7e871612e",
@@ -854,20 +876,14 @@
         "nodes": [
             "037c66ba96df20be",
             "be4aa8937a2551a3",
-            "b7d03180d0bbb143",
             "24099d8cac2ab795",
             "564ff8ef50de58b1",
             "4d39ba490ae7a81f",
             "06043ac62e7edf8e",
             "7de319477688b8ba",
-            "d21d613f143f2ab7",
             "dfd243663d89ff30",
-            "c4460b8e1fb0cacf",
             "e6cfcb3d10177c46",
-            "4c13d948507fa2d4",
-            "0954a40fa36cb951",
             "7df4342477554fec",
-            "14a8562b30231057",
             "e53439d570dffd07",
             "a3348e49115feabc",
             "83df3adbaa2a6c51",
@@ -877,26 +893,21 @@
             "c8f6c212fc68f165",
             "560fe6956d93cb53",
             "b7249babe9ca16cc",
-            "11f3a37337ed7a48",
             "bdf43fa3a5a439e7",
             "ea6e70d0667d480d",
             "86cdf396ce6d4aa0",
-            "ce010bb35af48543",
             "dd42e2b99a2a7645",
             "18ecfed882d9cab8",
             "79291a7a1150f807",
             "1fbd8cc10ee44cd0",
             "961702918836aa4d",
-            "ca1a3b161424e5e9",
             "b2b6c35ccfe6517f",
             "3ba29ad018e06586",
             "b8028a182f6e3883",
             "b4fc87ff7c293b7a",
-            "e340359c4e3672f1",
             "041efdc800181680",
             "a49a58dcf5918f7a",
             "8a4fdf696c797978",
-            "54750dd1664af595",
             "15f4a37073c29cdc",
             "7a3554e3063ac472",
             "fd4dd9381332bd43",
@@ -906,11 +917,9 @@
             "55cc69056770aa9f",
             "a9bf38fc141961ae",
             "73cf18f32e5abc7b",
-            "e922248d1cb2a731",
             "055a8ac1dad23671",
             "7b3dca1a87b0dc5e",
             "b88faf03b44d1c0a",
-            "67db4514c666723e",
             "25e5be0676b5f6f8",
             "cbeb3dca73005cb3",
             "d67d684ecee6c676",
@@ -924,12 +933,26 @@
             "9a3d1961c9c303cd",
             "bb05228eade21d1f",
             "4ad3e45a119c1ab8",
-            "06b1faf353de60fa"
+            "06b1faf353de60fa",
+            "d93510c6fbb67516",
+            "a48667c232bc72ea",
+            "1fc0dce79a6feefe",
+            "6a9fa0bd8fd2fe78",
+            "df6c15d9807db302",
+            "96d1beb6501d4661",
+            "eeb33e9c9894d157",
+            "ca1a3b161424e5e9",
+            "04cf2cb39f05fbf5",
+            "0bd48ea4562be240",
+            "092dfa0718d148d9",
+            "2e5405bc8896e802",
+            "69abf9c7573503c3",
+            "a6d16b412273335c"
         ],
-        "x": 754,
-        "y": 1399,
-        "w": 2572,
-        "h": 942
+        "x": 1094,
+        "y": 1439,
+        "w": 2492,
+        "h": 1142
     },
     {
         "id": "42bb49f4356c0595",
@@ -971,45 +994,18 @@
             "e1b464488f392996",
             "2dae94e0a5a67ff8"
         ],
-        "x": 834,
-        "y": 2459,
+        "x": 1094,
+        "y": 2619,
         "w": 2312,
         "h": 302
-    },
-    {
-        "id": "c0a7b9314d6f5b3c",
-        "type": "junction",
-        "z": "57297ea9585b5f93",
-        "g": "03423aacbab5be01",
-        "x": 580,
-        "y": 120,
-        "wires": [
-            [
-                "c280ced4041a7ec7",
-                "9b0b777f741c8465"
-            ]
-        ]
-    },
-    {
-        "id": "06366bb54320586d",
-        "type": "junction",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "x": 1420,
-        "y": 1340,
-        "wires": [
-            [
-                "4d39ba490ae7a81f"
-            ]
-        ]
     },
     {
         "id": "705b4607cb4e54cf",
         "type": "junction",
         "z": "57297ea9585b5f93",
         "g": "18e263da0ce661a2",
-        "x": 420,
-        "y": 880,
+        "x": 1160,
+        "y": 620,
         "wires": [
             [
                 "53590d1add8b6432"
@@ -1021,11 +1017,26 @@
         "type": "junction",
         "z": "57297ea9585b5f93",
         "g": "18e263da0ce661a2",
-        "x": 2240,
-        "y": 880,
+        "x": 2320,
+        "y": 700,
         "wires": [
             [
                 "8b3802d31611155a"
+            ]
+        ]
+    },
+    {
+        "id": "baa2cf368634c41f",
+        "type": "junction",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "x": 500,
+        "y": 1480,
+        "wires": [
+            [
+                "1ac64cb8c2b56f2d",
+                "cac216a938770ad4",
+                "6b4a9b0521c14524"
             ]
         ]
     },
@@ -1668,7 +1679,7 @@
         "z": "58612799aa277ac1",
         "g": "accc01d78c5b390d",
         "name": "1st step",
-        "info": "## Plan\nPour cette première vidéo le planning est d'installer les premiers outils néccessaire. C'est a dire:\n - Les outils de base de communication entre nos machines  \n - Un éditeur de code, Visual Studio Code sur l'orangepi et le telephone\n    - téléphone : https://www.codewithharry.com/blogpost/install-vs-code-in-android/\n - Un gestionnaire de conteneneur, Docker car c'est le plus fournir et simple à mettre en place sur tout les support. Nous allons le mettre sur l'orangepi et essayer sur le téléphone, je l'ai pas fait encore pour préserver le téléphone.\n - Un gestionnaire d'activité, Dolibarr, car il permet de lié les flux financier et les flux physique. De plus, sont utilisation represente une compétence utilsable dans la vie professsionelle et personnelle. Nous allons le mettre sur l'orangepi\n - Un assistant vocal, Rhasspy car il est le plus modulable que nous alllons également mettre sur l'orangepi et sur le téléphone. Nous allons sur le téléphone installer l'APK même si je n'arrive pas afaire fonctionner le wakeword avec\n - Enfin si on à le temps ce qui métonnerais, nous allons commencer à palier à ce problème.\n\n## Session 1\n - Installation de node-red-dashboardpour la simplicité.\n - Mise en place du systeme de communication avec le terminal depuis node-red pour gerer les coonections internet et bluetooth\n    - Pour execetuter des commandes avec node-red nous avons plusieur choix possible\n      1. Tout dabords la note exec. Voici un exemple avec la commande nmcli pour la gestion du wifi\n          1. J'ai créer un bouton sur le dashbord qui nous permet de lancer la commande\n          2. Dans la fonction node j'en fait un tableau d'object que je montre avec la node additionel ui-list\n          3. Dans la node ui-list, j'ai parameter une action au click qui nous permet de lancer la commande de connexion\n          4. Dans la node exec, j'ai activer l'options pour ajouter le nom du reseau c'est à dire la propriété SSID de l'obect construit auparavent.Deplus je l'ai mise en mode spawn pour recevoir des message pendant que la commande est en cours\n          5. Enfin, j'ai fait une template node qui nous permet de voir les message cumuler.  \n          - Nous allons essayer cette solution. Je click sur refresh, nous attendons un peu et nous voyons les connnexion. Maintenant je clique sur une et on vois que l'on nous demande un password.\n        Cela pose un problème car nous ne pouvons pas renvoyer un message dans la commande que nous avons lancer. Pour communiquer avec un processus que nous avons lancer il nous faut une autre node addiotonelle, la node daemon qui est ici.\n        Cependant dans cette node nous ne pouvons pas definir de commande ou d'argument dynamiquement. Cela veut dire que lorsque nous cliquons dans notre list, nous ne pouvons pas en recolter l'information pour la mettre dans notre node daemon\n        On va donc essayer une autre solution\n      2. Pour le deuxième essai on va essayer d'utiliser la même fonction que la node exec realise mais dans une fonction node. c'est ce qu'il y a ici.\n          1. J'ai créer un formulaire avec la node form pour mettre une liste de commande separer par entrer\n          2. J'ai créer une function node pour réaliser à la suite les commandes.\n          3. J'ai remis la node template pour voir le resultat\n          - Nous allons essayer cette solution. Nous tapons notre commande pour nous connecter et nous rajoutons notre ssid. Nous cliquons sur submit et on nous demande notre password, nous en sommme au même point que precédement.\n        Maintenant nous tappons la commmande et le ssid et à la ligne le mot de passe. Nous avons perdu la connexion avec le pc et nous devrions être connecter au téléphone.\n        Avec mon telephone je recupére l'adresse ip du téléphone avec la commande \"ifconfig\" et apres je scanne le reseau avec \"nmap mon_ip/24\". Cela me donne l'ip de mon orangepi connecter au telephone.\n        Maintenant nous pouvons aller sur le node-red de l'orange pi avec le téléphone comme cela. Je coupe mon point d'acces avec le téléphone et nous attendons un peu que l'orangepi se reconnecte à la maison pour y avoir de nouveau acces avec l'ordinateur\n        Dans la prochaine video nous ferrons cela avec node-red coté téléphone et on affichera une notification sur le tel avec l'adresse ip.\n      3. Nous avons reussi à nous connecter au téléphone cependant cela ne fonctionne pas de manière dynamique. En effet, cela ne marche toutjours pas avec un click sur la liste. Pour cette raison, nous allons voir la troisième solution, \n      celle de droite qui est un terminal dynamique qui est ici fait avec la node daemon.\n          1. Tout d'abords, comme la node n'est pas parametrable, il nous faut créer un fichier javascript, contenant notre commande à lancer. Pour cela, j'ai utilisé\n          une template node, qui nous permet de récolter l'information de notre node form qui est ici, pour la mettre dans notre fichier javascript qui s'ecrit avec la node write.\n          2. Ensuite, j'ai mis une node change pour definir une propriété start au message qui permet de lancer la node daemon\n          3. Dans la node daemon, j'ai mis node dans la commande \"node\" et le fichier à lancer dans argument. J'ai déchocher auto-start daemon on deploy et j'ai cocher add enter to every message sent\n          4. Pour envoyer un message au processus en cours j'ai mis une autre node form\n          5. Pour terminer notre processus en cours, j'ai mis une node button qui quand il est cliquer envoie un message à la node change.Dedans j'ai defini une propriété kill a msg qui est transmis à la node daemon\n          6. Pour finir j'ai mis un bouton pour repéter la commande.\n          7. Nous laissons de coter la partie du bas pour le moment qui nous servira à gérer une liste de commande.  \n          - Nous allons maintenant tester notre solution. Nous tapons tape donc la commande pour nous connecter aux reseau. Cela demmande le SSID. Nous mettons XperiaXZ_c8a0 et cela nous demande le mot de passe qui est coucoutoi que nous envoyons\n        Nous repetons les commandes pour trouver notre ip et scanner le reseau pour trouver l'ip de notre orangepi. C'est le même que tout à l'heure. Nous retournons donc dans le navigateur internet pour nous coonecter au dashboard.\n        Cela fonctionne. Nous coupons la connexions du téléphone pour retrouver l'orangepi avec le pc.\n - Choix de l'utilisation d'une node ssh\n   - Maintenant que nous pouvons communiquer avec notre machine grâce à un terminal dans node-red nous allons comminquer avec notre téléphone grave à la commande ssh. Pour ce la on pourrait utiliser notre terminal mais si on essaie on voit qu'il y a une erreur.\n   Nous pouvons la contourner mais cela implique de mettre le mot de passe dans la commande ce qui ne serai pas sécuriser. Dans une autre vidéo, nous ferrons un systeme pour crypter le mot de passe, le sauvegarder et l'injecter dans la commande.\n   Pour le moment détaillons le choix de la node ssh. Parmis les node existante :\n   - node-red-contrib-ssh-v3 : pas de port spécifiable donc pas utilisable avec termux\n   - idem pour : node-red-contrib-ssh-coco, node-red-contrib-ssh et node-red-contrib-ssh-v2-reconnection \n   - node-red-contrib-bigssh : pas de changement de status de la node en cas de perte de connection avec le telephone\n   - Pour l'instant le mieux c'est bigssh.\n   - En revanche ce n'est pas parfait car cela nous fait revenir au point de départ concernant le terminal. En effet toute les node ssh sont comme les node exec et non comme les node daemon.\n   C'est à dire pas de communication possible après la commande. Pour cette rasion, nous serrons obliger de remplacer cette node ultérieurement comme nous auront fait le systeme de cryptation du mot de passe.\n - Maintenant qu nous avons notre systeme de terminal, nous pouvons commencer as réaliser les commandes nécessaire lorsque l'on télécharge le projet pour la première fois. Avant cela nous allons voir la dernière fonctionnalité à notre terminal.\nFaire defiler une liste de commande préétablie avec des boutons en fonction du resultat de la commande précedente. \n    1. J'ai donc ajouter une node text pour saisir un tableau de commande\n    2. J'ai ajouter une node change pour definir des variables au niveau du flow ce qui nous permettra d'acceder à nos informations de liste pour tout les messages\n    3. Ensuite, la prochaine node change passe la premières commande à notre text \n    4. Toutes les node fonction \"message for spawn\" servent à formater le message car pour lancer la première commande, la commande doit être séparer des arguments. Maintenant que c'est fait je pense que cela peut être améliorer en modifiant le code javascript qui lance la commande.\n    5. Il y a ensuite les trois bouton pour gerer la liste\n    6. Ce qui est derrière ces bouton sert à modifier l'état des boutons, l'index en cour de la liste et le texte pour la commande suivante\n    7. La liste est compatible avec la parti du dessus, c'est a dire que vous pouvez injecter des commande en cours de liste.\n  - Nous allons maintenant pourvoir dresser une liste de commande à executer pour chaque outil. Cependant en fesant cela je me suis rendu compte que de pourvoir sauvegarder notre liste pourrait être intéressant\n  C'est l'objet de la troisième parti que vous voyer la. J'arrive à ma dead line pour cette vidéo donc je ne détaille pas. Sachez juste que en fesant cela j'ai découvert xterm.js et que dans les prochaines vidéo on remplacera la node template par une fenetre xterm.js pour pouvoir exploiter pleinement le terminal et profitez de notre gestion de liste de commande.\n  Cependant nous avons maintenant un outil pour modifier un script que nous pouvons modifier librement et faire defiler commande par commande. Pour injecter des commandes dans notre outils j'ai ajouter une node link in. Dans le flow Installation nous pouvons maintenant mettre une inject node et une node link out pour charger notre list.\n  Cela nous permetra de facilement d'effectuer nos installations sur nos différente machine et de pouvoir injecter nos mots de passe.\n    1. Nous commencons donc avec Node-Red. Dedans il y a les commandes pour le lancer au démarrage. Pour l'instant c'est juste le laner au démarrage de la machine. Cependant je vais le lancer, Nous voyons que  ",
+        "info": "## Plan\nPour cette première vidéo le planning est d'installer les premiers outils néccessaire. C'est a dire:\n - Les outils de base de communication entre nos machines  \n - Un éditeur de code, Visual Studio Code sur l'orangepi et le telephone\n    - téléphone : https://www.codewithharry.com/blogpost/install-vs-code-in-android/\n - Un gestionnaire de conteneneur, Docker car c'est le plus fournir et simple à mettre en place sur tout les support. Nous allons le mettre sur l'orangepi et essayer sur le téléphone, je l'ai pas fait encore pour préserver le téléphone.\n - Un gestionnaire d'activité, Dolibarr, car il permet de lié les flux financier et les flux physique. De plus, sont utilisation represente une compétence utilsable dans la vie professsionelle et personnelle. Nous allons le mettre sur l'orangepi\n - Un assistant vocal, Rhasspy car il est le plus modulable que nous alllons également mettre sur l'orangepi et sur le téléphone. Nous allons sur le téléphone installer l'APK même si je n'arrive pas afaire fonctionner le wakeword avec\n - Enfin si on à le temps ce qui métonnerais, nous allons commencer à palier à ce problème.\n\n## Session 1\n - Installation de node-red-dashboardpour la simplicité.\n - Mise en place du systeme de communication avec le terminal depuis node-red pour gerer les coonections internet et bluetooth\n    - Pour execetuter des commandes avec node-red nous avons plusieur choix possible\n      1. Tout dabords la note exec. Voici un exemple avec la commande nmcli pour la gestion du wifi\n          1. J'ai créer un bouton sur le dashbord qui nous permet de lancer la commande\n          2. Dans la fonction node j'en fait un tableau d'object que je montre avec la node additionel ui-list\n          3. Dans la node ui-list, j'ai parameter une action au click qui nous permet de lancer la commande de connexion\n          4. Dans la node exec, j'ai activer l'options pour ajouter le nom du reseau c'est à dire la propriété SSID de l'obect construit auparavent.Deplus je l'ai mise en mode spawn pour recevoir des message pendant que la commande est en cours\n          5. Enfin, j'ai fait une template node qui nous permet de voir les message cumuler.  \n          - Nous allons essayer cette solution. Je click sur refresh, nous attendons un peu et nous voyons les connnexion. Maintenant je clique sur une et on vois que l'on nous demande un password.\n        Cela pose un problème car nous ne pouvons pas renvoyer un message dans la commande que nous avons lancer. Pour communiquer avec un processus que nous avons lancer il nous faut une autre node addiotonelle, la node daemon qui est ici.\n        Cependant dans cette node nous ne pouvons pas definir de commande ou d'argument dynamiquement. Cela veut dire que lorsque nous cliquons dans notre list, nous ne pouvons pas en recolter l'information pour la mettre dans notre node daemon\n        On va donc essayer une autre solution\n      2. Pour le deuxième essai on va essayer d'utiliser la même fonction que la node exec realise mais dans une fonction node. c'est ce qu'il y a ici.\n          1. J'ai créer un formulaire avec la node form pour mettre une liste de commande separer par entrer\n          2. J'ai créer une function node pour réaliser à la suite les commandes.\n          3. J'ai remis la node template pour voir le resultat\n          - Nous allons essayer cette solution. Nous tapons notre commande pour nous connecter et nous rajoutons notre ssid. Nous cliquons sur submit et on nous demande notre password, nous en sommme au même point que precédement.\n        Maintenant nous tappons la commmande et le ssid et à la ligne le mot de passe. Nous avons perdu la connexion avec le pc et nous devrions être connecter au téléphone.\n        Avec mon telephone je recupére l'adresse ip du téléphone avec la commande \"ifconfig\" et apres je scanne le reseau avec \"nmap mon_ip/24\". Cela me donne l'ip de mon orangepi connecter au telephone.\n        Maintenant nous pouvons aller sur le node-red de l'orange pi avec le téléphone comme cela. Je coupe mon point d'acces avec le téléphone et nous attendons un peu que l'orangepi se reconnecte à la maison pour y avoir de nouveau acces avec l'ordinateur\n        Dans la prochaine video nous ferrons cela avec node-red coté téléphone et on affichera une notification sur le tel avec l'adresse ip.\n      3. Nous avons reussi à nous connecter au téléphone cependant cela ne fonctionne pas de manière dynamique. En effet, cela ne marche toutjours pas avec un click sur la liste. Pour cette raison, nous allons voir la troisième solution, \n      celle de droite qui est un terminal dynamique qui est ici fait avec la node daemon.\n          1. Tout d'abords, comme la node n'est pas parametrable, il nous faut créer un fichier javascript, contenant notre commande à lancer. Pour cela, j'ai utilisé\n          une template node, qui nous permet de récolter l'information de notre node form qui est ici, pour la mettre dans notre fichier javascript qui s'ecrit avec la node write.\n          2. Ensuite, j'ai mis une node change pour definir une propriété start au message qui permet de lancer la node daemon\n          3. Dans la node daemon, j'ai mis node dans la commande \"node\" et le fichier à lancer dans argument. J'ai déchocher auto-start daemon on deploy et j'ai cocher add enter to every message sent\n          4. Pour envoyer un message au processus en cours j'ai mis une autre node form\n          5. Pour terminer notre processus en cours, j'ai mis une node button qui quand il est cliquer envoie un message à la node change.Dedans j'ai defini une propriété kill a msg qui est transmis à la node daemon\n          6. Pour finir j'ai mis un bouton pour repéter la commande.\n          7. Nous laissons de coter la partie du bas pour le moment qui nous servira à gérer une liste de commande.  \n          - Nous allons maintenant tester notre solution. Nous tapons tape donc la commande pour nous connecter aux reseau. Cela demmande le SSID. Nous mettons XperiaXZ_c8a0 et cela nous demande le mot de passe qui est coucoutoi que nous envoyons\n        Nous repetons les commandes pour trouver notre ip et scanner le reseau pour trouver l'ip de notre orangepi. C'est le même que tout à l'heure. Nous retournons donc dans le navigateur internet pour nous coonecter au dashboard.\n        Cela fonctionne. Nous coupons la connexions du téléphone pour retrouver l'orangepi avec le pc.\n - Choix de l'utilisation d'une node ssh\n   - Maintenant que nous pouvons communiquer avec notre machine grâce à un terminal dans node-red nous allons comminquer avec notre téléphone grave à la commande ssh. Pour ce la on pourrait utiliser notre terminal mais si on essaie on voit qu'il y a une erreur.\n   Nous pouvons la contourner mais cela implique de mettre le mot de passe dans la commande ce qui ne serai pas sécuriser. Dans une autre vidéo, nous ferrons un systeme pour crypter le mot de passe, le sauvegarder et l'injecter dans la commande.\n   Pour le moment détaillons le choix de la node ssh. Parmis les node existante :\n   - node-red-contrib-ssh-v3 : pas de port spécifiable donc pas utilisable avec termux\n   - idem pour : node-red-contrib-ssh-coco, node-red-contrib-ssh et node-red-contrib-ssh-v2-reconnection \n   - node-red-contrib-bigssh : pas de changement de status de la node en cas de perte de connection avec le telephone\n   - Pour l'instant le mieux c'est bigssh.\n   - En revanche ce n'est pas parfait car cela nous fait revenir au point de départ concernant le terminal. En effet toute les node ssh sont comme les node exec et non comme les node daemon.\n   C'est à dire pas de communication possible après la commande. Pour cette rasion, nous serrons obliger de remplacer cette node ultérieurement comme nous auront fait le systeme de cryptation du mot de passe.\n - Maintenant qu nous avons notre systeme de terminal, nous pouvons commencer as réaliser les commandes nécessaire lorsque l'on télécharge le projet pour la première fois. Avant cela nous allons voir la dernière fonctionnalité à notre terminal.\nFaire defiler une liste de commande préétablie avec des boutons en fonction du resultat de la commande précedente. \n    1. J'ai donc ajouter une node text pour saisir un tableau de commande\n    2. J'ai ajouter une node change pour definir des variables au niveau du flow ce qui nous permettra d'acceder à nos informations de liste pour tout les messages\n    3. Ensuite, la prochaine node change passe la premières commande à notre text \n    4. Toutes les node fonction \"message for spawn\" servent à formater le message car pour lancer la première commande, la commande doit être séparer des arguments. Maintenant que c'est fait je pense que cela peut être améliorer en modifiant le code javascript qui lance la commande.\n    5. Il y a ensuite les trois bouton pour gerer la liste\n    6. Ce qui est derrière ces bouton sert à modifier l'état des boutons, l'index en cour de la liste et le texte pour la commande suivante\n    7. La liste est compatible avec la parti du dessus, c'est a dire que vous pouvez injecter des commande en cours de liste.\n  - Nous allons maintenant pourvoir dresser une liste de commande à executer pour chaque outil. Cependant en fesant cela je me suis rendu compte que de pourvoir sauvegarder notre liste pourrait être intéressant\n  C'est l'objet de la troisième parti que vous voyer la. J'arrive à ma dead line pour cette vidéo donc je ne détaille pas. Sachez juste que en fesant cela j'ai découvert xterm.js et que dans les prochaines vidéo on remplacera la node template par une fenetre xterm.js pour pouvoir exploiter pleinement le terminal et profitez de notre gestion de liste de commande.\n  Cependant nous avons maintenant un outil pour modifier un script que nous pouvons modifier librement et faire defiler commande par commande. Pour injecter des commandes dans notre outils j'ai ajouter une node link in. Dans le flow Installation nous pouvons maintenant mettre une inject node et une node link out pour charger notre list.\n  Cela nous permetra de facilement d'effectuer nos installations sur nos différente machine et de pouvoir injecter nos mots de passe.\n    1. Nous commencons donc avec Node-Red. Dedans il y a les commandes pour le lancer au démarrage. Pour l'instant c'est juste le laner au démarrage de la machine. Cependant je vais le lancer, Nous voyons que  \n    Added more stuff on the terminal like automated list it's like script but with a json array of command. Rhasspy and Dolibarr are instaled on the pi and sound ",
         "x": 150,
         "y": 80,
         "wires": []
@@ -3613,7 +3624,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "[\"sudo systemctl enable pulseaudio.service\"]",
+        "payload": "[\"killall pulseaudio\", \"pulseaudio --start\"]",
         "payloadType": "json",
         "x": 170,
         "y": 2160,
@@ -3650,6 +3661,47 @@
         "wires": []
     },
     {
+        "id": "fc628bbe4830e99a",
+        "type": "inject",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "[\"killall pulseaudio\", \"pulseaudio --start\"]",
+        "payloadType": "json",
+        "x": 170,
+        "y": 2200,
+        "wires": [
+            [
+                "be19391959d36958",
+                "67d3b5ce22f3522d"
+            ]
+        ]
+    },
+    {
+        "id": "be19391959d36958",
+        "type": "link out",
+        "z": "58612799aa277ac1",
+        "g": "46c394b9fe31938d",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "ef08ad9ecb7fca29"
+        ],
+        "x": 315,
+        "y": 2200,
+        "wires": []
+    },
+    {
         "id": "217704d4bcad8509",
         "type": "debug",
         "z": "57297ea9585b5f93",
@@ -3673,7 +3725,7 @@
         "z": "57297ea9585b5f93",
         "g": "03423aacbab5be01",
         "name": "function 4",
-        "func": "var lines = msg.payload.split('\\n')\nvar connections = []\nfor (let index = 1; index < lines.length-1; index++) {\n    const fields = lines[index];\n    let fieldsA = fields.split(' ')\n    for (let j = 0; j < fieldsA.length; j++) {\n        if(fieldsA[j] === \"\" && fieldsA[j+1] === \"\"){\n            fieldsA.splice(j,1)\n            j--\n        };\n        if(fieldsA[j] !== \"\" && fieldsA[j + 1] !== \"\"){\n            fieldsA[j] = fieldsA[j] + ' ' + fieldsA[j+1]\n            fieldsA.splice(j+1, 1)\n        }\n    }\n    let connection = {}\n    let cleanConnection = fieldsA.filter(field => { return field !== \"\" })\n    if (cleanConnection[0] === \"*\"){\n        connection.icon_name = \"fa-solid fa-wifi\"\n        cleanConnection.splice(0,1)\n    }\n    connection.BSSID = cleanConnection[0]\n    connection.SSID = cleanConnection[1]\n    connection.mode = cleanConnection[2]\n    connection.chan = cleanConnection[3]\n    connection.rate = cleanConnection[4] + ' ' + cleanConnection[5]\n    connection.signal = cleanConnection[6]\n    connection.bars = cleanConnection[7]\n    connection.security = [cleanConnection[8],cleanConnection[9]]\n    //For the lsit node\n    connection.title = connection.SSID\n    connection.description = connection.signal\n    connections.push(connection)\n}\nmsg.connexions = connections\nmsg.payload = connections\nreturn msg;",
+        "func": "var lines = msg.payload.split('\\n')\nvar connections = []\nfor (let index = 1; index < lines.length-1; index++) {\n    const fields = lines[index];\n    let fieldsA = fields.split(' ')\n    for (let j = 0; j < fieldsA.length; j++) {\n        if(fieldsA[j] === \"\" && fieldsA[j+1] === \"\"){\n            fieldsA.splice(j,1)\n            j--\n        };\n        if(fieldsA[j] !== \"\" && fieldsA[j + 1] !== \"\"){\n            fieldsA[j] = fieldsA[j] + ' ' + fieldsA[j+1]\n            fieldsA.splice(j+1, 1)\n        }\n    }\n    let connection = {}\n    let cleanConnection = fieldsA.filter(field => { return field !== \"\" })\n    if (cleanConnection[0] === \"*\"){\n        connection.icon_name = \"fa-solid fa-wifi\"\n        cleanConnection.splice(0,1)\n    }\n    connection.BSSID = cleanConnection[0]\n    connection.SSID = cleanConnection[1]\n    connection.mode = cleanConnection[2]\n    connection.chan = cleanConnection[3]\n    connection.rate = cleanConnection[4] + ' ' + cleanConnection[5]\n    connection.signal = cleanConnection[6]\n    connection.bars = cleanConnection[7]\n    connection.security = [cleanConnection[8],cleanConnection[9]]\n    //For the lsit node\n    connection.title = connection.SSID\n    connection.description = connection.signal\n    connection.menu = [\"Connect\"]\n    connections.push(connection)\n    \n}\nmsg.connexions = connections\nmsg.payload = connections\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3683,8 +3735,9 @@
         "y": 140,
         "wires": [
             [
-                "c0a7b9314d6f5b3c",
-                "d1944d4ac30b8216"
+                "d1944d4ac30b8216",
+                "c280ced4041a7ec7",
+                "9b0b777f741c8465"
             ]
         ]
     },
@@ -3700,8 +3753,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1500,
-        "y": 940,
+        "x": 1880,
+        "y": 780,
         "wires": [
             [
                 "7f82046bd9d0371b"
@@ -3718,44 +3771,13 @@
         "fieldType": "msg",
         "format": "javascript",
         "syntax": "mustache",
-        "template": "var cp = require('child_process');\nlet child = cp.spawn('{{command}}', {{{args}}})\nchild.stdout.on('data', function (data) {\n    console.log(`${data}`);\n});\nchild.stderr.on('data', function (data) {\n    console.log(`${data}`);\n});\nprocess.stdin.on('data', function (data) {\n    child.stdin.write(data)\n})\n\nchild.on('close', (code) => {\n    console.log(`child process exited with code ${code}`);\n});\n\n//process.on(\"message\", function (message) {\n//    console.log(`Message from main.js: ${message}`);\n//    cp.stdin.write(message)\n//});\n//cp.stdout.on('data', function (data) {\n//    console.log(`Message from main.js: ${data}`)\n//    process.send(data)\n//});\n",
+        "template": "var cp = require('child_process');\nlet child = cp.spawn('{{command}}', {{{args}}})\nchild.stdout.on('data', function (data) {\n    process.stdout.write(data.toString())\n    //console.log(data);\n});\nchild.stderr.on('data', function (data) {\n    console.log(`${data}`);\n});\nprocess.stdin.on('data', function (data) {\n    child.stdin.write(data)\n})\n\nchild.on('close', (code) => {\n    console.log(`child process exited with code ${code}`);\n});\n\n//process.on(\"message\", function (message) {\n//    console.log(`Message from main.js: ${message}`);\n//    cp.stdin.write(message)\n//});\n//cp.stdout.on('data', function (data) {\n//    console.log(`Message from main.js: ${data}`)\n//    process.send(data)\n//});\n",
         "output": "str",
-        "x": 1180,
-        "y": 940,
+        "x": 2180,
+        "y": 740,
         "wires": [
             [
                 "f899bfee50c2c5f6"
-            ]
-        ]
-    },
-    {
-        "id": "9a20901ecac67666",
-        "type": "inject",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "Create file wich launch the command et start daemon",
-        "props": [
-            {
-                "p": "command",
-                "v": "nmcli",
-                "vt": "str"
-            },
-            {
-                "p": "args",
-                "v": "[\"dev\", \"wifi\"]",
-                "vt": "json"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 760,
-        "y": 700,
-        "wires": [
-            [
-                "05636ee319db6f24"
             ]
         ]
     },
@@ -3791,8 +3813,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2620,
-        "y": 900,
+        "x": 2720,
+        "y": 740,
         "wires": []
     },
     {
@@ -3809,8 +3831,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2620,
-        "y": 940,
+        "x": 2700,
+        "y": 980,
         "wires": []
     },
     {
@@ -3822,7 +3844,7 @@
         "props": [],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "x": 130,
@@ -3997,8 +4019,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
-        "y": 160,
+        "x": 520,
+        "y": 60,
         "wires": []
     },
     {
@@ -4015,8 +4037,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2640,
-        "y": 820,
+        "x": 2700,
+        "y": 660,
         "wires": []
     },
     {
@@ -4032,14 +4054,15 @@
         "redo": false,
         "op": "string",
         "closer": "SIGKILL",
-        "x": 2390,
-        "y": 1000,
+        "x": 2470,
+        "y": 820,
         "wires": [
             [
                 "44c756161c28b0e2",
                 "2d81644308115d7d",
                 "265694c368031b88",
-                "3b9751a158948df4"
+                "3b9751a158948df4",
+                "74dc2426dfad908d"
             ],
             [
                 "8db83594bc604f4d",
@@ -4048,7 +4071,6 @@
             ],
             [
                 "684d60b75c1cc9da",
-                "44c756161c28b0e2",
                 "265694c368031b88",
                 "3b9751a158948df4"
             ]
@@ -4074,8 +4096,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1770,
-        "y": 920,
+        "x": 2210,
+        "y": 780,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -4091,8 +4113,8 @@
         "property": "args",
         "action": "",
         "pretty": false,
-        "x": 1030,
-        "y": 940,
+        "x": 2030,
+        "y": 740,
         "wires": [
             [
                 "5fe632846e1697cf"
@@ -4117,8 +4139,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1700,
-        "y": 1160,
+        "x": 2200,
+        "y": 960,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -4212,11 +4234,11 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1600,
-        "y": 1200,
+        "x": 1960,
+        "y": 1000,
         "wires": [
             [
-                "06de75552b3afce3"
+                "07b4fddee5d12ac2"
             ]
         ]
     },
@@ -4232,12 +4254,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
-        "y": 940,
+        "x": 1880,
+        "y": 740,
         "wires": [
             [
-                "05636ee319db6f24",
-                "14a8562b30231057"
+                "05636ee319db6f24"
             ]
         ]
     },
@@ -4261,8 +4282,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1930,
-        "y": 1220,
+        "x": 2190,
+        "y": 1000,
         "wires": [
             [
                 "8b3802d31611155a"
@@ -4277,18 +4298,20 @@
         "group": "6e16baac817e17b4",
         "name": "",
         "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<div id=\"{{'my_'+$id}}\" style=\"{{'color:'+theme.base_color}}\"></div>\n<script>\n    (function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      //$(\"#my_\"+scope.$id).html('<div>'+msg.payload+'</div>');\n      let p = document.createElement(\"p\");\n      p.style.color='white'\n      p.innerHTML= msg.payload\n      $(\"#my_\"+scope.$id).append(p)\n    }\n  });\n})(scope);\n</script>",
+        "width": "20",
+        "height": "5",
+        "format": "<div id=\"{{'my_'+$id}}\" style=\"{{'color:'+theme.base_color}}\"></div>\n<script>\n    (function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      //$(\"#my_\"+scope.$id).html('<div>'+msg.payload+'</div>');\n      let p = document.createElement(\"p\");\n      p.style.color='white'\n      //document.querySelector.(\"#my_\"+scope.$id).insertAdjacentHTML('beforeend', '<p>'+msg.payload+'</p>')\n      $(\"#my_\"+scope.$id).append('<pre style=\"font-size:16px; color:#eeeeee\">'+msg.payload+'</pre>');\n      //lines = msg.payload.split('\\n')\n      //for(i=0; i <= lines.length;i++){\n        //p.insertAdjacentHTML('beforeend', '<p>'+msg.payload+'</p>')\n      //}   \n      //$(\"#my_\"+scope.$id).append(p)\n    }\n  });\n})(scope);\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
         "x": 2980,
-        "y": 1040,
+        "y": 860,
         "wires": [
-            []
+            [
+                "28f99a18b712b8c7"
+            ]
         ]
     },
     {
@@ -4299,9 +4322,9 @@
         "group": "1588cad9498681c1",
         "name": "",
         "order": 3,
-        "width": 0,
-        "height": 0,
-        "format": "<div id=\"{{'my_'+$id}}\" style=\"{{'color:'+theme.base_color}}\"></div>\n<script>\n    (function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      //$(\"#my_\"+scope.$id).html('<div>'+msg.payload+'</div>');\n      let p = document.createElement(\"p\");\n      $(\"#my_\"+scope.$id).append(msg.payload, p)\n    }\n  });\n})(scope);\n</script>",
+        "width": "0",
+        "height": "0",
+        "format": "<div id=\"{{'my_'+$id}}\" style=\"{{'color:'+theme.base_color}}\"></div>\n<script>\n    (function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n      // Do something when msg arrives\n      //$(\"#my_\"+scope.$id).html('<div>'+msg.payload+'</div>');\n      $(\"#my_\"+scope.$id).append('<p>'+msg.payload+'</p>')\n    }\n  });\n})(scope);\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": false,
@@ -4392,11 +4415,10 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 340,
-        "y": 1220,
+        "x": 220,
+        "y": 1020,
         "wires": [
             [
-                "aae069b40e843c69",
                 "707a42c2835a3c14",
                 "0a8c19f4df98784d",
                 "11024c778cd30379"
@@ -4421,8 +4443,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1320,
-        "y": 1020,
+        "x": 1500,
+        "y": 780,
         "wires": [
             [
                 "3d8c166dafde23ec",
@@ -4459,8 +4481,8 @@
         "g": "18e263da0ce661a2",
         "name": "Terminal dynamique",
         "info": "",
-        "x": 230,
-        "y": 660,
+        "x": 310,
+        "y": 480,
         "wires": []
     },
     {
@@ -4576,9 +4598,7 @@
         "x": 50,
         "y": 2840,
         "wires": [
-            [
-                "7df4342477554fec"
-            ]
+            []
         ]
     },
     {
@@ -4595,8 +4615,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1480,
-        "y": 1040,
+        "x": 1720,
+        "y": 860,
         "wires": []
     },
     {
@@ -4622,14 +4642,13 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 990,
-        "y": 1160,
+        "x": 1010,
+        "y": 980,
         "wires": [
             [
                 "668842fefb1ad86b"
             ],
             [
-                "5e8044892e24ec72",
                 "6b54aac46cb4c9b3"
             ]
         ]
@@ -4648,44 +4667,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 1220,
-        "wires": []
-    },
-    {
-        "id": "ca59ca888877673f",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 40",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 4040,
-        "y": 900,
-        "wires": []
-    },
-    {
-        "id": "aae069b40e843c69",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 41",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 1080,
+        "x": 1000,
+        "y": 1020,
         "wires": []
     },
     {
@@ -4708,12 +4691,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1300,
-        "y": 1160,
+        "x": 1540,
+        "y": 920,
         "wires": [
             [
-                "8b3802d31611155a",
-                "00194ed721a11998"
+                "8b3802d31611155a"
             ]
         ]
     },
@@ -4726,11 +4708,10 @@
         "scope": [
             "8b3802d31611155a"
         ],
-        "x": 3920,
-        "y": 940,
+        "x": 1100,
+        "y": 1260,
         "wires": [
             [
-                "ca59ca888877673f",
                 "c13e09dff09adfbd"
             ]
         ]
@@ -4753,47 +4734,22 @@
                 "t": "eq",
                 "v": "stopped",
                 "vt": "str"
-            },
-            {
-                "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 3,
-        "x": 4350,
-        "y": 940,
+        "outputs": 2,
+        "x": 1430,
+        "y": 1260,
         "wires": [
             [
                 "1590d913477ecb52",
                 "dff8087ee587c923"
             ],
             [
-                "7f4645757907e388",
                 "3554dd2e300a186d"
-            ],
-            [
-                "cc9d36cac2f0dc9e"
             ]
         ]
-    },
-    {
-        "id": "cc9d36cac2f0dc9e",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 47",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 4520,
-        "y": 1220,
-        "wires": []
     },
     {
         "id": "e481703bc59b4c72",
@@ -4809,26 +4765,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 4880,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "7f4645757907e388",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 49",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 4520,
-        "y": 1060,
+        "x": 1920,
+        "y": 1220,
         "wires": []
     },
     {
@@ -4851,12 +4789,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 4700,
-        "y": 920,
+        "x": 1740,
+        "y": 1240,
         "wires": [
             [
                 "e481703bc59b4c72",
-                "06366bb54320586d"
+                "d0a82e3544f7a8b0"
             ]
         ]
     },
@@ -4881,8 +4819,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2650,
-        "y": 1160,
+        "x": 2830,
+        "y": 920,
         "wires": [
             [
                 "09f1ac7ac86f2fa8"
@@ -4910,11 +4848,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2640,
-        "y": 1220,
+        "x": 3000,
+        "y": 920,
         "wires": [
             [
-                "7de319477688b8ba"
+                "049914dc3aa6e18a"
             ]
         ]
     },
@@ -4938,11 +4876,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 820,
+        "x": 1140,
+        "y": 540,
         "wires": [
             [
-                "f214607e192146ac",
                 "40fcc77c45bef21d"
             ]
         ]
@@ -4965,31 +4902,13 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 130,
-        "y": 1220,
+        "x": 230,
+        "y": 980,
         "wires": [
             [
                 "dcbb085ee2ecca8b"
             ]
         ]
-    },
-    {
-        "id": "00194ed721a11998",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 50",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1300,
-        "y": 1220,
-        "wires": []
     },
     {
         "id": "c13e09dff09adfbd",
@@ -5011,11 +4930,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 4160,
-        "y": 940,
+        "x": 1340,
+        "y": 1220,
         "wires": [
             [
-                "7d681acadaecfb5f"
+                "7d681acadaecfb5f",
+                "f8cc71cc05ed9b0c"
             ]
         ]
     },
@@ -5040,11 +4960,10 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2770,
-        "y": 960,
+        "x": 2850,
+        "y": 780,
         "wires": [
             [
-                "052108423e0562a3",
                 "447f88e0a835b97a"
             ],
             [
@@ -5066,8 +4985,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2900,
-        "y": 840,
+        "x": 3020,
+        "y": 800,
         "wires": []
     },
     {
@@ -5083,7 +5002,7 @@
         "finalize": "",
         "libs": [],
         "x": 1260,
-        "y": 1060,
+        "y": 860,
         "wires": [
             [
                 "628dfb2257610e39"
@@ -5111,15 +5030,14 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1130,
-        "y": 1120,
+        "x": 1150,
+        "y": 960,
         "wires": [
             [
                 "3d8c166dafde23ec"
             ],
             [
-                "127cf7d29cea1234",
-                "00194ed721a11998"
+                "127cf7d29cea1234"
             ]
         ]
     },
@@ -5143,11 +5061,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 4540,
-        "y": 1020,
+        "x": 1600,
+        "y": 1280,
         "wires": [
             [
-                "0e66b4ca4d045ec1"
+                "6acb2b994b6e860f"
             ]
         ]
     },
@@ -5171,11 +5089,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 4540,
-        "y": 800,
+        "x": 1600,
+        "y": 1200,
         "wires": [
             [
-                "0e66b4ca4d045ec1"
+                "fbb4165b4fadc15a"
             ]
         ]
     },
@@ -5200,8 +5118,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1130,
-        "y": 1220,
+        "x": 1150,
+        "y": 1000,
         "wires": [
             [
                 "96f4d0b1004067bd"
@@ -5227,39 +5145,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 4530,
-        "y": 920,
-        "wires": [
-            [
-                "9c8aca4bedc48d5e"
-            ]
-        ]
-    },
-    {
-        "id": "06de75552b3afce3",
-        "type": "change",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "index",
-                "pt": "flow",
-                "to": "null",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1680,
+        "x": 1570,
         "y": 1240,
         "wires": [
             [
-                "07b4fddee5d12ac2"
+                "9c8aca4bedc48d5e"
             ]
         ]
     },
@@ -5279,8 +5169,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 2630,
-        "y": 1080,
+        "x": 2710,
+        "y": 920,
         "wires": [
             [
                 "5c8e04ee1e796b6d"
@@ -5330,36 +5220,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2780,
-        "y": 1040,
+        "x": 2740,
+        "y": 860,
         "wires": [
             [
                 "733d567b31de5df5"
             ]
-        ]
-    },
-    {
-        "id": "052108423e0562a3",
-        "type": "delay",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "200",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 2990,
-        "y": 920,
-        "wires": [
-            []
         ]
     },
     {
@@ -5385,66 +5251,17 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1490,
-        "y": 1900,
+        "x": 1670,
+        "y": 2020,
         "wires": [
             [
                 "8b3802d31611155a",
-                "96733b71745ad798",
                 "e6cfcb3d10177c46"
             ],
             [
-                "3d8c166dafde23ec",
                 "e6cfcb3d10177c46",
-                "11f3a37337ed7a48"
+                "1fc0dce79a6feefe"
             ]
-        ]
-    },
-    {
-        "id": "ca82925a30c70e70",
-        "type": "link in",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "link in 1",
-        "links": [],
-        "x": 695,
-        "y": 1580,
-        "wires": [
-            [
-                "11735e05573fb370",
-                "7df4342477554fec"
-            ]
-        ]
-    },
-    {
-        "id": "d72c1812856c0d1f",
-        "type": "status",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "",
-        "scope": [
-            "447f88e0a835b97a"
-        ],
-        "x": 200,
-        "y": 1920,
-        "wires": [
-            [
-                "be0d1711cdc49ac1",
-                "5110136cfb5ba8b3"
-            ]
-        ]
-    },
-    {
-        "id": "4f9e60570c7f4dbd",
-        "type": "status",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "",
-        "scope": null,
-        "x": 3240,
-        "y": 880,
-        "wires": [
-            []
         ]
     },
     {
@@ -5459,8 +5276,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2990,
-        "y": 960,
+        "x": 3070,
+        "y": 760,
         "wires": [
             [
                 "acf896f91e62ebb9"
@@ -5481,37 +5298,9 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3160,
-        "y": 940,
+        "x": 3260,
+        "y": 760,
         "wires": []
-    },
-    {
-        "id": "5110136cfb5ba8b3",
-        "type": "switch",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "",
-        "property": "status.text",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "child process exited with",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 470,
-        "y": 1920,
-        "wires": [
-            [],
-            []
-        ]
     },
     {
         "id": "be0d1711cdc49ac1",
@@ -5527,8 +5316,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 1580,
+        "x": 520,
+        "y": 1620,
         "wires": []
     },
     {
@@ -5549,8 +5338,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 870,
-        "y": 1680,
+        "x": 1530,
+        "y": 1460,
         "wires": [
             [
                 "a3348e49115feabc"
@@ -5561,7 +5350,7 @@
         "id": "04cf2cb39f05fbf5",
         "type": "function",
         "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
+        "g": "c0b40a7272cfab76",
         "name": "Format message for spawn",
         "func": "let fullCommand = flow.get(\"commands\")[0];\nmsg.payload = {}\nif (fullCommand.indexOf(' ')===-1){\n    msg.payload.command = fullCommand\n}else{\n    msg.payload.command = fullCommand.substring(0, fullCommand.indexOf(' '))\n    msg.payload.args = fullCommand.substr(fullCommand.indexOf(' ') + 1)\n}\nreturn msg;",
         "outputs": 1,
@@ -5569,11 +5358,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 1280,
+        "x": 1700,
+        "y": 1780,
         "wires": [
             [
-                "3d8c166dafde23ec"
+                "0bd48ea4562be240"
             ]
         ]
     },
@@ -5586,8 +5375,8 @@
         "scope": [
             "447f88e0a835b97a"
         ],
-        "x": 1360,
-        "y": 1260,
+        "x": 1840,
+        "y": 1040,
         "wires": [
             [
                 "aa17940305d40738"
@@ -5615,32 +5404,14 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1490,
-        "y": 1260,
+        "x": 1970,
+        "y": 1040,
         "wires": [
             [
                 "07b4fddee5d12ac2"
             ],
             []
         ]
-    },
-    {
-        "id": "96733b71745ad798",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 79",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1920,
-        "y": 1900,
-        "wires": []
     },
     {
         "id": "cac216a938770ad4",
@@ -5661,12 +5432,11 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 250,
-        "y": 780,
+        "x": 610,
+        "y": 540,
         "wires": [
             [
-                "e34bac8166d30631",
-                "f214607e192146ac"
+                "e34bac8166d30631"
             ]
         ]
     },
@@ -5684,8 +5454,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1360,
-        "y": 1680,
+        "x": 1520,
+        "y": 1720,
         "wires": []
     },
     {
@@ -5702,26 +5472,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3220,
-        "y": 1680,
-        "wires": []
-    },
-    {
-        "id": "b7d03180d0bbb143",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 19",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2720,
-        "y": 1620,
+        "x": 3480,
+        "y": 1800,
         "wires": []
     },
     {
@@ -5743,11 +5495,10 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 2490,
-        "y": 1720,
+        "x": 2730,
+        "y": 1760,
         "wires": [
             [
-                "b7d03180d0bbb143",
                 "8a4fdf696c797978"
             ]
         ]
@@ -5764,8 +5515,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3000,
-        "y": 1640,
+        "x": 3300,
+        "y": 1700,
         "wires": [
             [
                 "285ddcd6faf866c9"
@@ -5793,8 +5544,8 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1200,
-        "y": 1720,
+        "x": 1440,
+        "y": 1760,
         "wires": [
             [
                 "037c66ba96df20be",
@@ -5824,12 +5575,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2180,
-        "y": 2020,
+        "x": 2420,
+        "y": 2040,
         "wires": [
-            [
-                "4c13d948507fa2d4"
-            ]
+            []
         ]
     },
     {
@@ -5853,33 +5602,14 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1220,
-        "y": 1920,
+        "x": 1500,
+        "y": 2020,
         "wires": [
             [
-                "d21d613f143f2ab7",
                 "b7249babe9ca16cc",
                 "55cc69056770aa9f"
             ]
         ]
-    },
-    {
-        "id": "d21d613f143f2ab7",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 30",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1220,
-        "y": 2000,
-        "wires": []
     },
     {
         "id": "dfd243663d89ff30",
@@ -5908,41 +5638,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1400,
-        "y": 1520,
+        "x": 1640,
+        "y": 1560,
         "wires": [
             [
-                "14a8562b30231057",
                 "3ba29ad018e06586",
                 "fd4dd9381332bd43"
-            ]
-        ]
-    },
-    {
-        "id": "c4460b8e1fb0cacf",
-        "type": "change",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$floxContext('index') ? $flowContext('commands')[$floxContext('index')] : $flowContext('commands')[0]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1600,
-        "y": 1520,
-        "wires": [
-            [
-                "24099d8cac2ab795"
             ]
         ]
     },
@@ -5967,54 +5668,17 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1910,
-        "y": 1960,
+        "x": 1890,
+        "y": 2020,
         "wires": [
             [
                 "bdf43fa3a5a439e7",
                 "a49a58dcf5918f7a"
             ],
             [
-                "06043ac62e7edf8e",
-                "0954a40fa36cb951"
+                "06043ac62e7edf8e"
             ]
         ]
-    },
-    {
-        "id": "4c13d948507fa2d4",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 31",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2260,
-        "y": 2060,
-        "wires": []
-    },
-    {
-        "id": "0954a40fa36cb951",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 33",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1880,
-        "y": 2040,
-        "wires": []
     },
     {
         "id": "7df4342477554fec",
@@ -6035,31 +5699,13 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 1190,
-        "y": 1520,
+        "x": 1430,
+        "y": 1560,
         "wires": [
             [
                 "dfd243663d89ff30"
             ]
         ]
-    },
-    {
-        "id": "14a8562b30231057",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 34",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1580,
-        "y": 1440,
-        "wires": []
     },
     {
         "id": "e53439d570dffd07",
@@ -6068,8 +5714,8 @@
         "g": "c0b40a7272cfab76",
         "name": "Part to handle array of command",
         "info": "",
-        "x": 1250,
-        "y": 1440,
+        "x": 1490,
+        "y": 1480,
         "wires": []
     },
     {
@@ -6093,7 +5739,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1570,
+        "x": 1870,
         "y": 1700,
         "wires": [
             [
@@ -6125,8 +5771,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2060,
-        "y": 1680,
+        "x": 2180,
+        "y": 1700,
         "wires": [
             [
                 "24099d8cac2ab795",
@@ -6154,8 +5800,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3210,
-        "y": 1720,
+        "x": 3450,
+        "y": 1760,
         "wires": [
             [
                 "be4aa8937a2551a3"
@@ -6182,12 +5828,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1740,
-        "y": 1820,
+        "x": 1960,
+        "y": 1880,
         "wires": [
-            [
-                "ce010bb35af48543"
-            ]
+            []
         ]
     },
     {
@@ -6217,8 +5861,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2040,
-        "y": 1720,
+        "x": 2180,
+        "y": 1740,
         "wires": [
             [
                 "24099d8cac2ab795",
@@ -6240,7 +5884,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2120,
+        "x": 2140,
         "y": 1640,
         "wires": []
     },
@@ -6258,8 +5902,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2100,
-        "y": 1760,
+        "x": 2340,
+        "y": 1800,
         "wires": []
     },
     {
@@ -6274,31 +5918,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1500,
-        "y": 1820,
+        "x": 1700,
+        "y": 1880,
         "wires": [
             [
                 "cc7f04658e10487c"
             ]
         ]
-    },
-    {
-        "id": "11f3a37337ed7a48",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 45",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2140,
-        "y": 1860,
-        "wires": []
     },
     {
         "id": "bdf43fa3a5a439e7",
@@ -6320,8 +5946,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2180,
-        "y": 1960,
+        "x": 2420,
+        "y": 2000,
         "wires": [
             [
                 "25e5be0676b5f6f8"
@@ -6346,8 +5972,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1170,
-        "y": 1680,
+        "x": 1210,
+        "y": 1740,
         "wires": [
             [
                 "4d39ba490ae7a81f"
@@ -6374,31 +6000,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1220,
+        "x": 2080,
         "y": 1800,
         "wires": [
             [
-                "7de319477688b8ba"
+                "092dfa0718d148d9"
             ]
         ]
-    },
-    {
-        "id": "ce010bb35af48543",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 38",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1920,
-        "y": 1820,
-        "wires": []
     },
     {
         "id": "dd42e2b99a2a7645",
@@ -6421,8 +6029,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1230,
-        "y": 2100,
+        "x": 1470,
+        "y": 2140,
         "wires": [
             [
                 "18ecfed882d9cab8"
@@ -6449,13 +6057,14 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1400,
-        "y": 2180,
+        "x": 1700,
+        "y": 2140,
         "wires": [
             [
                 "79291a7a1150f807",
                 "1fbd8cc10ee44cd0",
-                "961702918836aa4d"
+                "961702918836aa4d",
+                "a6d16b412273335c"
             ]
         ]
     },
@@ -6479,12 +6088,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
+        "x": 1900,
         "y": 2140,
         "wires": [
             [
-                "7de319477688b8ba",
-                "07b4fddee5d12ac2"
+                "96d1beb6501d4661"
             ]
         ]
     },
@@ -6508,11 +6116,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
+        "x": 1900,
         "y": 2180,
         "wires": [
             [
-                "4d39ba490ae7a81f"
+                "eeb33e9c9894d157"
             ]
         ]
     },
@@ -6536,7 +6144,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
+        "x": 1900,
         "y": 2220,
         "wires": [
             [
@@ -6551,15 +6159,15 @@
         "g": "c0b40a7272cfab76",
         "name": "Go to commands",
         "links": [
+            "2e5405bc8896e802",
+            "40f7e1e7c55cd034",
+            "67d3b5ce22f3522d",
             "73013c23ef540790",
             "c4d0127ebb81b796",
-            "f1203755b971bb67",
-            "40f7e1e7c55cd034",
-            "fb2f5a5457cc1c7b",
-            "67d3b5ce22f3522d"
+            "fb2f5a5457cc1c7b"
         ],
-        "x": 1185,
-        "y": 1600,
+        "x": 1235,
+        "y": 1620,
         "wires": [
             [
                 "b2b6c35ccfe6517f"
@@ -6575,8 +6183,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 1190,
-        "y": 1560,
+        "x": 1430,
+        "y": 1600,
         "wires": [
             [
                 "7df4342477554fec"
@@ -6604,8 +6212,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1470,
-        "y": 1580,
+        "x": 1790,
+        "y": 1600,
         "wires": [
             [
                 "b8028a182f6e3883"
@@ -6633,11 +6241,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
-        "y": 1620,
+        "x": 1960,
+        "y": 1600,
         "wires": [
             [
-                "7de319477688b8ba"
+                "df6c15d9807db302"
             ]
         ]
     },
@@ -6655,26 +6263,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2660,
-        "y": 1580,
-        "wires": []
-    },
-    {
-        "id": "e340359c4e3672f1",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 77",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2960,
-        "y": 1800,
+        "x": 3240,
+        "y": 1660,
         "wires": []
     },
     {
@@ -6698,16 +6288,15 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2790,
-        "y": 1700,
+        "x": 3090,
+        "y": 1760,
         "wires": [
             [
                 "564ff8ef50de58b1",
                 "b4fc87ff7c293b7a"
             ],
             [
-                "285ddcd6faf866c9",
-                "e340359c4e3672f1"
+                "285ddcd6faf866c9"
             ]
         ]
     },
@@ -6731,11 +6320,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2080,
-        "y": 2100,
+        "x": 2420,
+        "y": 2080,
         "wires": [
             [
-                "7de319477688b8ba"
+                "6a9fa0bd8fd2fe78"
             ]
         ]
     },
@@ -6757,31 +6346,13 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 2680,
-        "y": 1780,
+        "x": 2940,
+        "y": 1760,
         "wires": [
             [
                 "041efdc800181680"
             ]
         ]
-    },
-    {
-        "id": "54750dd1664af595",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 81",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2380,
-        "y": 1460,
-        "wires": []
     },
     {
         "id": "9c223c328c2c1229",
@@ -6802,8 +6373,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 230,
-        "y": 820,
+        "x": 590,
+        "y": 600,
         "wires": [
             [
                 "7f2f743ebaeb222d"
@@ -6831,8 +6402,8 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 160,
-        "y": 960,
+        "x": 260,
+        "y": 760,
         "wires": [
             [
                 "b710b47357afff69",
@@ -6861,8 +6432,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 940,
-        "y": 2500,
+        "x": 1200,
+        "y": 2660,
         "wires": [
             [
                 "8cb281e27cb12913"
@@ -6883,8 +6454,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1780,
-        "y": 2680,
+        "x": 2040,
+        "y": 2840,
         "wires": []
     },
     {
@@ -6899,8 +6470,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 2540,
-        "y": 2640,
+        "x": 2800,
+        "y": 2800,
         "wires": [
             [
                 "126bdc8d1fe884f0",
@@ -6929,8 +6500,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 940,
-        "y": 2540,
+        "x": 1200,
+        "y": 2700,
         "wires": [
             [
                 "5ab7478a90317b26"
@@ -6956,8 +6527,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 1120,
-        "y": 2660,
+        "x": 1380,
+        "y": 2820,
         "wires": [
             [
                 "b73225bfdbae241a"
@@ -6980,8 +6551,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 2590,
-        "y": 2520,
+        "x": 2850,
+        "y": 2680,
         "wires": [
             []
         ]
@@ -7006,8 +6577,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1340,
-        "y": 2660,
+        "x": 1600,
+        "y": 2820,
         "wires": [
             []
         ]
@@ -7033,8 +6604,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1870,
-        "y": 2600,
+        "x": 2130,
+        "y": 2760,
         "wires": [
             [
                 "abb24d721e50e418",
@@ -7055,8 +6626,8 @@
             "aaea082df6e0d28e"
         ],
         "uncaught": false,
-        "x": 1550,
-        "y": 2600,
+        "x": 1810,
+        "y": 2760,
         "wires": [
             [
                 "fba7ea4f0c525b8f",
@@ -7077,8 +6648,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 1620,
-        "y": 2500,
+        "x": 1880,
+        "y": 2660,
         "wires": [
             [
                 "081925cde061cad5",
@@ -7100,8 +6671,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1700,
-        "y": 2540,
+        "x": 1960,
+        "y": 2700,
         "wires": []
     },
     {
@@ -7124,8 +6695,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1420,
-        "y": 2500,
+        "x": 1680,
+        "y": 2660,
         "wires": [
             [
                 "aaea082df6e0d28e"
@@ -7152,8 +6723,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1720,
-        "y": 2600,
+        "x": 1980,
+        "y": 2760,
         "wires": [
             [
                 "9fb37ef2271445f3"
@@ -7174,8 +6745,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2580,
-        "y": 2680,
+        "x": 2840,
+        "y": 2840,
         "wires": []
     },
     {
@@ -7198,8 +6769,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1900,
-        "y": 2520,
+        "x": 2160,
+        "y": 2680,
         "wires": [
             [
                 "0dd47cebafd78a73"
@@ -7216,8 +6787,8 @@
             "76b45b809532e499"
         ],
         "uncaught": false,
-        "x": 2310,
-        "y": 2720,
+        "x": 2570,
+        "y": 2880,
         "wires": [
             [
                 "0dd47cebafd78a73",
@@ -7239,8 +6810,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2100,
-        "y": 2660,
+        "x": 2360,
+        "y": 2820,
         "wires": []
     },
     {
@@ -7257,8 +6828,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2480,
-        "y": 2720,
+        "x": 2740,
+        "y": 2880,
         "wires": []
     },
     {
@@ -7281,8 +6852,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1130,
-        "y": 2540,
+        "x": 1390,
+        "y": 2700,
         "wires": [
             [
                 "d6f838746286e467"
@@ -7312,8 +6883,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2090,
-        "y": 2620,
+        "x": 2350,
+        "y": 2780,
         "wires": [
             [
                 "497be50704f809a8"
@@ -7350,8 +6921,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2300,
-        "y": 2660,
+        "x": 2560,
+        "y": 2820,
         "wires": [
             [
                 "76b45b809532e499"
@@ -7370,8 +6941,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2280,
-        "y": 2600,
+        "x": 2540,
+        "y": 2760,
         "wires": [
             [
                 "76b45b809532e499"
@@ -7398,8 +6969,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1130,
-        "y": 2500,
+        "x": 1390,
+        "y": 2660,
         "wires": [
             [
                 "d6f838746286e467"
@@ -7419,8 +6990,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 2890,
-        "y": 2640,
+        "x": 3150,
+        "y": 2800,
         "wires": [
             [
                 "2dae94e0a5a67ff8"
@@ -7456,8 +7027,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 2670,
-        "y": 2580,
+        "x": 2930,
+        "y": 2740,
         "wires": [
             [
                 "e1b464488f392996"
@@ -7485,8 +7056,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2820,
-        "y": 2580,
+        "x": 3080,
+        "y": 2740,
         "wires": [
             [
                 "83dcd2bef897c63e"
@@ -7507,8 +7078,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3040,
-        "y": 2640,
+        "x": 3300,
+        "y": 2800,
         "wires": []
     },
     {
@@ -7531,11 +7102,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
-        "y": 820,
+        "x": 890,
+        "y": 540,
         "wires": [
             [
-                "dc269403be70248b"
+                "dc269403be70248b",
+                "f214607e192146ac"
             ]
         ]
     },
@@ -7551,8 +7123,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 620,
-        "y": 940,
+        "x": 1060,
+        "y": 720,
         "wires": [
             [
                 "3d8c166dafde23ec",
@@ -7584,12 +7156,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 410,
-        "y": 960,
+        "x": 790,
+        "y": 780,
         "wires": [
             [
-                "9d9d7260b0dc6059",
-                "3021fc8fd5f96f2b"
+                "9d9d7260b0dc6059"
             ],
             [
                 "9d9d7260b0dc6059"
@@ -7613,8 +7184,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 900,
+        "x": 1080,
+        "y": 660,
         "wires": []
     },
     {
@@ -7637,8 +7208,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 1220,
+        "x": 710,
+        "y": 1020,
         "wires": [
             [
                 "9478cafaace3eda1",
@@ -7661,26 +7232,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "3021fc8fd5f96f2b",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 85",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 700,
-        "y": 1040,
+        "x": 1100,
+        "y": 500,
         "wires": []
     },
     {
@@ -7717,10 +7270,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
-        "y": 700,
+        "x": 220,
+        "y": 640,
         "wires": [
-            []
+            [
+                "5dd43c642137b6b6"
+            ]
         ]
     },
     {
@@ -7735,12 +7290,11 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
-        "y": 700,
+        "x": 210,
+        "y": 580,
         "wires": [
             [
-                "e84e8c0191c253f9",
-                "5dd43c642137b6b6"
+                "e84e8c0191c253f9"
             ]
         ]
     },
@@ -7764,8 +7318,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 210,
-        "y": 1020,
+        "x": 550,
+        "y": 760,
         "wires": [
             [
                 "4e85502b0cdbb08b",
@@ -7795,10 +7349,13 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 120,
-        "y": 1540,
+        "x": 200,
+        "y": 1460,
         "wires": [
-            []
+            [
+                "cfe3b14e2bddbf6a",
+                "7c99e16850770331"
+            ]
         ]
     },
     {
@@ -7822,8 +7379,8 @@
         "payloadType": "flow",
         "topic": "topic",
         "topicType": "msg",
-        "x": 460,
-        "y": 1320,
+        "x": 240,
+        "y": 1200,
         "wires": [
             [
                 "9e39d1b269bca6f1",
@@ -7849,11 +7406,11 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 130,
-        "y": 1480,
+        "x": 210,
+        "y": 1380,
         "wires": [
             [
-                "2e0f75ce20fba878"
+                "81e980f5c7b5363f"
             ]
         ]
     },
@@ -7877,8 +7434,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 120,
-        "y": 740,
+        "x": 220,
+        "y": 700,
         "wires": [
             [
                 "40fcc77c45bef21d"
@@ -7897,8 +7454,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
-        "y": 1300,
+        "x": 250,
+        "y": 1120,
         "wires": [
             [
                 "e2c596f862f807c1"
@@ -7926,7 +7483,7 @@
         "to": "",
         "reg": false,
         "x": 240,
-        "y": 1300,
+        "y": 1160,
         "wires": [
             [
                 "11024c778cd30379"
@@ -7953,12 +7510,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 880,
+        "x": 800,
+        "y": 600,
         "wires": [
             [
-                "705b4607cb4e54cf",
-                "40fcc77c45bef21d"
+                "705b4607cb4e54cf"
             ]
         ]
     },
@@ -7976,8 +7532,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 1440,
+        "x": 820,
+        "y": 1400,
         "wires": []
     },
     {
@@ -8000,8 +7556,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 200,
-        "y": 1140,
+        "x": 220,
+        "y": 820,
         "wires": [
             [
                 "dcbb085ee2ecca8b",
@@ -8027,12 +7583,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 410,
-        "y": 1060,
+        "x": 550,
+        "y": 800,
         "wires": [
             [
-                "acb41c72b270cbac",
-                "385d64860ec615cb"
+                "acb41c72b270cbac"
             ]
         ]
     },
@@ -8056,31 +7611,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
-        "y": 1120,
+        "x": 540,
+        "y": 840,
         "wires": [
             [
                 "2e0f75ce20fba878"
             ]
         ]
-    },
-    {
-        "id": "385d64860ec615cb",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "18e263da0ce661a2",
-        "name": "debug 87",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 580,
-        "y": 1080,
-        "wires": []
     },
     {
         "id": "a0aab47871bf4d0e",
@@ -8096,8 +7633,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 1020,
+        "x": 620,
+        "y": 720,
         "wires": []
     },
     {
@@ -8120,8 +7657,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
-        "y": 1260,
+        "x": 540,
+        "y": 1120,
         "wires": [
             [
                 "2e0f75ce20fba878"
@@ -8141,7 +7678,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 1400,
+        "y": 1260,
         "wires": [
             [
                 "6b4a9b0521c14524",
@@ -8161,12 +7698,12 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 930,
-        "y": 1560,
+        "x": 1210,
+        "y": 1500,
         "wires": [
             [
-                "7df4342477554fec",
-                "7a3554e3063ac472"
+                "7a3554e3063ac472",
+                "11735e05573fb370"
             ]
         ]
     },
@@ -8190,8 +7727,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 1620,
+        "x": 1200,
+        "y": 1540,
         "wires": [
             [
                 "b2b6c35ccfe6517f"
@@ -8219,7 +7756,7 @@
         "to": "",
         "reg": false,
         "x": 750,
-        "y": 1160,
+        "y": 980,
         "wires": [
             []
         ]
@@ -8240,12 +7777,11 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 690,
-        "y": 1340,
+        "x": 610,
+        "y": 1200,
         "wires": [
             [
                 "41b1f0df6391aabf",
-                "5e8044892e24ec72",
                 "5daf26229a34ec6d"
             ]
         ]
@@ -8270,8 +7806,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
-        "y": 1480,
+        "x": 1880,
+        "y": 1540,
         "wires": [
             [
                 "24099d8cac2ab795"
@@ -8299,8 +7835,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1240,
-        "y": 2300,
+        "x": 1480,
+        "y": 2340,
         "wires": [
             [
                 "7489632c2a204942"
@@ -8348,8 +7884,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1420,
-        "y": 2300,
+        "x": 1660,
+        "y": 2340,
         "wires": [
             [
                 "6ac8777966c061e5",
@@ -8378,11 +7914,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1020,
-        "y": 2200,
+        "x": 2000,
+        "y": 2340,
         "wires": [
             [
-                "dd42e2b99a2a7645",
                 "a046801adbd525d4"
             ]
         ]
@@ -8407,12 +7942,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 1780,
+        "x": 840,
+        "y": 1200,
         "wires": [
             [
-                "4d39ba490ae7a81f",
-                "7de319477688b8ba"
+                "0675a67dbf5f226d"
             ]
         ]
     },
@@ -8436,8 +7970,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2580,
-        "y": 1960,
+        "x": 2780,
+        "y": 2000,
         "wires": [
             [
                 "4d39ba490ae7a81f",
@@ -8457,29 +7991,13 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 950,
-        "y": 1920,
+        "x": 1190,
+        "y": 1980,
         "wires": [
             [
                 "b88faf03b44d1c0a"
             ]
         ]
-    },
-    {
-        "id": "e922248d1cb2a731",
-        "type": "switch",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "",
-        "property": "$flowContext('commands') & $count($flowContext('commands')) > 1 ? $flowContext('commands') : []",
-        "propertyType": "jsonata",
-        "rules": [],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 0,
-        "x": 970,
-        "y": 2080,
-        "wires": []
     },
     {
         "id": "055a8ac1dad23671",
@@ -8493,7 +8011,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 850,
+        "x": 1190,
         "y": 2300,
         "wires": [
             [
@@ -8515,8 +8033,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 420,
-        "y": 2200,
+        "x": 720,
+        "y": 1840,
         "wires": []
     },
     {
@@ -8539,8 +8057,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
-        "y": 2300,
+        "x": 1280,
+        "y": 2340,
         "wires": [
             [
                 "990a856009b4df1b"
@@ -8567,32 +8085,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 1980,
+        "x": 1240,
+        "y": 2020,
         "wires": [
             [
-                "7de319477688b8ba",
-                "67db4514c666723e"
+                "7de319477688b8ba"
             ]
         ]
-    },
-    {
-        "id": "67db4514c666723e",
-        "type": "debug",
-        "z": "57297ea9585b5f93",
-        "g": "c0b40a7272cfab76",
-        "name": "debug 90",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 2040,
-        "wires": []
     },
     {
         "id": "25e5be0676b5f6f8",
@@ -8614,8 +8113,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2380,
-        "y": 1960,
+        "x": 2600,
+        "y": 2000,
         "wires": [
             [
                 "a9bf38fc141961ae"
@@ -8629,8 +8128,8 @@
         "g": "c0b40a7272cfab76",
         "name": "DO NOT EXIT COMMAND AT THIS POINT YOU HAVE TO DO IT IN THE DASHBORD",
         "info": "That gonna break fonctionnality to add commands at the ed of the liste",
-        "x": 2400,
-        "y": 1920,
+        "x": 2640,
+        "y": 1960,
         "wires": []
     },
     {
@@ -8654,8 +8153,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 2500,
-        "y": 2060,
+        "x": 1460,
+        "y": 2460,
         "wires": [
             [
                 "6feb6980b1214cbf"
@@ -8683,8 +8182,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 2480,
-        "y": 2120,
+        "x": 1460,
+        "y": 2520,
         "wires": [
             [
                 "b24f311005810a61"
@@ -8711,8 +8210,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2700,
-        "y": 2060,
+        "x": 1660,
+        "y": 2460,
         "wires": [
             [
                 "03c239aeca73f949",
@@ -8740,8 +8239,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2660,
-        "y": 2120,
+        "x": 1660,
+        "y": 2520,
         "wires": [
             [
                 "03c239aeca73f949",
@@ -8769,8 +8268,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2980,
-        "y": 2040,
+        "x": 1920,
+        "y": 2460,
         "wires": [
             [
                 "24099d8cac2ab795"
@@ -8797,13 +8296,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2980,
-        "y": 2120,
+        "x": 1920,
+        "y": 2520,
         "wires": [
             [
                 "78a24a7adeabe9c3",
-                "7de319477688b8ba",
-                "dd42e2b99a2a7645"
+                "06b1faf353de60fa"
             ]
         ]
     },
@@ -8827,11 +8325,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 3080,
-        "y": 2180,
+        "x": 2120,
+        "y": 2540,
         "wires": [
             [
-                "4d39ba490ae7a81f"
+                "d93510c6fbb67516"
             ]
         ]
     },
@@ -8839,6 +8337,7 @@
         "id": "69abf9c7573503c3",
         "type": "inject",
         "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
         "name": "",
         "props": [],
         "repeat": "",
@@ -8846,7 +8345,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 850,
+        "x": 1190,
         "y": 2160,
         "wires": [
             [
@@ -8874,8 +8373,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 2140,
+        "x": 1240,
+        "y": 2200,
         "wires": [
             [
                 "dd42e2b99a2a7645"
@@ -8889,9 +8388,13 @@
         "g": "c0b40a7272cfab76",
         "name": "Go to Start list button",
         "links": [
-            "a046801adbd525d4"
+            "a046801adbd525d4",
+            "06b1faf353de60fa",
+            "0675a67dbf5f226d",
+            "eeb33e9c9894d157",
+            "d0a82e3544f7a8b0"
         ],
-        "x": 1045,
+        "x": 1245,
         "y": 1780,
         "wires": [
             [
@@ -8906,10 +8409,17 @@
         "g": "c0b40a7272cfab76",
         "name": "Go to Continue button",
         "links": [
-            "a046801adbd525d4"
+            "a046801adbd525d4",
+            "d93510c6fbb67516",
+            "0675a67dbf5f226d",
+            "6a9fa0bd8fd2fe78",
+            "df6c15d9807db302",
+            "96d1beb6501d4661",
+            "049914dc3aa6e18a",
+            "092dfa0718d148d9"
         ],
-        "x": 1075,
-        "y": 1860,
+        "x": 1355,
+        "y": 1980,
         "wires": [
             [
                 "7de319477688b8ba"
@@ -8924,11 +8434,12 @@
         "name": "From Clear list button",
         "mode": "link",
         "links": [
+            "4ad3e45a119c1ab8",
             "9a3d1961c9c303cd",
             "bb05228eade21d1f"
         ],
-        "x": 1235,
-        "y": 2240,
+        "x": 2145,
+        "y": 2120,
         "wires": []
     },
     {
@@ -8937,9 +8448,12 @@
         "z": "57297ea9585b5f93",
         "g": "c0b40a7272cfab76",
         "name": "Go to Reset index button",
-        "links": [],
-        "x": 1075,
-        "y": 2100,
+        "links": [
+            "d93510c6fbb67516",
+            "a046801adbd525d4"
+        ],
+        "x": 1345,
+        "y": 2120,
         "wires": [
             [
                 "dd42e2b99a2a7645"
@@ -8953,9 +8467,982 @@
         "g": "c0b40a7272cfab76",
         "name": "From Index +1 and Index -1 button",
         "mode": "link",
+        "links": [
+            "9a3d1961c9c303cd"
+        ],
+        "x": 2305,
+        "y": 2540,
+        "wires": []
+    },
+    {
+        "id": "d93510c6fbb67516",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Index +1 and Index -1 button != 0",
+        "mode": "link",
+        "links": [
+            "4ad3e45a119c1ab8",
+            "bb05228eade21d1f"
+        ],
+        "x": 2125,
+        "y": 2460,
+        "wires": []
+    },
+    {
+        "id": "a48667c232bc72ea",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "Go to text command input IN LIST",
         "links": [],
-        "x": 3205,
-        "y": 2240,
+        "x": 2585,
+        "y": 1720,
+        "wires": [
+            [
+                "24099d8cac2ab795"
+            ]
+        ]
+    },
+    {
+        "id": "0675a67dbf5f226d",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From Merge at index button",
+        "mode": "link",
+        "links": [
+            "9a3d1961c9c303cd",
+            "bb05228eade21d1f"
+        ],
+        "x": 965,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "74d28e415cac5e4b",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Got to Child Processus",
+        "links": [
+            "0bd48ea4562be240",
+            "1fc0dce79a6feefe"
+        ],
+        "x": 1735,
+        "y": 680,
+        "wires": [
+            [
+                "3d8c166dafde23ec"
+            ]
+        ]
+    },
+    {
+        "id": "0bd48ea4562be240",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Start List button",
+        "mode": "link",
+        "links": [
+            "74d28e415cac5e4b"
+        ],
+        "x": 1855,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "1fc0dce79a6feefe",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Continue button",
+        "mode": "link",
+        "links": [
+            "74d28e415cac5e4b"
+        ],
+        "x": 1825,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "6a9fa0bd8fd2fe78",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Continue button end of list",
+        "mode": "link",
+        "links": [
+            "bb05228eade21d1f"
+        ],
+        "x": 2565,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "df6c15d9807db302",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Commands text",
+        "mode": "link",
+        "links": [
+            "bb05228eade21d1f"
+        ],
+        "x": 2075,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "96d1beb6501d4661",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Reset index button diseable",
+        "mode": "link",
+        "links": [
+            "bb05228eade21d1f",
+            "f6930578ff860b22"
+        ],
+        "x": 2035,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "eeb33e9c9894d157",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Reset index button enable",
+        "mode": "link",
+        "links": [
+            "9a3d1961c9c303cd"
+        ],
+        "x": 2035,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "049914dc3aa6e18a",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From node-daemon response",
+        "mode": "link",
+        "links": [
+            "bb05228eade21d1f"
+        ],
+        "x": 3145,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "092dfa0718d148d9",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Start List button if list >1",
+        "mode": "link",
+        "links": [
+            "bb05228eade21d1f"
+        ],
+        "x": 2195,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "2e5405bc8896e802",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "From Clear list button",
+        "mode": "link",
+        "links": [
+            "ca1a3b161424e5e9"
+        ],
+        "x": 1835,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "6acb2b994b6e860f",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From node-daemon-status",
+        "mode": "link",
+        "links": [
+            "f6930578ff860b22"
+        ],
+        "x": 1735,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "f6930578ff860b22",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Go to Exit command button",
+        "links": [
+            "6acb2b994b6e860f",
+            "fbb4165b4fadc15a",
+            "96d1beb6501d4661"
+        ],
+        "x": 1835,
+        "y": 1000,
+        "wires": [
+            [
+                "0e66b4ca4d045ec1"
+            ]
+        ]
+    },
+    {
+        "id": "d0a82e3544f7a8b0",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From node-daemon-status if running and index not null",
+        "mode": "link",
+        "links": [
+            "9a3d1961c9c303cd"
+        ],
+        "x": 1825,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "fbb4165b4fadc15a",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From node-daemon-status if running and index not null enable=true",
+        "mode": "link",
+        "links": [
+            "f6930578ff860b22"
+        ],
+        "x": 1745,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "a6d16b412273335c",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "",
+        "property": "daemonStatus",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "running",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1890,
+        "y": 2100,
+        "wires": [
+            [
+                "07b4fddee5d12ac2"
+            ]
+        ]
+    },
+    {
+        "id": "a23460e2039e2240",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1970,
+        "y": 920,
+        "wires": [
+            [
+                "f7e50795bbbe828e"
+            ]
+        ]
+    },
+    {
+        "id": "f7e50795bbbe828e",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "$flowContext('daemonStatus') = 'running' ? 1 : 0",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1960,
+        "y": 960,
+        "wires": [
+            [
+                "0e66b4ca4d045ec1"
+            ]
+        ]
+    },
+    {
+        "id": "f8cc71cc05ed9b0c",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From node-daemon-status for automated lsit",
+        "mode": "link",
+        "links": [
+            "d4f78a45877d861b"
+        ],
+        "x": 1455,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "0a9601a0b978d84a",
+        "type": "rbe",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "_msgid",
+        "topi": "topic",
+        "x": 250,
+        "y": 1720,
+        "wires": [
+            [
+                "b3b58ad074a2b566"
+            ]
+        ]
+    },
+    {
+        "id": "c3e5157c333c3465",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tmpCommandsOutList",
+                "pt": "flow",
+                "to": "commandsOutList",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tmpCommandsOutList[0]",
+                "tot": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "commandsOutList",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 1560,
+        "wires": [
+            [
+                "baa2cf368634c41f"
+            ]
+        ]
+    },
+    {
+        "id": "66bf2097b327336e",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "property": "$flowContext(\"indexCommandOutList\")",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "$count($flowContext(\"tmpCommandsOutList\"))",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 1720,
+        "wires": [
+            [
+                "af47437bc74e05a2",
+                "ea2b5f79579f1d4a"
+            ],
+            [
+                "8a3271e120fc0949",
+                "dcdd569d049123a4"
+            ]
+        ]
+    },
+    {
+        "id": "cfe3b14e2bddbf6a",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "autoLoad",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 1520,
+        "wires": [
+            [
+                "c3e5157c333c3465"
+            ]
+        ]
+    },
+    {
+        "id": "ea2b5f79579f1d4a",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "autoLoad",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "delete",
+                "p": "indexCommandOutList",
+                "pt": "flow"
+            },
+            {
+                "t": "delete",
+                "p": "tmpCommandsOutList",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 1700,
+        "wires": [
+            [
+                "dcdd569d049123a4"
+            ]
+        ]
+    },
+    {
+        "id": "81e980f5c7b5363f",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "autoLoad",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "tmpCommandsOutList",
+                "pt": "flow",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 1420,
+        "wires": [
+            [
+                "2e0f75ce20fba878"
+            ]
+        ]
+    },
+    {
+        "id": "7c99e16850770331",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From repeat all button",
+        "mode": "link",
+        "links": [
+            "816b0666cf836929"
+        ],
+        "x": 375,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "816b0666cf836929",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Go to kill daemon-node",
+        "links": [
+            "7c99e16850770331"
+        ],
+        "x": 1975,
+        "y": 1100,
+        "wires": [
+            [
+                "07b4fddee5d12ac2"
+            ]
+        ]
+    },
+    {
+        "id": "8a3271e120fc0949",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 90",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "c66ed3dda5290e99",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 91",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "c377f1e581915fd5",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 92",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "1ac64cb8c2b56f2d",
+        "type": "delay",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 520,
+        "y": 1440,
+        "wires": [
+            [
+                "b710b47357afff69"
+            ]
+        ]
+    },
+    {
+        "id": "74dc2426dfad908d",
+        "type": "switch",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "To handle autoLoad no status possible beacause of kill process",
+        "property": "autoLoad",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2910,
+        "y": 700,
+        "wires": [
+            [
+                "b0e63695bcd5c315"
+            ]
+        ]
+    },
+    {
+        "id": "b0e63695bcd5c315",
+        "type": "link out",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "From daemon and child",
+        "mode": "link",
+        "links": [
+            "ff2965f7510c868d"
+        ],
+        "x": 3215,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ff2965f7510c868d",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Go to autoLoad",
+        "links": [
+            "b0e63695bcd5c315"
+        ],
+        "x": 145,
+        "y": 1720,
+        "wires": [
+            [
+                "c377f1e581915fd5",
+                "0a9601a0b978d84a"
+            ]
+        ]
+    },
+    {
+        "id": "b3b58ad074a2b566",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "indexCommandOutList",
+                "pt": "flow",
+                "to": "$flowContext('indexCommandOutList') ? $flowContext('indexCommandOutList')+1 : 1",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 1760,
+        "wires": [
+            [
+                "c66ed3dda5290e99",
+                "66bf2097b327336e"
+            ]
+        ]
+    },
+    {
+        "id": "dcdd569d049123a4",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$flowContext('tmpCommandsOutList')[$flowContext('indexCommandOutList')]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 1700,
+        "wires": [
+            [
+                "baa2cf368634c41f"
+            ]
+        ]
+    },
+    {
+        "id": "23e2f51aa5001862",
+        "type": "ui_button",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "group": "297b1964920fbcef",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Clean temporary list",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#532c2c",
+        "className": "",
+        "icon": "fa-solid fa-trash",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 1900,
+        "wires": [
+            [
+                "9a99865feeda8c41",
+                "af71c28ef446236c"
+            ]
+        ]
+    },
+    {
+        "id": "9a99865feeda8c41",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "tmpCommandsOutList",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a24a7fd6de2c5f3",
+        "type": "inject",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Diseable on deploy",
+        "props": [
+            {
+                "p": "enabled",
+                "v": "false",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 1860,
+        "wires": [
+            [
+                "23e2f51aa5001862"
+            ]
+        ]
+    },
+    {
+        "id": "af71c28ef446236c",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 1940,
+        "wires": [
+            [
+                "2e0f75ce20fba878",
+                "11024c778cd30379",
+                "dcbb085ee2ecca8b"
+            ]
+        ]
+    },
+    {
+        "id": "28f99a18b712b8c7",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 93",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3300,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "c2e0b987362039af",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 94",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3320,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "ef08ad9ecb7fca29",
+        "type": "link in",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "Go to Reapeat all button to run array of command in payload",
+        "links": [
+            "be19391959d36958"
+        ],
+        "x": 205,
+        "y": 2080,
+        "wires": [
+            [
+                "ec3f6ba6983f80ae",
+                "1f43d49576bb375f"
+            ]
+        ]
+    },
+    {
+        "id": "ec3f6ba6983f80ae",
+        "type": "change",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "For external load",
+        "rules": [
+            {
+                "t": "set",
+                "p": "commandsOutList",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 2060,
+        "wires": [
+            [
+                "cfe3b14e2bddbf6a"
+            ]
+        ]
+    },
+    {
+        "id": "1f43d49576bb375f",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 95",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 2120,
         "wires": []
     },
     {
