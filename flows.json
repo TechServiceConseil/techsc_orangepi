@@ -3773,7 +3773,7 @@
         "syntax": "mustache",
         "template": "var cp = require('child_process');\nlet child = cp.spawn('{{command}}', {{{args}}})\nchild.stdout.on('data', function (data) {\n    process.stdout.write(data.toString())\n    //console.log(data);\n});\nchild.stderr.on('data', function (data) {\n    console.log(`${data}`);\n});\nprocess.stdin.on('data', function (data) {\n    child.stdin.write(data)\n})\n\nchild.on('close', (code) => {\n    console.log(`child process exited with code ${code}`);\n});\n\n//process.on(\"message\", function (message) {\n//    console.log(`Message from main.js: ${message}`);\n//    cp.stdin.write(message)\n//});\n//cp.stdout.on('data', function (data) {\n//    console.log(`Message from main.js: ${data}`)\n//    process.send(data)\n//});\n",
         "output": "str",
-        "x": 2180,
+        "x": 2220,
         "y": 740,
         "wires": [
             [
@@ -4248,7 +4248,7 @@
         "z": "57297ea9585b5f93",
         "g": "18e263da0ce661a2",
         "name": "function 6",
-        "func": "if(msg.payload.args){\n    //handle space in args \"my args\" like\n    let args = []\n    let allIndex = []\n    let indexOfLastCut = 0\n    let indexOflasGuillemet\n    let countOfGuillemet = 0\n    let countOfspace = 0\n    for (let index = 0; index < msg.payload.args.length; index++) {\n        const element = msg.payload.args[index];\n        if(element === '\"'){\n            if(countOfGuillemet%2 === 0){\n            }else{\n                let arg = msg.payload.args.substring(indexOflasGuillemet, index+1)\n                args.push(arg)\n                indexOfLastCut = index\n            }\n            indexOflasGuillemet = index\n            countOfGuillemet++\n        }\n        if(element === ' '){\n            countOfspace++\n            if(countOfGuillemet%2===0){\n                let arg = msg.payload.args.substring(indexOfLastCut,index)\n                args.push(arg)\n                indexOfLastCut = index\n            }else{\n\n            }\n        }\n        if(index === msg.payload.args.length-1 && element !== '\"'){\n            let arg = msg.payload.args.substring(indexOfLastCut)\n            args.push(arg)\n        }      \n    }\n    //msg.args = msg.payload.args.split(' ')\n    msg.args = args\n}\nmsg.command = msg.payload.command\nreturn msg;",
+        "func": "if(msg.payload.args){\n    //handle space in args \"my args\" like\n    let args = []\n    let allIndex = []\n    let indexOfLastCut = 0\n    let indexOflasGuillemet\n    let countOfGuillemet = 0\n    let countOfspace = 0\n    for (let index = 0; index < msg.payload.args.length; index++) {\n        const element = msg.payload.args[index];\n        if(index === msg.payload.args.length-1){\n            msg.indelascut = indexOfLastCut\n            msg.indexlasguile = indexOflasGuillemet\n            if(element !== '\"'){\n                if (indexOflasGuillemet === indexOfLastCut) {\n                    let arg = msg.payload.args.substring(indexOfLastCut+2)\n                    args.push(arg)\n                }else{\n                    let arg = msg.payload.args.substring(indexOfLastCut)\n                    args.push(arg)\n                }\n            }else{\n                let arg = msg.payload.args.substring(indexOfLastCut)\n                args.push(arg)\n            }      \n        }else{\n            if (element === '\"') {\n                indexOflasGuillemet = index\n                countOfGuillemet++\n            }\n            if (element === ' ') {\n                countOfspace++\n                if (countOfGuillemet % 2 === 0) {\n                    let arg = msg.payload.args.substring(indexOfLastCut, index)\n                    args.push(arg)\n                    indexOfLastCut = index + 1    \n                } else {\n                }\n            }\n        }\n    }\n    msg.args = args\n}\nmsg.command = msg.payload.command\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7233,7 +7233,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
+        "x": 1120,
         "y": 500,
         "wires": []
     },
@@ -9460,8 +9460,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2120,
-        "y": 620,
+        "x": 2100,
+        "y": 640,
         "wires": []
     },
     {
