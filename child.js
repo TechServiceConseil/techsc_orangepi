@@ -1,5 +1,5 @@
 var cp = require('child_process');
-let child = cp.spawn('killall', ["pulseaudio"])
+let child = cp.spawn('bluetoothctl', ["connect","\"Mpwo M5\""])
 child.stdout.on('data', function (data) {
     process.stdout.write(data.toString())
     //console.log(data);

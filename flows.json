@@ -303,7 +303,9 @@
             "9cd7edf4b42d2e4f"
         ],
         "x": 34,
-        "y": 19
+        "y": 19,
+        "w": 1392,
+        "h": 182
     },
     {
         "id": "b8f8611163248bdd",
@@ -328,7 +330,9 @@
             "ec2f91b7c82fe538"
         ],
         "x": 34,
-        "y": 239
+        "y": 239,
+        "w": 1032,
+        "h": 182
     },
     {
         "id": "18e263da0ce661a2",
@@ -460,10 +464,13 @@
             "c2e0b987362039af",
             "ef08ad9ecb7fca29",
             "ec3f6ba6983f80ae",
-            "1f43d49576bb375f"
+            "1f43d49576bb375f",
+            "1961a1e8fed2c784"
         ],
         "x": 74,
-        "y": 439
+        "y": 439,
+        "w": 3538,
+        "h": 2508
     },
     {
         "id": "9952592d4fff7c8b",
@@ -943,7 +950,9 @@
             "a6d16b412273335c"
         ],
         "x": 1094,
-        "y": 1439
+        "y": 1439,
+        "w": 2492,
+        "h": 1142
     },
     {
         "id": "42bb49f4356c0595",
@@ -986,7 +995,9 @@
             "2dae94e0a5a67ff8"
         ],
         "x": 1094,
-        "y": 2619
+        "y": 2619,
+        "w": 2312,
+        "h": 302
     },
     {
         "id": "705b4607cb4e54cf",
@@ -3501,8 +3512,8 @@
         "outputFormat": "file",
         "manualPath": "test2",
         "debugOutput": true,
-        "x": 850,
-        "y": 580,
+        "x": 810,
+        "y": 620,
         "wires": [
             [
                 "3edb45e1ae2cc323"
@@ -3820,8 +3831,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2700,
-        "y": 980,
+        "x": 2760,
+        "y": 1000,
         "wires": []
     },
     {
@@ -4237,17 +4248,18 @@
         "z": "57297ea9585b5f93",
         "g": "18e263da0ce661a2",
         "name": "function 6",
-        "func": "if(msg.payload.args){\n    msg.args = msg.payload.args.split(' ')\n}\nmsg.command = msg.payload.command\nreturn msg;",
+        "func": "if(msg.payload.args){\n    //handle space in args \"my args\" like\n    let args = []\n    let allIndex = []\n    let indexOfLastCut = 0\n    let indexOflasGuillemet\n    let countOfGuillemet = 0\n    let countOfspace = 0\n    for (let index = 0; index < msg.payload.args.length; index++) {\n        const element = msg.payload.args[index];\n        if(element === '\"'){\n            if(countOfGuillemet%2 === 0){\n            }else{\n                let arg = msg.payload.args.substring(indexOflasGuillemet, index+1)\n                args.push(arg)\n                indexOfLastCut = index\n            }\n            indexOflasGuillemet = index\n            countOfGuillemet++\n        }\n        if(element === ' '){\n            countOfspace++\n            if(countOfGuillemet%2===0){\n                let arg = msg.payload.args.substring(indexOfLastCut,index)\n                args.push(arg)\n                indexOfLastCut = index\n            }else{\n\n            }\n        }\n        if(index === msg.payload.args.length-1 && element !== '\"'){\n            let arg = msg.payload.args.substring(indexOfLastCut)\n            args.push(arg)\n        }      \n    }\n    //msg.args = msg.payload.args.split(' ')\n    msg.args = args\n}\nmsg.command = msg.payload.command\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1880,
+        "x": 1860,
         "y": 740,
         "wires": [
             [
-                "05636ee319db6f24"
+                "05636ee319db6f24",
+                "1961a1e8fed2c784"
             ]
         ]
     },
@@ -9432,6 +9444,24 @@
         "statusType": "auto",
         "x": 580,
         "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "1961a1e8fed2c784",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "debug 96",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2120,
+        "y": 620,
         "wires": []
     },
     {
