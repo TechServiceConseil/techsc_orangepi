@@ -947,7 +947,8 @@
             "092dfa0718d148d9",
             "2e5405bc8896e802",
             "69abf9c7573503c3",
-            "a6d16b412273335c"
+            "a6d16b412273335c",
+            "ad653b64c5bc3d1c"
         ],
         "x": 1094,
         "y": 1439,
@@ -3423,7 +3424,7 @@
         "type": "sox-play",
         "z": "58612799aa277ac1",
         "name": "",
-        "outputDevice": "0,0",
+        "outputDevice": "default",
         "manualOutput": "",
         "gain": "0",
         "startNew": "start",
@@ -3434,7 +3435,7 @@
         "inputBits": 16,
         "debugOutput": true,
         "x": 840,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "2a57bc40ec44ac59"
@@ -3456,9 +3457,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "test.wav",
+        "payload": "2Pac - 103 - Lil' Homies.mp3",
         "payloadType": "str",
-        "x": 640,
+        "x": 630,
         "y": 500,
         "wires": [
             [
@@ -3479,7 +3480,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
+        "x": 1120,
         "y": 500,
         "wires": []
     },
@@ -3589,8 +3590,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 900,
-        "y": 420,
+        "x": 840,
+        "y": 460,
         "wires": [
             [
                 "2a57bc40ec44ac59"
@@ -4248,7 +4249,7 @@
         "z": "57297ea9585b5f93",
         "g": "18e263da0ce661a2",
         "name": "function 6",
-        "func": "if(msg.payload.args){\n    //handle space in args \"my args\" like\n    let args = []\n    let allIndex = []\n    let indexOfLastCut = 0\n    let indexOflasGuillemet\n    let countOfGuillemet = 0\n    let countOfspace = 0\n    for (let index = 0; index < msg.payload.args.length; index++) {\n        const element = msg.payload.args[index];\n        if(index === msg.payload.args.length-1){\n            msg.indelascut = indexOfLastCut\n            msg.indexlasguile = indexOflasGuillemet\n            if(element !== '\"'){\n                if (indexOflasGuillemet === indexOfLastCut) {\n                    let arg = msg.payload.args.substring(indexOfLastCut+2)\n                    args.push(arg)\n                }else{\n                    let arg = msg.payload.args.substring(indexOfLastCut)\n                    args.push(arg)\n                }\n            }else{\n                let arg = msg.payload.args.substring(indexOfLastCut)\n                args.push(arg)\n            }      \n        }else{\n            if (element === '\"') {\n                indexOflasGuillemet = index\n                countOfGuillemet++\n            }\n            if (element === ' ') {\n                countOfspace++\n                if (countOfGuillemet % 2 === 0) {\n                    let arg = msg.payload.args.substring(indexOfLastCut, index)\n                    args.push(arg)\n                    indexOfLastCut = index + 1    \n                } else {\n                }\n            }\n        }\n    }\n    msg.args = args\n}\nmsg.command = msg.payload.command\nreturn msg;",
+        "func": "if(msg.payload.args){\n    //handle space in args \"my args\" like\n    let args = []\n    let allIndex = []\n    let indexOfLastCut = 0\n    let indexOflasGuillemet\n    let indexOfLastSimpleQuote\n    let countOfGuillemet = 0\n    let countOfSimpleQuote = 0\n    let countOfspace = 0\n    for (let index = 0; index < msg.payload.args.length; index++) {\n        const element = msg.payload.args[index];\n        if (element === \"'\"){\n            countOfSimpleQuote++\n            indexOfLastSimpleQuote = index\n        }\n        if(index === msg.payload.args.length-1){\n            msg.indelascut = indexOfLastCut\n            msg.indexlasguile = indexOflasGuillemet\n            if (element !== '\"' && element !== \"'\" ){\n                if (indexOflasGuillemet === indexOfLastCut || indexOfLastSimpleQuote === indexOfLastCut ) {\n                    let arg = msg.payload.args.substring(indexOfLastCut+2)\n                    args.push(arg)\n                }else{\n                    let arg = msg.payload.args.substring(indexOfLastCut)\n                    args.push(arg)\n                }\n            }else{\n                let arg = msg.payload.args.substring(indexOfLastCut)\n                args.push(arg)\n            }      \n        }else{\n            if (element === '\"') {\n                indexOflasGuillemet = index\n                countOfGuillemet++\n            }\n            if (element === ' ') {\n                countOfspace++\n                if (countOfGuillemet % 2 === 0 && countOfSimpleQuote % 2 === 0) {\n                    let arg = msg.payload.args.substring(indexOfLastCut, index)\n                    args.push(arg)\n                    indexOfLastCut = index + 1    \n                } else {\n                }\n            }\n        }\n    }\n    msg.args = args\n}\nmsg.command = msg.payload.command\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5644,7 +5645,8 @@
         "wires": [
             [
                 "3ba29ad018e06586",
-                "fd4dd9381332bd43"
+                "fd4dd9381332bd43",
+                "ad653b64c5bc3d1c"
             ]
         ]
     },
@@ -9460,8 +9462,26 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2100,
+        "x": 2140,
         "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ad653b64c5bc3d1c",
+        "type": "debug",
+        "z": "57297ea9585b5f93",
+        "g": "c0b40a7272cfab76",
+        "name": "debug 97",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2260,
+        "y": 1520,
         "wires": []
     },
     {
