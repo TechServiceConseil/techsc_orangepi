@@ -9,6 +9,8 @@ services:
       - /etc/localtime:/etc/localtime
     ports:
       - '12102:12101'
+      - '22222:22222'
+      - '12184:12183'
     devices:
       - /dev/snd:/dev/snd
     command: '--user-profiles /profiles --profile en'
@@ -21,6 +23,8 @@ services:
       - /etc/localtime:/etc/localtime
     ports:
       - '12101:12101'
+      - '11111:11111'
+      - '12183:12183'
     devices:
       - /dev/snd:/dev/snd
     command: '--user-profiles /profiles --profile fr'

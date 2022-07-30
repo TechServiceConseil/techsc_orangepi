@@ -1,5 +1,5 @@
 var cp = require('child_process');
-let child = cp.spawn('play', ["'2Pac - 113 - Until the End of Time.mp3'"])
+let child = cp.spawn('id', ["-un"])
 child.stdout.on('data', function (data) {
     process.stdout.write(data.toString())
     //console.log(data);
