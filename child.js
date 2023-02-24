@@ -1,5 +1,5 @@
 var cp = require('child_process');
-let child = cp.spawn('id', ["-un"])
+let child = cp.spawn('bash', ["/home/perseigneUF/.node-red/projects/perseigneUF/scripts/codeEditorLauncher.sh"])
 child.stdout.on('data', function (data) {
     process.stdout.write(data.toString())
     //console.log(data);

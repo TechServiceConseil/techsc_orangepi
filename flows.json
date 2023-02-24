@@ -11,7 +11,7 @@
         "id": "57297ea9585b5f93",
         "type": "tab",
         "label": "Dahsboard",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -27,7 +27,7 @@
         "id": "b21e8c38dec5d4ca",
         "type": "tab",
         "label": "Assistant web",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -75,6 +75,22 @@
         "id": "11571c3a0d218a3e",
         "type": "tab",
         "label": "Wordlmap",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2acb5f6dedaa6446",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9ede64b79636f3da",
+        "type": "tab",
+        "label": "Dolibarr listener",
         "disabled": false,
         "info": "",
         "env": []
@@ -1336,6 +1352,716 @@
         ]
     },
     {
+        "id": "e0b88d23ec56febb",
+        "type": "subflow",
+        "name": "Get objects",
+        "info": "## **Editor properties to use for each object type**\n\n- **global properties :**\n    - sortField\n    - sortOrder\n    - limit\n    - page\n    - category\n    - sqlFilters\n        - From Dolibarr documentation :  \n            - Other criteria to filter answers separated by a comma. Syntax example \"(t.tobuy:=:0) and (t.tosell:=:1)\"\n        - From this subflow :  \n            - Use a array with one object for each filter like this one\n                <code>msg.sqlFilters: [  \n                            {  \n                                \"attribute\": \"ref\",  \n                                \"compare\": \"=\",  \n                                \"value\": 18  \n                            },  \n                        {  \n                            \"operation\": \"and\",  \n                            \"attribute\": \"ref\",  \n                            \"compare\": \"=\"  \n                            \"value\": 18  \n                        }  \n                ]</code>\n            - Note the presence of a additional attribute for the second message\n            - You can still pass the Dolibarr default syntax if you pass a string instead of an array   \n&nbsp;\n    - **No supplementary field for :**\n        - bankAccounts\n        - boms\n        - category  \n&nbsp;\n    - **The following properties IS NOT CONTAIN the following type :**  \n        - category\n            - boms\n            - documents\n            - invoices\n            - knowledgeManagement\n            - mos\n            - orders\n            - recruitment/candidature\n            - recruitment/jobPosition\n            - shipments\n            - stockMovements\n            - supplierOrders\n            - supplierInvoices\n            - tasks  \n&nbsp;\n    - **The following types DO NOT CONTAIN the following properties :**\n        - documents\n            - limit\n            - page\n            - sqlFilters  \n&nbsp;\n- **agendaEvents :**\n    - userIds\n        - User ids filter field (owners of event). Example: '1' or '1,2,3'  \n&nbsp;\n- **categories**\n    - type\n        - From Dolibarr documentation :\n            - Type of category ('member', 'customer', 'supplier', 'product', 'contact')\n        - For this subflow by techsc.fr :\n            For this subflow by techsc.fr : \n            - You can pass an array of int like that :  \n            <code>\n            [1,2,9]\n            </code>\n            - You **CAN NOT PASS** the string like the Dolibarr documentation say **BECAUSE THIS WAY IS BETTER**.\n            Dolibarr filter with an sql filter on the column \"type\" in the database. So i do that directly. Below you \n            can this the mapping:\n                - 0: service\n                - 1: product\n                - 2: client/prospect\n                - 3: member\n                - 4: contact\n                - 5: bank\n                - 6: project\n                - 7: user\n                - 8: I guess it correspond with the table categorie_lang but i didn't find where add that categorie\n                - 9: warehouse\n                - 10: event\n                - 11: website page\n            \n\n&nbsp;\n- **contacts :**\n    - thirdpartyIds\n        - From Dolibarr documentation :\n            - Thirdparty ids to filter contacts of (example '1' or '1,2,3')\n        - For this subflow by techsc.fr : \n            - You can pass an array of int like that :  \n            <code>\n            [1,2,9]\n            </code>\n            - You can pass the string like the Dolibarr documentation say.\n    - includeCount\n        - From Dolibarr documentation :\n            - Count and return also number of elements the contact is used as a link for\n    - includeRole  \n&nbsp;\n- **documents :**\n    - modulePart\n    - id\n    - ref  \n&nbsp;\n- **invoices :**\n    - thirdpartyIds\n    - status\n        - From Dolibarr documentation :\n            - Filter by invoice status : draft | unpaid | paid | cancelled  \n&nbsp;\n- **orders :**\n    - thirdpartyIds  \n&nbsp;\n- **products :**\n    - mode\n        - From Dolibarr documentation :\n            - Use this param to filter list (0 for all, 1 for only product, 2 for only service)\n    - variantFilter\n        - From Dolibarr documentation :\n            - Use this param to filter list (0 = all, 1=products without variants, 2=parent of variants, 3=variants only)  \n    - idsOnly\n    - paginationData\n    - includeStockData\n&nbsp;\n- **projects :**\n    - thirdpartyIds  \n&nbsp;\n- **proposals :**\n    - thirdpartyIds  \n&nbsp;\n- **supplierInvoices :**\n    - thirdpartyIds\n    - status\n        - From Dolibarr documentation :\n            - Filter by invoice status : draft | unpaid | paid | cancelled  \n&nbsp;\n- **supplierOrders :**\n    - thirdpartyIds\n    - status\n        - From Dolibarr documentation :\n            - Filter by order status : draft | validated | approved | running | received_start | received_end | cancelled | refused\n    - productIds\n        - From Dolibarr documentation :\n            - Thirdparty ids to filter orders of (example '1' or '1,2,3')\n        - For this subflow by techsc.fr : \n            - You can pass an array of int like that :  \n            <code>\n            [1,2,9]\n            </code>\n            - You can pass the string like the Dolibarr documentation say.  \n&nbsp;\n- **thirdparties**\n    - mode\n        - From Dolibarr documentation :\n            - Set to 1 to show only customers Set to 2 to show only prospects Set to 3 to show only those are not customer neither prospect Set to 4 to show only suppliers  \n\n\n",
+        "category": "Dolibarr",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "d6cf05a3596154b7"
+                    },
+                    {
+                        "id": "e9c33ced9f42dc2d"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 2020,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "5c0e995677254bcd",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "protocol",
+                "type": "str",
+                "value": "https",
+                "ui": {
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "HTTP"
+                                },
+                                "v": "http"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "HTTPS"
+                                },
+                                "v": "https"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "host",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "port",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "apiKey",
+                "type": "cred"
+            },
+            {
+                "name": "clearHeaders",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "objectName",
+                "type": "str",
+                "value": "products",
+                "ui": {
+                    "label": {
+                        "en-US": "objectName (API path)"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "sortField",
+                "type": "str",
+                "value": "ref",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "sortOrder",
+                "type": "str",
+                "value": "ASC",
+                "ui": {
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "Ascendant"
+                                },
+                                "v": "ASC"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Descendant"
+                                },
+                                "v": "DESC"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "limit",
+                "type": "num",
+                "value": "100",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "page",
+                "type": "num",
+                "value": "0",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "sqlFilters",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "json",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "category",
+                "type": "num",
+                "value": "0",
+                "ui": {
+                    "label": {
+                        "en-US": "category (id)"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "thirdpartyIds",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "json",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "mode",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "PROD - Products & Services"
+                                },
+                                "v": "0"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "PROD - Products"
+                                },
+                                "v": "1"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "PROD - Services"
+                                },
+                                "v": "2"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "3rdP - Customers"
+                                },
+                                "v": "1"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "3rdP - Suppliers"
+                                },
+                                "v": "4"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "3rdP - Prospects"
+                                },
+                                "v": "2"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "3rdP - Neither customers | suppliers"
+                                },
+                                "v": "3"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "status",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "draft"
+                                },
+                                "v": "draft"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "unpaid"
+                                },
+                                "v": "unpaid"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "paid"
+                                },
+                                "v": "paid"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "cancelled"
+                                },
+                                "v": "cancelled"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "validated"
+                                },
+                                "v": "validated"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "approved"
+                                },
+                                "v": "approved"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "running"
+                                },
+                                "v": "running"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "receivedStart"
+                                },
+                                "v": "receiveStart"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "receivedEnd"
+                                },
+                                "v": "receivedEnd"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "refused"
+                                },
+                                "v": "refused"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "productIds",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "productIds"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "json",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "variantFilter",
+                "type": "str",
+                "value": "0",
+                "ui": {
+                    "label": {
+                        "en-US": "variantFilter"
+                    },
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "All"
+                                },
+                                "v": "0"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Product without variants"
+                                },
+                                "v": "1"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Parent of variants"
+                                },
+                                "v": "2"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Variants only"
+                                },
+                                "v": "3"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "idsOnly",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "paginationData",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "includeStockData",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "includeCount",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "includeRole",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "bool",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "type",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "json"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "id",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "json",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "method",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "GET"
+                                },
+                                "v": "get"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "POST"
+                                },
+                                "v": "post"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "PUT"
+                                },
+                                "v": "put"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "DELETE"
+                                },
+                                "v": "delete"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {},
+        "color": "rgb(85, 165, 155)",
+        "inputLabels": [
+            "List of object type name"
+        ]
+    },
+    {
+        "id": "54526e03f83ee9e5",
+        "type": "subflow",
+        "name": "Set API key header",
+        "info": "",
+        "category": "Dolibarr",
+        "in": [
+            {
+                "x": 220,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "f0cc08cda04f90a8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1420,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "762646999dea5e9f",
+                        "port": 0
+                    },
+                    {
+                        "id": "a11e0bdac5ddb9e6",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "apiKey",
+                "type": "cred",
+                "ui": {
+                    "icon": "font-awesome/fa-key"
+                }
+            },
+            {
+                "name": "clearHeaders",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "icon": "font-awesome/fa-trash-o",
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "eraseKey",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "icon": "font-awesome/fa-trash-o",
+                    "type": "checkbox"
+                }
+            }
+        ],
+        "meta": {},
+        "color": "rgb(85, 165, 155)",
+        "outputLabels": [
+            "msg with header"
+        ],
+        "icon": "font-awesome/fa-key"
+    },
+    {
+        "id": "c38e097dab2ac14e",
+        "type": "subflow",
+        "name": "Get one object of each enable and existing",
+        "info": "",
+        "category": "Dolibarr",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "2db58ed50592ceaf"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 3290,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "b20c6328a0579e71",
+                        "port": 0
+                    },
+                    {
+                        "id": "d119efffbb29803a",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "apiHost",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "apiPort",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-key",
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str",
+                            "env"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "apiKey",
+                "type": "cred"
+            },
+            {
+                "name": "clearHeaders",
+                "type": "bool",
+                "value": "true",
+                "ui": {
+                    "type": "checkbox"
+                }
+            }
+        ],
+        "meta": {},
+        "color": "rgb(85, 165, 155)",
+        "inputLabels": [
+            "List of object type name"
+        ],
+        "outputLabels": [
+            "Dollibar object list"
+        ]
+    },
+    {
         "id": "accc01d78c5b390d",
         "type": "group",
         "z": "58612799aa277ac1",
@@ -1370,8 +2096,8 @@
             "c9b408509b964873",
             "bbbac82b0e8ca5c5"
         ],
-        "x": 54,
-        "y": 39,
+        "x": 34,
+        "y": 79,
         "w": 2072,
         "h": 382
     },
@@ -1405,9 +2131,9 @@
             "43a79bd58eabb2a7",
             "b526c618a38e84f3"
         ],
-        "x": 2404,
+        "x": 2414,
         "y": 3739,
-        "w": 472,
+        "w": 462,
         "h": 562
     },
     {
@@ -1441,9 +2167,9 @@
             "cdfd1d73457ea283",
             "89abe519e798830c"
         ],
-        "x": 24,
+        "x": 34,
         "y": 479,
-        "w": 1482,
+        "w": 1472,
         "h": 222
     },
     {
@@ -1493,7 +2219,7 @@
             "9e7fcf2906f05495",
             "02b6639290dbf4a5"
         ],
-        "x": 3204,
+        "x": 3214,
         "y": 719,
         "w": 512,
         "h": 302
@@ -1561,8 +2287,8 @@
             "1062808635d4d00d",
             "b482b5c9e8bf7d29"
         ],
-        "x": 14,
-        "y": 2459,
+        "x": 34,
+        "y": 1179,
         "w": 232,
         "h": 122
     },
@@ -1648,9 +2374,9 @@
             "8f1dab3002769cfa",
             "39de74c3e1f0dd02"
         ],
-        "x": 4,
+        "x": 14,
         "y": 1519,
-        "w": 1562,
+        "w": 1552,
         "h": 922
     },
     {
@@ -1717,9 +2443,9 @@
             "eb313792563b107a",
             "7e79908e974385de"
         ],
-        "x": 4,
+        "x": 14,
         "y": 3839,
-        "w": 1122,
+        "w": 1112,
         "h": 522
     },
     {
@@ -1751,8 +2477,8 @@
             "4d475f99c5fd1661"
         ],
         "x": 34,
-        "y": 939,
-        "w": 1202,
+        "y": 739,
+        "w": 1332,
         "h": 402
     },
     {
@@ -1807,9 +2533,9 @@
             "7214f4f61c1de456",
             "cef540999b630fb7"
         ],
-        "x": 34,
+        "x": 1394,
         "y": 739,
-        "w": 1052,
+        "w": 1162,
         "h": 162
     },
     {
@@ -1982,7 +2708,8 @@
             "f081cb68bd6a63b6",
             "08717e5d7a7b1e2d",
             "43c0975e7bb96e1a",
-            "0efe17d66efb0d0d"
+            "0efe17d66efb0d0d",
+            "58adc702736ecdcc"
         ],
         "x": 164,
         "y": 339
@@ -2248,6 +2975,29 @@
         ],
         "x": 54,
         "y": 919
+    },
+    {
+        "id": "3769455bbb18be83",
+        "type": "group",
+        "z": "cda9a4b5dd195f96",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "eaf1ee88e00d9406",
+            "dc3d51f8ecedc5f1",
+            "4c6c3c86226eb43e",
+            "a6a82660b6ace126",
+            "8259d817ba4c9098"
+        ],
+        "x": 54,
+        "y": 599
     },
     {
         "id": "111a6963dd720d7d",
@@ -3255,11 +4005,34 @@
     {
         "id": "ad4e0d83364bc715",
         "type": "ui_tab",
+        "d": true,
         "name": "Worldmap",
         "icon": "dashboard",
         "order": 7,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "272472e074141e70",
+        "type": "ui_group",
+        "name": "Upload file",
+        "tab": "660f9ed8308b8e21",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "18cdadd15d72d136",
+        "type": "ui_group",
+        "name": "OCR",
+        "tab": "660f9ed8308b8e21",
+        "order": 5,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "1c3881de7afa11d5",
@@ -5561,6 +6334,7 @@
         "id": "231575bb.55a0ea",
         "type": "function",
         "z": "556a42b9.3f02cc",
+        "d": true,
         "name": "Split intent in property of global.monologue object ",
         "func": "msg.monologue3 = \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus? Suspendisse lectus tortor, dignissim sit amet. adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi?\"\nmsg.monologue = msg.monologue3\nfor (i=0; i<global.get('confSynthaxMark.sentence').length; i++) {\n    if (msg.monologue.includes(global.get('confSynthaxMark.sentence')[i]) && global.get('confSynthaxMark.sentence')[i] !== \".\") {\n        for(var j=0; j<msg.monologue.length; j++) {\n            if (msg.monologue[j] === global.get('confSynthaxMark.sentence')[i]){\n                msg.monologue = msg.monologue.substr(0, j) + '.' + msg.monologue.substr(j+1)\n            }\n        }\n    }\n}\nif(msg.payload.includes(\"phrase\")){\n    msg.monologueToSpeak = msg.monologue.split('.');\n}\nif(msg.payload.includes(\"paragraphe\")){\n    msg.monologueToSpeak = msg.monologue.split('/n');\n}\nif(msg.payload.match(/[0-9]/g)) {\n    nb = msg.payload.match(/[0-9]/g).join('')\n    if(msg.payload.includes(\"premier\") || msg.payload.includes(\"première\")){\n        msg.monologueToSpeak = msg.monologueToSpeak.slice(0, parseInt(nb)+1);\n        msg.monologueToSpeak = msg.monologueToSpeak.join('.')\n        msg.monologueToSpeak = msg.monologue3.slice(0, msg.monologueToSpeak.length)\n    }\n    if(msg.payload.includes(\"dernière\") || msg.payload.includes(\"dernier\")){\n        msg.monologueToSpeak = msg.monologueToSpeak.slice(msg.monologueToSpeak.length - (parseInt(nb)+1), msg.monologueToSpeak.length);\n        msg.monologueToSpeak = msg.monologueToSpeak.join('.')\n        msg.monologueToSpeak = msg.monologue3.slice(msg.monologue3.length - (msg.monologueToSpeak.length-1), msg.monologue3.length)\n    }\n}else {\n    flow.set(\"monologue.edit.qty\", 1);\n    if(msg.payload.includes(\"premier\") || msg.payload.includes(\"première\")){\n        msg.monologueToSpeak = msg.monologueToSpeak.slice(0, 1);\n        msg.monologueToSpeak = msg.monologueToSpeak.join('.')\n        msg.monologueToSpeak = msg.monologue3.slice(0, msg.monologueToSpeak.length)\n    }\n    if(msg.payload.includes(\"dernière\") || msg.payload.includes(\"dernier\")){\n        msg.monologueToSpeak = msg.monologueToSpeak.slice(msg.monologueToSpeak.length - 2, msg.monologueToSpeak.length);\n        msg.monologueToSpeak = msg.monologueToSpeak.join('.')\n        msg.monologueToSpeak = msg.monologue3.slice(msg.monologue3.length - (msg.monologueToSpeak.length-1), msg.monologue3.length)\n    }\n}\nif(msg.payload.includes(\"tout le monologue\")){\n    msg.monologueToSpeak = msg.monologue3\n}\nmsg.payload = msg.monologueToSpeak\n\nreturn msg;\n",
         "outputs": 1,
@@ -7672,14 +8446,1857 @@
         ]
     },
     {
+        "id": "66e5a712699560fe",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "a783024a8314ff4e",
+        "type": "function",
+        "z": "e0b88d23ec56febb",
+        "name": "Get dolibarr API object rootPaths",
+        "func": "var dolibarrObjectTypeList = []\nfor (var path in msg.payload.paths) {\n    if (msg.payload.paths.hasOwnProperty(path)) {\n        path = path.slice(1)\n        if(path.includes('/')){\n            var rootPath = path.slice(0, path.indexOf('/'))\n        }else{\n            rootPath = path\n        }\n        dolibarrObjectTypeList.push(rootPath)\n    }\n}\nmsg.dolibarrObjectTypeList = [...new Set(dolibarrObjectTypeList)]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 300,
+        "wires": [
+            [
+                "2b317408bce6e542"
+            ]
+        ]
+    },
+    {
+        "id": "770be6beb8328773",
+        "type": "http request",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 550,
+        "y": 260,
+        "wires": [
+            [
+                "a783024a8314ff4e"
+            ]
+        ]
+    },
+    {
+        "id": "167db7777642b7c5",
+        "type": "split",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1550,
+        "y": 300,
+        "wires": [
+            [
+                "3b9fa8df3cc40f13"
+            ]
+        ]
+    },
+    {
+        "id": "4d0f70846a304a25",
+        "type": "http request",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 670,
+        "y": 540,
+        "wires": [
+            [
+                "66e5a712699560fe",
+                "085349cfe37516db"
+            ]
+        ]
+    },
+    {
+        "id": "085349cfe37516db",
+        "type": "switch",
+        "z": "e0b88d23ec56febb",
+        "name": "Handle errors",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "404",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "503",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "400",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 960,
+        "y": 540,
+        "wires": [
+            [
+                "af5490ba85caccc6"
+            ],
+            [
+                "2df03207650839fb"
+            ],
+            [
+                "03686734cc7e053f"
+            ],
+            [
+                "50d86c4d971e0331"
+            ],
+            [
+                "ac25e51276cc6d90"
+            ]
+        ]
+    },
+    {
+        "id": "391fe18b05530468",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": false,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1490,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "69f3b6f6f36d5258",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1930,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "1299a97669f73268",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "a8cc649ab5c458dd",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "76de7163c10af77f",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "2df03207650839fb",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "work to do",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 520,
+        "wires": [
+            [
+                "ec2d574e6fc6afa0"
+            ]
+        ]
+    },
+    {
+        "id": "af5490ba85caccc6",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "No object found",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 480,
+        "wires": [
+            [
+                "391fe18b05530468",
+                "2c94da3074594fd1"
+            ]
+        ]
+    },
+    {
+        "id": "03686734cc7e053f",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "api call wrong parameter",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 560,
+        "wires": [
+            [
+                "1299a97669f73268",
+                "2c94da3074594fd1"
+            ]
+        ]
+    },
+    {
+        "id": "ec2d574e6fc6afa0",
+        "type": "switch",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "property": "payload.error.message",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "'t.rowid' in 'order clause'",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1750,
+        "y": 520,
+        "wires": [
+            [
+                "bb46dd8bab5bb1aa"
+            ],
+            [
+                "69f3b6f6f36d5258"
+            ]
+        ]
+    },
+    {
+        "id": "bb46dd8bab5bb1aa",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "url",
+                "pt": "msg",
+                "from": "rowid",
+                "fromt": "str",
+                "to": "id",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1960,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0add92ae320a3779",
+        "type": "http request",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 2370,
+        "y": 460,
+        "wires": [
+            [
+                "d92fc3314f8c70a9"
+            ]
+        ]
+    },
+    {
+        "id": "d92fc3314f8c70a9",
+        "type": "link out",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "4ff19ac399a0f899"
+        ],
+        "x": 2505,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "4ff19ac399a0f899",
+        "type": "link in",
+        "z": "e0b88d23ec56febb",
+        "name": "check error way",
+        "links": [
+            "d92fc3314f8c70a9"
+        ],
+        "x": 625,
+        "y": 640,
+        "wires": [
+            [
+                "085349cfe37516db"
+            ]
+        ]
+    },
+    {
+        "id": "50d86c4d971e0331",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{dolibarrObjectTypeList[$$.parts.index] : payload[0]}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 600,
+        "wires": [
+            [
+                "2c94da3074594fd1",
+                "a8cc649ab5c458dd"
+            ]
+        ]
+    },
+    {
+        "id": "2b317408bce6e542",
+        "type": "function",
+        "z": "e0b88d23ec56febb",
+        "name": "Remove elememt ",
+        "func": "msg.dolibarrObjectTypeList.slice(msg.dolibarrObjectTypeList.indexOf(msg.payload),1)\nvar valToRemove = ['login', 'documents', 'setup', 'status']\nfor (let index = 0; index < valToRemove.length; index++) {\n    const element = valToRemove[index];\n    if (msg.dolibarrObjectTypeList.includes(element)){\n        msg.dolibarrObjectTypeList.splice(msg.dolibarrObjectTypeList.indexOf(element), 1)\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 300,
+        "wires": [
+            [
+                "b99afed8e7639d9f"
+            ]
+        ]
+    },
+    {
+        "id": "b99afed8e7639d9f",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "dolibarrObjectTypeList",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "dolibarrObjects",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1360,
+        "y": 300,
+        "wires": [
+            [
+                "167db7777642b7c5"
+            ]
+        ]
+    },
+    {
+        "id": "3b9fa8df3cc40f13",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'http://192.168.1.18:8200/api/index.php/' & payload & '?sortfield=t.rowid&sortorder=ASC&limit=1'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "4d0f70846a304a25",
+                "1f6de9ab648fec22",
+                "3829fe4d1978f0e3"
+            ]
+        ]
+    },
+    {
+        "id": "2c94da3074594fd1",
+        "type": "join",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 2450,
+        "y": 80,
+        "wires": [
+            [
+                "7f4e8f215b3c90a5"
+            ]
+        ]
+    },
+    {
+        "id": "7f4e8f215b3c90a5",
+        "type": "function",
+        "z": "e0b88d23ec56febb",
+        "name": "Remove elememt with error",
+        "func": "var dolibarrObjects = []\nfor (let index = 0; index < msg.payload.length; index++) {\n    const element = msg.payload[index];\n    if (!element.hasOwnProperty('error')) {\n        dolibarrObjects.push(msg.payload[index])\n    }\n}\nmsg.dolibarrObjects = dolibarrObjects\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2680,
+        "y": 80,
+        "wires": [
+            [
+                "0c77d02d05c60bcf"
+            ]
+        ]
+    },
+    {
+        "id": "ac25e51276cc6d90",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "this case is not handled",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 640,
+        "wires": [
+            [
+                "76de7163c10af77f"
+            ]
+        ]
+    },
+    {
+        "id": "d6cf05a3596154b7",
+        "type": "function",
+        "z": "e0b88d23ec56febb",
+        "name": "Set priority of msg value",
+        "func": "var list = [\n    'protocol',\n    'host',\n    'port',\n    'path',\n    'apiKey',\n    'clearHeaders',\n    'objectName',\n    'sortField',\n    'sortOrder',\n    'limit',\n    'page',\n    'sqlFilters',\n    'category',\n    'thirdparties',\n    'mode',\n    'status',\n    'productIds',\n    'variantFilter',\n    'idsOnly',\n    'paginationData',\n    'includeStockData',\n    'includeCount',\n    'includeRole',\n    'type']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)){\n        msg[element] = env.get(element)\n    }else{\n        if (msg[element] === undefined || msg[element] === null){\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 80,
+        "wires": [
+            [
+                "82018866575fba41"
+            ]
+        ]
+    },
+    {
+        "id": "6877cb437a61bf10",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "apiKey",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3090,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c77d02d05c60bcf",
+        "type": "switch",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "property": "eraseKey",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2890,
+        "y": 120,
+        "wires": [
+            [
+                "6877cb437a61bf10"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "82018866575fba41",
+        "type": "subflow:54526e03f83ee9e5",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "env": [
+            {
+                "name": "apiKey",
+                "type": "cred"
+            },
+            {
+                "name": "clearHeaders",
+                "type": "bool",
+                "value": "false"
+            },
+            {
+                "name": "eraseKey",
+                "type": "bool",
+                "value": "false"
+            }
+        ],
+        "x": 490,
+        "y": 80,
+        "wires": [
+            [
+                "52c90dec905d5b6c",
+                "4257198d5b1c19ac"
+            ]
+        ]
+    },
+    {
+        "id": "1f6de9ab648fec22",
+        "type": "subflow:54526e03f83ee9e5",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "env": [
+            {
+                "name": "apiKey",
+                "type": "cred"
+            }
+        ],
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "8c598d4bd7834c04"
+            ]
+        ]
+    },
+    {
+        "id": "8c598d4bd7834c04",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "3829fe4d1978f0e3",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "81474ab224fe0e13",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "protocol & '://' & host & ':' & port & '/api/slots' & (path != '' ? '/'&path : '')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "770be6beb8328773"
+            ]
+        ]
+    },
+    {
+        "id": "52c90dec905d5b6c",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "protocol & '://' & host  & (port ? ':' & port : '')  & '/api/index.php/' & objectName & '?'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 140,
+        "wires": [
+            [
+                "7df5b6af6b3b9f32",
+                "1348a42ec4b03de9"
+            ]
+        ]
+    },
+    {
+        "id": "881f30591bb19ec3",
+        "type": "function",
+        "z": "e0b88d23ec56febb",
+        "name": "Add parametter global parameter to URL",
+        "func": "//sortField\nif(msg.sortField !== \"\"){\n    msg.url += 'sortfield=t.' + msg.sortField\n}\n//sortOrder\nif (msg.sortOrder !== \"\") {\n    msg.url += '&sortorder=' + msg.sortOrder\n}\n//limit\nif (msg.limit !== \"\") {\n    msg.url += '&limit=' + msg.limit\n}\n//page\nif (msg.page !== 0) {\n    msg.url += '&page=' + msg.page\n}\n//sqlFilters\nif (typeof msg.sqlFilters === 'string' && msg.sqlFilters !== ''){\n    msg.url += '&sqlfilters=' + msg.sqlFilters\n}\nif (typeof msg.sqlFilters === 'object' && msg.sqlFilters !== []){\n    let sqlFilters = ''\n    for (let i = 0; i < msg.sqlFilters.length; i++) {\n        if(i !== 0){\n            sqlFilters += ' ' + msg.sqlFilters[i].operation\n        }\n        sqlFilters += '(' + msg.sqlFilters[i].attribute\n        sqlFilters += ':' + msg.sqlFilters[i].compare + ':'\n        sqlFilters += msg.sqlFilters[i].value + ')'\n    }\n    msg.url += sqlFilters\n}\n//varianFilter\nif (msg.variantFilter !== 0) {\n    msg.url += '&variant_filter=' + msg.variantFilter\n}\n//idsOnly\nif (msg.idsOnly !== false) {\n    msg.url += '&ids_only=' + msg.idsOnly\n}\n//paginationData\nif (msg.paginationData !== false) {\n    msg.url += '&pagination_data=' + msg.paginationData\n}\n//mode\nif (msg.mode !== \"null\") {\n    msg.url += '&mode=' + msg.mode\n}\n//status\nif (msg.status !== \"null\") {\n    msg.url += '&mode=' + msg.status\n}\n//includeStockData\nif (msg.includeStockData !== false) {\n    msg.url += '&includestockdata=' + msg.includeStockData\n}\n//includeCount\nif (msg.includeCount !== false) {\n    msg.url += '&includecount=' + msg.includeCount\n}\n//includeRole\nif (msg.includeRole !== false) {\n    msg.url += '&includerole=' + msg.includeRole\n}\n//type\nif (msg.type !== \"\") {\n    msg.url += '&type=' + msg.type\n}\n//thirdpartyIds\n//if (msg.thirdpartyIds !== '' || msg.sqlFilters !== []) {\n//    if (typeof msg.sqlFilters === 'string') {\n//        msg.url += '&sqlfilters=' + msg.sqlFilters\n//    }\n//    if (typeof msg.sqlFilters === 'object') {\n//        let sqlFilters = ''\n//        for (let i = 0; i < msg.sqlFilters.length; i++) {\n//            if (i !== 0) {\n//                sqlFilters += ' ' + msg.sqlFilters[i].operation\n//            }\n//            sqlFilters += '(' + msg.sqlFilters[i].attribute\n//            sqlFilters += ':' + msg.sqlFilters[i].compare + ':'\n//            sqlFilters += msg.sqlFilters[i].value + ')'\n//        }\n//    }\n//}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 80,
+        "wires": [
+            [
+                "796f7157d12daf87",
+                "5c0e995677254bcd"
+            ]
+        ]
+    },
+    {
+        "id": "e9c33ced9f42dc2d",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7df5b6af6b3b9f32",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5c0e995677254bcd",
+        "type": "http request",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1730,
+        "y": 200,
+        "wires": [
+            [
+                "c5214b76499a0c16"
+            ]
+        ]
+    },
+    {
+        "id": "796f7157d12daf87",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c5214b76499a0c16",
+        "type": "debug",
+        "z": "e0b88d23ec56febb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1970,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4257198d5b1c19ac",
+        "type": "change",
+        "z": "e0b88d23ec56febb",
+        "d": true,
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "https://www.techsc-dolibarr.fr/api/index.php/products?sortfield=t.ref&sortorder=ASC&limit=100&page=1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 20,
+        "wires": [
+            [
+                "5c0e995677254bcd"
+            ]
+        ]
+    },
+    {
+        "id": "1348a42ec4b03de9",
+        "type": "function",
+        "z": "e0b88d23ec56febb",
+        "name": "Handle special  case of \"type\" field ",
+        "func": "if(msg.objectName === 'categories'){\n    if(typeof msg.type === 'string' || msg.type !== ''){\n        //if ((typeof msg.sqlFilters === 'string' && msg.sqlFilters !== '')){\n        //    msg.sqlFilters += 'and(type:=:' + msg.type + ')'\n        //}\n        //if ((typeof msg.sqlFilters === 'string' && msg.sqlFilters === '')) {\n        //    msg.sqlFilters += '(type:=:' + msg.type + ')'\n        //}\n        if ((typeof msg.sqlFilters === 'object' && msg.sqlFilters !== [])){\n            let sqlFilter = {\n                'operation': 'and',\n                'comparate': '=',\n                'attribute': 'type',\n                'value': msg.type\n            }\n            msg.sqlFilters.push(sqlFilter)\n        }\n    }\n    if (typeof msg.type === 'object') {\n        if (msg.type.length === 0){\n\n        }else{\n            if (typeof msg.sqlFilters === 'string') {\n                for (let i = 0; i < msg.type.length; i++) {\n                    if (i === 0 && msg.sqlFilters === '') {\n                        msg.sqlFilters += '(type:=:' + msg.type[i] + ')';\n                    } else {\n                        msg.sqlFilters += 'and(type:=:' + msg.type[i] + ')';\n                    }\n                }\n            }\n        }\n        if ((typeof msg.sqlFilters === 'object' && msg.sqlFilters !== [])) {\n            for (let i = 0; i < msg.type.length; i++) {  \n                let sqlFilter = {\n                    'operation': 'and',\n                    'comparate': '=',\n                    'attribute': 'type',\n                    'value': msg.type[i]\n                }\n                msg.sqlFilters.push(sqlFilter)\n            }\n        }\n    }\n    msg.type = ''\n}\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 80,
+        "wires": [
+            [
+                "881f30591bb19ec3"
+            ]
+        ]
+    },
+    {
+        "id": "27635e708f5d05b0",
+        "type": "function",
+        "z": "54526e03f83ee9e5",
+        "name": "Set Header",
+        "func": "if (msg.headers === null || msg.headers === undefined || msg.clearHeaders){\n    msg.headers = {};\n}\nmsg.headers['DOLAPIKEY'] = msg.apiKey;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 280,
+        "wires": [
+            [
+                "a11e0bdac5ddb9e6"
+            ]
+        ]
+    },
+    {
+        "id": "85dbe078bc70e1fa",
+        "type": "comment",
+        "z": "54526e03f83ee9e5",
+        "name": "Set API key in header",
+        "info": "",
+        "x": 680,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "762646999dea5e9f",
+        "type": "change",
+        "z": "54526e03f83ee9e5",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "apiKey",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0cc08cda04f90a8",
+        "type": "function",
+        "z": "54526e03f83ee9e5",
+        "name": "Set priority of msg value",
+        "func": "var list = ['apiKey', 'clearHeaders', 'eraseKey']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)) {\n        msg[element] = env.get(element)\n    } else {\n        if (msg[element] === undefined || msg[element] === null) {\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 280,
+        "wires": [
+            [
+                "27635e708f5d05b0"
+            ]
+        ]
+    },
+    {
+        "id": "a11e0bdac5ddb9e6",
+        "type": "switch",
+        "z": "54526e03f83ee9e5",
+        "name": "",
+        "property": "eraseKey",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 970,
+        "y": 300,
+        "wires": [
+            [
+                "762646999dea5e9f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "53434fea43310c31",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "3f817fd15eb9dbf8",
+        "type": "function",
+        "z": "c38e097dab2ac14e",
+        "name": "Get dolibarr API object rootPaths",
+        "func": "var dolibarrObjectTypeList = []\nfor (var path in msg.payload.paths) {\n    if (msg.payload.paths.hasOwnProperty(path)) {\n        path = path.slice(1)\n        if(path.includes('/')){\n            var rootPath = path.slice(0, path.indexOf('/'))\n        }else{\n            rootPath = path\n        }\n        dolibarrObjectTypeList.push(rootPath)\n    }\n}\nmsg.dolibarrObjectTypeList = [...new Set(dolibarrObjectTypeList)]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 140,
+        "wires": [
+            [
+                "97e1c886bf8837d7"
+            ]
+        ]
+    },
+    {
+        "id": "da3c9644c193c389",
+        "type": "http request",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.18:8200/api/index.php/explorer/swagger.json?DOLAPIKEY=yCTZOBZR5wA415gDkwaTg8c46K5ux34s",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 550,
+        "y": 260,
+        "wires": [
+            [
+                "3f817fd15eb9dbf8"
+            ]
+        ]
+    },
+    {
+        "id": "48b11d7bd95e2ce2",
+        "type": "split",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1510,
+        "y": 140,
+        "wires": [
+            [
+                "6fadfb41f5874d9b"
+            ]
+        ]
+    },
+    {
+        "id": "368f348c1b273036",
+        "type": "http request",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 670,
+        "y": 540,
+        "wires": [
+            [
+                "53434fea43310c31",
+                "67b39c715145d352"
+            ]
+        ]
+    },
+    {
+        "id": "67b39c715145d352",
+        "type": "switch",
+        "z": "c38e097dab2ac14e",
+        "name": "Handle errors",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "404",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "503",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "400",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 960,
+        "y": 540,
+        "wires": [
+            [
+                "9a090f3d0e5d1933"
+            ],
+            [
+                "b0c07090a5e8461c"
+            ],
+            [
+                "a991f7320168c15e"
+            ],
+            [
+                "707dde1df378cdfb"
+            ],
+            [
+                "fecc4c4084b1874d"
+            ]
+        ]
+    },
+    {
+        "id": "8f519972cc20df43",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": false,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1490,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "fd396387cba9932f",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1930,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "89231a35733f7616",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "6b144d5705b44d45",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3e35e7f701e6b5c5",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "b0c07090a5e8461c",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "work to do",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 520,
+        "wires": [
+            [
+                "0908a1529d955f35"
+            ]
+        ]
+    },
+    {
+        "id": "9a090f3d0e5d1933",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "No object found",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 480,
+        "wires": [
+            [
+                "8f519972cc20df43",
+                "d6852ba0eb8e155c"
+            ]
+        ]
+    },
+    {
+        "id": "a991f7320168c15e",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "api call wrong parameter",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 560,
+        "wires": [
+            [
+                "89231a35733f7616",
+                "d6852ba0eb8e155c"
+            ]
+        ]
+    },
+    {
+        "id": "0908a1529d955f35",
+        "type": "switch",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "property": "payload.error.message",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "'t.rowid' in 'order clause'",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1750,
+        "y": 520,
+        "wires": [
+            [
+                "8be64e7c84a6e84f"
+            ],
+            [
+                "fd396387cba9932f"
+            ]
+        ]
+    },
+    {
+        "id": "8be64e7c84a6e84f",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "url",
+                "pt": "msg",
+                "from": "rowid",
+                "fromt": "str",
+                "to": "id",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1960,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bd36370b78835b69",
+        "type": "http request",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 2370,
+        "y": 460,
+        "wires": [
+            [
+                "43b92a06e9ae685e"
+            ]
+        ]
+    },
+    {
+        "id": "43b92a06e9ae685e",
+        "type": "link out",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "519ad4287c143cec"
+        ],
+        "x": 2505,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "519ad4287c143cec",
+        "type": "link in",
+        "z": "c38e097dab2ac14e",
+        "name": "check error way",
+        "links": [
+            "43b92a06e9ae685e"
+        ],
+        "x": 625,
+        "y": 640,
+        "wires": [
+            [
+                "67b39c715145d352"
+            ]
+        ]
+    },
+    {
+        "id": "707dde1df378cdfb",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{dolibarrObjectTypeList[$$.parts.index] : payload[0]}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 600,
+        "wires": [
+            [
+                "d6852ba0eb8e155c",
+                "6b144d5705b44d45"
+            ]
+        ]
+    },
+    {
+        "id": "97e1c886bf8837d7",
+        "type": "function",
+        "z": "c38e097dab2ac14e",
+        "name": "Remove elememt ",
+        "func": "msg.dolibarrObjectTypeList.slice(msg.dolibarrObjectTypeList.indexOf(msg.payload),1)\nvar valToRemove = ['login', 'documents', 'setup', 'status']\nfor (let index = 0; index < valToRemove.length; index++) {\n    const element = valToRemove[index];\n    if (msg.dolibarrObjectTypeList.includes(element)){\n        msg.dolibarrObjectTypeList.splice(msg.dolibarrObjectTypeList.indexOf(element), 1)\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 140,
+        "wires": [
+            [
+                "1b9eb6585d882f09"
+            ]
+        ]
+    },
+    {
+        "id": "1b9eb6585d882f09",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "dolibarrObjectTypeList",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "dolibarrObjects",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 140,
+        "wires": [
+            [
+                "48b11d7bd95e2ce2"
+            ]
+        ]
+    },
+    {
+        "id": "6fadfb41f5874d9b",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'http://192.168.1.18:8200/api/index.php/' & payload & '?sortfield=t.rowid&sortorder=ASC&limit=1'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "368f348c1b273036",
+                "337a7db13ac99dec",
+                "9e2fc69e0960823f"
+            ]
+        ]
+    },
+    {
+        "id": "d6852ba0eb8e155c",
+        "type": "join",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 2450,
+        "y": 80,
+        "wires": [
+            [
+                "e6adb927485f1a9c"
+            ]
+        ]
+    },
+    {
+        "id": "e6adb927485f1a9c",
+        "type": "function",
+        "z": "c38e097dab2ac14e",
+        "name": "Remove elememt with error",
+        "func": "var dolibarrObjects = []\nfor (let index = 0; index < msg.payload.length; index++) {\n    const element = msg.payload[index];\n    if (!element.hasOwnProperty('error')) {\n        dolibarrObjects.push(msg.payload[index])\n    }\n}\nmsg.dolibarrObjects = dolibarrObjects\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2680,
+        "y": 80,
+        "wires": [
+            [
+                "d119efffbb29803a"
+            ]
+        ]
+    },
+    {
+        "id": "fecc4c4084b1874d",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fornow",
+                "pt": "msg",
+                "to": "this case is not handled",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 640,
+        "wires": [
+            [
+                "3e35e7f701e6b5c5"
+            ]
+        ]
+    },
+    {
+        "id": "2db58ed50592ceaf",
+        "type": "function",
+        "z": "c38e097dab2ac14e",
+        "name": "Set priority of msg value",
+        "func": "var list = ['apiHost', 'apiKey', 'clearHeaders']\nfor (let index = 0; index < list.length; index++) {\n    const element = list[index];\n    if (msg[element] === undefined && (env.get(element) !== '' || env.get(element) !== null || env.get(element) !== undefined)){\n        msg[element] = env.get(element)\n    }else{\n        if (msg[element] === undefined || msg[element] === null){\n            node.warn(\"You have to configure the node in the panel editor or via msg property\");\n        }\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 80,
+        "wires": [
+            [
+                "dbc853c81be6436e"
+            ]
+        ]
+    },
+    {
+        "id": "b20c6328a0579e71",
+        "type": "change",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "apiKey",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3090,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d119efffbb29803a",
+        "type": "switch",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "property": "eraseKey",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2890,
+        "y": 120,
+        "wires": [
+            [
+                "b20c6328a0579e71"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dbc853c81be6436e",
+        "type": "subflow:54526e03f83ee9e5",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "env": [
+            {
+                "name": "apiKey",
+                "type": "cred"
+            },
+            {
+                "name": "clearHeaders",
+                "type": "bool",
+                "value": "false"
+            },
+            {
+                "name": "eraseKey",
+                "type": "bool",
+                "value": "false"
+            }
+        ],
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "da3c9644c193c389"
+            ]
+        ]
+    },
+    {
+        "id": "337a7db13ac99dec",
+        "type": "subflow:54526e03f83ee9e5",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "env": [
+            {
+                "name": "apiKey",
+                "type": "cred"
+            }
+        ],
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "c3664e603bf01f70"
+            ]
+        ]
+    },
+    {
+        "id": "c3664e603bf01f70",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "9e2fc69e0960823f",
+        "type": "debug",
+        "z": "c38e097dab2ac14e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 580,
+        "wires": []
+    },
+    {
         "id": "099f6275bdac6398",
         "type": "comment",
         "z": "58612799aa277ac1",
         "g": "accc01d78c5b390d",
         "name": "1st step",
         "info": "## Plan\nPour cette première vidéo le planning est d'installer les premiers outils néccessaire. C'est a dire:\n - Les outils de base de communication entre nos machines  \n - Un éditeur de code, Visual Studio Code sur l'orangepi et le telephone\n    - téléphone : https://www.codewithharry.com/blogpost/install-vs-code-in-android/\n - Un gestionnaire de conteneneur, Docker car c'est le plus fournir et simple à mettre en place sur tout les support. Nous allons le mettre sur l'orangepi et essayer sur le téléphone, je l'ai pas fait encore pour préserver le téléphone.\n - Un gestionnaire d'activité, Dolibarr, car il permet de lié les flux financier et les flux physique. De plus, sont utilisation represente une compétence utilsable dans la vie professsionelle et personnelle. Nous allons le mettre sur l'orangepi\n - Un assistant vocal, Rhasspy car il est le plus modulable que nous alllons également mettre sur l'orangepi et sur le téléphone. Nous allons sur le téléphone installer l'APK même si je n'arrive pas afaire fonctionner le wakeword avec\n - Enfin si on à le temps ce qui métonnerais, nous allons commencer à palier à ce problème.\n\n## Session 1\n - Installation de node-red-dashboardpour la simplicité.\n - Mise en place du systeme de communication avec le terminal depuis node-red pour gerer les coonections internet et bluetooth\n    - Pour execetuter des commandes avec node-red nous avons plusieur choix possible\n      1. Tout dabords la note exec. Voici un exemple avec la commande nmcli pour la gestion du wifi\n          1. J'ai créer un bouton sur le dashbord qui nous permet de lancer la commande\n          2. Dans la fonction node j'en fait un tableau d'object que je montre avec la node additionel ui-list\n          3. Dans la node ui-list, j'ai parameter une action au click qui nous permet de lancer la commande de connexion\n          4. Dans la node exec, j'ai activer l'options pour ajouter le nom du reseau c'est à dire la propriété SSID de l'obect construit auparavent.Deplus je l'ai mise en mode spawn pour recevoir des message pendant que la commande est en cours\n          5. Enfin, j'ai fait une template node qui nous permet de voir les message cumuler.  \n          - Nous allons essayer cette solution. Je click sur refresh, nous attendons un peu et nous voyons les connnexion. Maintenant je clique sur une et on vois que l'on nous demande un password.\n        Cela pose un problème car nous ne pouvons pas renvoyer un message dans la commande que nous avons lancer. Pour communiquer avec un processus que nous avons lancer il nous faut une autre node addiotonelle, la node daemon qui est ici.\n        Cependant dans cette node nous ne pouvons pas definir de commande ou d'argument dynamiquement. Cela veut dire que lorsque nous cliquons dans notre list, nous ne pouvons pas en recolter l'information pour la mettre dans notre node daemon\n        On va donc essayer une autre solution\n      2. Pour le deuxième essai on va essayer d'utiliser la même fonction que la node exec realise mais dans une fonction node. c'est ce qu'il y a ici.\n          1. J'ai créer un formulaire avec la node form pour mettre une liste de commande separer par entrer\n          2. J'ai créer une function node pour réaliser à la suite les commandes.\n          3. J'ai remis la node template pour voir le resultat\n          - Nous allons essayer cette solution. Nous tapons notre commande pour nous connecter et nous rajoutons notre ssid. Nous cliquons sur submit et on nous demande notre password, nous en sommme au même point que precédement.\n        Maintenant nous tappons la commmande et le ssid et à la ligne le mot de passe. Nous avons perdu la connexion avec le pc et nous devrions être connecter au téléphone.\n        Avec mon telephone je recupére l'adresse ip du téléphone avec la commande \"ifconfig\" et apres je scanne le reseau avec \"nmap mon_ip/24\". Cela me donne l'ip de mon orangepi connecter au telephone.\n        Maintenant nous pouvons aller sur le node-red de l'orange pi avec le téléphone comme cela. Je coupe mon point d'acces avec le téléphone et nous attendons un peu que l'orangepi se reconnecte à la maison pour y avoir de nouveau acces avec l'ordinateur\n        Dans la prochaine video nous ferrons cela avec node-red coté téléphone et on affichera une notification sur le tel avec l'adresse ip.\n      3. Nous avons reussi à nous connecter au téléphone cependant cela ne fonctionne pas de manière dynamique. En effet, cela ne marche toutjours pas avec un click sur la liste. Pour cette raison, nous allons voir la troisième solution, \n      celle de droite qui est un terminal dynamique qui est ici fait avec la node daemon.\n          1. Tout d'abords, comme la node n'est pas parametrable, il nous faut créer un fichier javascript, contenant notre commande à lancer. Pour cela, j'ai utilisé\n          une template node, qui nous permet de récolter l'information de notre node form qui est ici, pour la mettre dans notre fichier javascript qui s'ecrit avec la node write.\n          2. Ensuite, j'ai mis une node change pour definir une propriété start au message qui permet de lancer la node daemon\n          3. Dans la node daemon, j'ai mis node dans la commande \"node\" et le fichier à lancer dans argument. J'ai déchocher auto-start daemon on deploy et j'ai cocher add enter to every message sent\n          4. Pour envoyer un message au processus en cours j'ai mis une autre node form\n          5. Pour terminer notre processus en cours, j'ai mis une node button qui quand il est cliquer envoie un message à la node change.Dedans j'ai defini une propriété kill a msg qui est transmis à la node daemon\n          6. Pour finir j'ai mis un bouton pour repéter la commande.\n          7. Nous laissons de coter la partie du bas pour le moment qui nous servira à gérer une liste de commande.  \n          - Nous allons maintenant tester notre solution. Nous tapons tape donc la commande pour nous connecter aux reseau. Cela demmande le SSID. Nous mettons XperiaXZ_c8a0 et cela nous demande le mot de passe qui est coucoutoi que nous envoyons\n        Nous repetons les commandes pour trouver notre ip et scanner le reseau pour trouver l'ip de notre orangepi. C'est le même que tout à l'heure. Nous retournons donc dans le navigateur internet pour nous coonecter au dashboard.\n        Cela fonctionne. Nous coupons la connexions du téléphone pour retrouver l'orangepi avec le pc.\n - Choix de l'utilisation d'une node ssh\n   - Maintenant que nous pouvons communiquer avec notre machine grâce à un terminal dans node-red nous allons comminquer avec notre téléphone grave à la commande ssh. Pour ce la on pourrait utiliser notre terminal mais si on essaie on voit qu'il y a une erreur.\n   Nous pouvons la contourner mais cela implique de mettre le mot de passe dans la commande ce qui ne serai pas sécuriser. Dans une autre vidéo, nous ferrons un systeme pour crypter le mot de passe, le sauvegarder et l'injecter dans la commande.\n   Pour le moment détaillons le choix de la node ssh. Parmis les node existante :\n   - node-red-contrib-ssh-v3 : pas de port spécifiable donc pas utilisable avec termux\n   - idem pour : node-red-contrib-ssh-coco, node-red-contrib-ssh et node-red-contrib-ssh-v2-reconnection \n   - node-red-contrib-bigssh : pas de changement de status de la node en cas de perte de connection avec le telephone\n   - Pour l'instant le mieux c'est bigssh.\n   - En revanche ce n'est pas parfait car cela nous fait revenir au point de départ concernant le terminal. En effet toute les node ssh sont comme les node exec et non comme les node daemon.\n   C'est à dire pas de communication possible après la commande. Pour cette rasion, nous serrons obliger de remplacer cette node ultérieurement comme nous auront fait le systeme de cryptation du mot de passe.\n - Maintenant qu nous avons notre systeme de terminal, nous pouvons commencer as réaliser les commandes nécessaire lorsque l'on télécharge le projet pour la première fois. Avant cela nous allons voir la dernière fonctionnalité à notre terminal.\nFaire defiler une liste de commande préétablie avec des boutons en fonction du resultat de la commande précedente. \n    1. J'ai donc ajouter une node text pour saisir un tableau de commande\n    2. J'ai ajouter une node change pour definir des variables au niveau du flow ce qui nous permettra d'acceder à nos informations de liste pour tout les messages\n    3. Ensuite, la prochaine node change passe la premières commande à notre text \n    4. Toutes les node fonction \"message for spawn\" servent à formater le message car pour lancer la première commande, la commande doit être séparer des arguments. Maintenant que c'est fait je pense que cela peut être améliorer en modifiant le code javascript qui lance la commande.\n    5. Il y a ensuite les trois bouton pour gerer la liste\n    6. Ce qui est derrière ces bouton sert à modifier l'état des boutons, l'index en cour de la liste et le texte pour la commande suivante\n    7. La liste est compatible avec la parti du dessus, c'est a dire que vous pouvez injecter des commande en cours de liste.\n  - Nous allons maintenant pourvoir dresser une liste de commande à executer pour chaque outil. Cependant en fesant cela je me suis rendu compte que de pourvoir sauvegarder notre liste pourrait être intéressant\n  C'est l'objet de la troisième parti que vous voyer la. J'arrive à ma dead line pour cette vidéo donc je ne détaille pas. Sachez juste que en fesant cela j'ai découvert xterm.js et que dans les prochaines vidéo on remplacera la node template par une fenetre xterm.js pour pouvoir exploiter pleinement le terminal et profitez de notre gestion de liste de commande.\n  Cependant nous avons maintenant un outil pour modifier un script que nous pouvons modifier librement et faire defiler commande par commande. Pour injecter des commandes dans notre outils j'ai ajouter une node link in. Dans le flow Installation nous pouvons maintenant mettre une inject node et une node link out pour charger notre list.\n  Cela nous permetra de facilement d'effectuer nos installations sur nos différente machine et de pouvoir injecter nos mots de passe.\n    1. Nous commencons donc avec Node-Red. Dedans il y a les commandes pour le lancer au démarrage. Pour l'instant c'est juste le laner au démarrage de la machine. Cependant je vais le lancer, Nous voyons que  \n",
-        "x": 150,
-        "y": 80,
+        "x": 130,
+        "y": 120,
         "wires": []
     },
     {
@@ -7696,8 +10313,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1860,
-        "y": 220,
+        "x": 1840,
+        "y": 260,
         "wires": []
     },
     {
@@ -7765,8 +10382,8 @@
         "g": "accc01d78c5b390d",
         "name": "Install nodejs libary to scan networks and define global variable for the app",
         "info": "",
-        "x": 360,
-        "y": 220,
+        "x": 340,
+        "y": 260,
         "wires": []
     },
     {
@@ -7791,8 +10408,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 170,
-        "y": 260,
+        "x": 150,
+        "y": 300,
         "wires": [
             [
                 "6e315e8005f93db6"
@@ -7861,8 +10478,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2020,
-        "y": 260,
+        "x": 2000,
+        "y": 300,
         "wires": [
             []
         ]
@@ -7910,8 +10527,8 @@
                 "type": "bool"
             }
         ],
-        "x": 800,
-        "y": 260,
+        "x": 780,
+        "y": 300,
         "wires": [
             [
                 "398286c135d72f4e",
@@ -8004,8 +10621,8 @@
         "g": "accc01d78c5b390d",
         "name": "Load project directory in global variable",
         "info": "",
-        "x": 250,
-        "y": 120,
+        "x": 230,
+        "y": 160,
         "wires": []
     },
     {
@@ -8047,8 +10664,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 180,
+        "x": 130,
+        "y": 220,
         "wires": [
             [
                 "bbbac82b0e8ca5c5"
@@ -8069,8 +10686,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 140,
+        "x": 820,
+        "y": 180,
         "wires": []
     },
     {
@@ -8104,8 +10721,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
-        "y": 140,
+        "x": 1300,
+        "y": 180,
         "wires": []
     },
     {
@@ -8122,8 +10739,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 160,
+        "x": 1020,
+        "y": 200,
         "wires": []
     },
     {
@@ -8144,8 +10761,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 560,
-        "y": 260,
+        "x": 540,
+        "y": 300,
         "wires": [
             [
                 "1a0ee4d754397b65",
@@ -8170,8 +10787,8 @@
                 "module": "os"
             }
         ],
-        "x": 320,
-        "y": 260,
+        "x": 300,
+        "y": 300,
         "wires": [
             [
                 "a486d072b002a4d8"
@@ -8196,8 +10813,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1030,
-        "y": 260,
+        "x": 1010,
+        "y": 300,
         "wires": [
             [
                 "f0aa98ca142d18ba"
@@ -8217,8 +10834,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 1300,
-        "y": 220,
+        "x": 1280,
+        "y": 260,
         "wires": [
             [
                 "a31ed93da07587de"
@@ -8247,8 +10864,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1480,
-        "y": 260,
+        "x": 1460,
+        "y": 300,
         "wires": [
             [
                 "26858a679202fcc1"
@@ -8267,8 +10884,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1680,
-        "y": 240,
+        "x": 1660,
+        "y": 280,
         "wires": [
             [
                 "3b986ba732de0ec3"
@@ -8295,8 +10912,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1230,
-        "y": 280,
+        "x": 1210,
+        "y": 320,
         "wires": [
             [
                 "2d811df439c064d7"
@@ -8320,7 +10937,7 @@
         "topic": "",
         "payload": "2Pac - 103 - Lil' Homies.mp3",
         "payloadType": "str",
-        "x": 2490,
+        "x": 2710,
         "y": 720,
         "wires": [
             [
@@ -8341,7 +10958,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2980,
+        "x": 3160,
         "y": 720,
         "wires": []
     },
@@ -8362,8 +10979,8 @@
         "topic": "",
         "payload": "start",
         "payloadType": "str",
-        "x": 2470,
-        "y": 780,
+        "x": 2830,
+        "y": 980,
         "wires": [
             [
                 "e81dc83962f7d46b"
@@ -8383,7 +11000,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2940,
+        "x": 3120,
         "y": 780,
         "wires": []
     },
@@ -8400,7 +11017,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2940,
+        "x": 3120,
         "y": 820,
         "wires": []
     },
@@ -8411,7 +11028,7 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 2700,
+        "x": 2880,
         "y": 680,
         "wires": [
             [
@@ -9373,8 +11990,8 @@
         "z": "58612799aa277ac1",
         "g": "accc01d78c5b390d",
         "name": "",
-        "x": 320,
-        "y": 160,
+        "x": 300,
+        "y": 200,
         "wires": [
             [
                 "db6ff932806cc474"
@@ -9396,7 +12013,7 @@
         "inputRate": 16000,
         "inputBits": 16,
         "debugOutput": true,
-        "x": 2700,
+        "x": 2880,
         "y": 760,
         "wires": [
             [
@@ -9433,7 +12050,7 @@
         "outputFormat": "file",
         "manualPath": "test2",
         "debugOutput": true,
-        "x": 2670,
+        "x": 2850,
         "y": 840,
         "wires": [
             [
@@ -10022,8 +12639,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 990,
-        "y": 100,
+        "x": 970,
+        "y": 140,
         "wires": [
             [
                 "3b2dd43a127982f6"
@@ -10058,8 +12675,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 740,
-        "y": 80,
+        "x": 720,
+        "y": 120,
         "wires": [
             [
                 "fc62c24868cdc470"
@@ -10075,8 +12692,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 1170,
-        "y": 80,
+        "x": 1150,
+        "y": 120,
         "wires": [
             [
                 "b56cbac6977e1dd7"
@@ -10095,8 +12712,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1490,
-        "y": 100,
+        "x": 1470,
+        "y": 140,
         "wires": [
             [
                 "b65237e8d3b302fa"
@@ -10110,8 +12727,8 @@
         "g": "accc01d78c5b390d",
         "name": "Packets to install on linux",
         "info": "",
-        "x": 210,
-        "y": 340,
+        "x": 190,
+        "y": 380,
         "wires": []
     },
     {
@@ -10136,8 +12753,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 190,
-        "y": 380,
+        "x": 170,
+        "y": 420,
         "wires": [
             []
         ]
@@ -10146,10 +12763,10 @@
         "id": "f182e36bcc72160e",
         "type": "comment",
         "z": "58612799aa277ac1",
-        "name": "Command for docker",
-        "info": "",
-        "x": 180,
-        "y": 1380,
+        "name": "Command for docker THINGS TO DO HERE",
+        "info": "You have to install docker and docker-compose. Go to the website to get the instruction\n[https://docs.docker.com/engine/install/debian/]()\n\nAfter that install docker-compose with the command below\nsudo apt install docker-compose",
+        "x": 230,
+        "y": 1420,
         "wires": []
     },
     {
@@ -10170,8 +12787,8 @@
         "topic": "",
         "payload": "[\"sudo systemctl enable nodered.service\"]",
         "payloadType": "json",
-        "x": 150,
-        "y": 1440,
+        "x": 130,
+        "y": 1480,
         "wires": [
             [
                 "c779dce1ced02432"
@@ -10188,8 +12805,8 @@
             "ca1a3b161424e5e9",
             "bc746456f276f19a"
         ],
-        "x": 265,
-        "y": 1440,
+        "x": 245,
+        "y": 1480,
         "wires": []
     },
     {
@@ -10779,8 +13396,8 @@
         "g": "73a13b2a544544a8",
         "name": "For the FTP server",
         "info": "Modify the /etc/vsftpd.conf file\nuncomment #write_enable=YES\n\nAdd\nforce_dot_files=YES\n",
-        "x": 130,
-        "y": 2500,
+        "x": 150,
+        "y": 1220,
         "wires": []
     },
     {
@@ -10799,10 +13416,10 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "[\"sudo -S apt install vsftpdt\"]",
+        "payload": "[\"sudo apt install vsftpd\",\"sudo systemctl start vsftpd\"]",
         "payloadType": "json",
-        "x": 110,
-        "y": 2540,
+        "x": 130,
+        "y": 1260,
         "wires": [
             []
         ]
@@ -11514,7 +14131,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "techscOrangepi",
+        "payload": "perseignUF",
         "payloadType": "str",
         "x": 160,
         "y": 1820,
@@ -11543,7 +14160,7 @@
             },
             {
                 "p": "dolTag",
-                "v": "15",
+                "v": "16",
                 "vt": "str"
             },
             {
@@ -11816,7 +14433,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "techscOrangepiPassword",
+        "payload": "perseigne1",
         "payloadType": "str",
         "x": 160,
         "y": 1860,
@@ -11842,7 +14459,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "techscOrangepi",
+        "payload": "perseigneUF",
         "payloadType": "str",
         "x": 160,
         "y": 1900,
@@ -11868,7 +14485,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "techscOrangepiPassword",
+        "payload": "perseigne1",
         "payloadType": "str",
         "x": 160,
         "y": 1940,
@@ -12272,6 +14889,7 @@
         "tls": "",
         "persist": false,
         "proxy": "",
+        "insecureHTTPParser": false,
         "authType": "",
         "senderr": false,
         "headers": [],
@@ -12390,8 +15008,8 @@
                 "t": "set",
                 "p": "url",
                 "pt": "msg",
-                "to": "http://192.168.1.21:8300",
-                "tot": "str"
+                "to": "\"http://\"&$globalContext(\"ip\") &\":8300\"",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -12784,6 +15402,7 @@
         "id": "0364a6765fddcc39",
         "type": "mqtt in",
         "z": "58612799aa277ac1",
+        "d": true,
         "g": "816dba1c45b8b78b",
         "name": "",
         "topic": "",
@@ -12842,6 +15461,7 @@
         "id": "1a0d64ee75fde097",
         "type": "mqtt out",
         "z": "58612799aa277ac1",
+        "d": true,
         "g": "816dba1c45b8b78b",
         "name": "",
         "topic": "",
@@ -13035,7 +15655,7 @@
         "name": "Command for node-red first install: boot at launch",
         "info": "",
         "x": 260,
-        "y": 1020,
+        "y": 820,
         "wires": []
     },
     {
@@ -13057,7 +15677,7 @@
         "payload": "[\"sudo systemctl enable nodered.service\"]",
         "payloadType": "json",
         "x": 190,
-        "y": 1060,
+        "y": 860,
         "wires": [
             [
                 "8bb6adaaf5f017e4"
@@ -13075,7 +15695,7 @@
             "ca1a3b161424e5e9"
         ],
         "x": 295,
-        "y": 1060,
+        "y": 860,
         "wires": []
     },
     {
@@ -13086,7 +15706,7 @@
         "name": "For node-red",
         "info": "",
         "x": 150,
-        "y": 980,
+        "y": 780,
         "wires": []
     },
     {
@@ -13095,26 +15715,28 @@
         "z": "58612799aa277ac1",
         "g": "dd24392cc62ce355",
         "name": "THINGS TO DO HERE TO READ FOR SECURE NODE-RED Create the SSL certificat",
-        "info": "If it's yout first ssl certificat dont forget to run the first step of the script generator for ssl above\nAfter that you can continue",
+        "info": "If it's yout first ssl certificat dont forget to run the first step of the script generator for ssl on the right\nAfter that you can continue",
         "x": 380,
-        "y": 1220,
+        "y": 1020,
         "wires": []
     },
     {
         "id": "e90fbf86d0c30903",
         "type": "comment",
         "z": "58612799aa277ac1",
+        "d": true,
         "g": "dd24392cc62ce355",
         "name": "THINGS TO DO HERE Command to run to generate conf of nlint ",
         "info": "Since it's npm i think no cd possible with my terminal so you have to run it in SSH terminal for now",
         "x": 310,
-        "y": 1120,
+        "y": 920,
         "wires": []
     },
     {
         "id": "e989f5792b9f580e",
         "type": "inject",
         "z": "58612799aa277ac1",
+        "d": true,
         "g": "dd24392cc62ce355",
         "name": "Command",
         "props": [
@@ -13130,7 +15752,7 @@
         "payload": "[\"sudo systemctl enable nodered.service\"]",
         "payloadType": "json",
         "x": 180,
-        "y": 1160,
+        "y": 960,
         "wires": [
             [
                 "8a6e36bdadab66b9"
@@ -13141,6 +15763,7 @@
         "id": "8a6e36bdadab66b9",
         "type": "link out",
         "z": "58612799aa277ac1",
+        "d": true,
         "g": "dd24392cc62ce355",
         "name": "",
         "mode": "link",
@@ -13148,7 +15771,7 @@
             "ca1a3b161424e5e9"
         ],
         "x": 265,
-        "y": 1160,
+        "y": 960,
         "wires": []
     },
     {
@@ -13164,7 +15787,7 @@
         "onceDelay": "3",
         "topic": "",
         "x": 130,
-        "y": 1300,
+        "y": 1100,
         "wires": [
             [
                 "09ae005b0bb6d415"
@@ -13199,7 +15822,7 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 1300,
+        "y": 1100,
         "wires": [
             [
                 "8bbf779d582f7116"
@@ -13219,7 +15842,7 @@
         "template": "    https: {\n        key: require(\"fs\").readFileSync(\"{{{keyPath}}}\"),\n        cert: require(\"fs\").readFileSync(\"{{{certPath}}}\")\n    },",
         "output": "str",
         "x": 620,
-        "y": 1300,
+        "y": 1100,
         "wires": [
             [
                 "4b19419db163cf9f"
@@ -13231,7 +15854,7 @@
         "type": "debug",
         "z": "58612799aa277ac1",
         "g": "dd24392cc62ce355",
-        "name": "Take content and replace Option 1 static object in yout setting file ",
+        "name": "Take content and replace Option 1 static object in yout setting file and restart node-red",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -13240,8 +15863,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 950,
-        "y": 1300,
+        "x": 1020,
+        "y": 1100,
         "wires": []
     },
     {
@@ -13252,7 +15875,7 @@
         "name": "Modify the seetings.js file to put the path or SSL file",
         "info": "",
         "x": 270,
-        "y": 1260,
+        "y": 1060,
         "wires": []
     },
     {
@@ -13431,7 +16054,7 @@
         "links": [
             "ca1a3b161424e5e9"
         ],
-        "x": 925,
+        "x": 2395,
         "y": 820,
         "wires": []
     },
@@ -13440,9 +16063,9 @@
         "type": "comment",
         "z": "58612799aa277ac1",
         "g": "d6c669dc0430ee27",
-        "name": "Script generator for ssl",
-        "info": "",
-        "x": 160,
+        "name": "Script generator for ssl  YOU HAVE TO GO TO THE DASHBOARD TO RUN THE COMMAND YOU HAVE TO ADD -S TO EACH COMMAND WICH START WITH SUDO.",
+        "info": "Modify the first inject node no fit your needs.",
+        "x": 1970,
         "y": 780,
         "wires": []
     },
@@ -13455,7 +16078,7 @@
         "props": [
             {
                 "p": "applicationName",
-                "v": "nodered",
+                "v": "ftp",
                 "vt": "str"
             }
         ],
@@ -13464,7 +16087,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 130,
+        "x": 1600,
         "y": 860,
         "wires": [
             [
@@ -13492,7 +16115,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
+        "x": 2030,
         "y": 860,
         "wires": [
             [
@@ -13515,7 +16138,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
+        "x": 2440,
         "y": 860,
         "wires": []
     },
@@ -13553,7 +16176,7 @@
             },
             {
                 "p": "organization",
-                "v": "TechSC",
+                "v": "PerseigneUF",
                 "vt": "str"
             },
             {
@@ -13572,7 +16195,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 130,
+        "x": 1600,
         "y": 820,
         "wires": [
             [
@@ -13600,7 +16223,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
+        "x": 2130,
         "y": 820,
         "wires": [
             [
@@ -13677,7 +16300,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 390,
+        "x": 1860,
         "y": 820,
         "wires": [
             [
@@ -13686,76 +16309,13 @@
         ]
     },
     {
-        "id": "6c0ac8444bf62c1b",
-        "type": "mqtt in",
+        "id": "6d15424931ec8ea4",
+        "type": "comment",
         "z": "58612799aa277ac1",
-        "name": "",
-        "topic": "",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "91f1b589e74d876c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 3430,
-        "y": 3620,
-        "wires": [
-            [
-                "305835f3101efbfc"
-            ]
-        ]
-    },
-    {
-        "id": "305835f3101efbfc",
-        "type": "debug",
-        "z": "58612799aa277ac1",
-        "name": "debug 142",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3610,
-        "y": 3640,
-        "wires": []
-    },
-    {
-        "id": "2a9a6b052c07bc4d",
-        "type": "catch",
-        "z": "58612799aa277ac1",
-        "name": "",
-        "scope": [
-            "6c0ac8444bf62c1b"
-        ],
-        "uncaught": false,
-        "x": 3390,
-        "y": 3680,
-        "wires": [
-            [
-                "305835f3101efbfc"
-            ]
-        ]
-    },
-    {
-        "id": "d1096ce6e17217b2",
-        "type": "mqtt out",
-        "z": "58612799aa277ac1",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "91f1b589e74d876c",
-        "x": 3590,
-        "y": 3740,
+        "name": "THINGS TO DO HERE TO READ",
+        "info": "For project dependencies:\nyouu can manage dependencies of the project but that is not egnough. you have to \"npm i\" for each dependencies.\n\nFor the dashboard:\nGo to the tab dashboard and find the comment node call \"TO DO FIRST\" and do what it tells you. ",
+        "x": 170,
+        "y": 40,
         "wires": []
     },
     {
@@ -13851,29 +16411,6 @@
         "pretty": false,
         "x": 190,
         "y": 2720,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1d1a03e6ebef2856",
-        "type": "inject",
-        "z": "57297ea9585b5f93",
-        "name": "",
-        "props": [
-            {
-                "p": "enabled",
-                "v": "true",
-                "vt": "bool"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 470,
-        "y": 2600,
         "wires": [
             []
         ]
@@ -14075,13 +16612,13 @@
         "z": "57297ea9585b5f93",
         "g": "18e263da0ce661a2",
         "name": "",
-        "filename": "/home/vicky/.node-red/projects/techscorangepi/child.js",
-        "filenameType": "str",
+        "filename": "$globalContext(\"projectDir\")& \"/child.js\"",
+        "filenameType": "jsonata",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 2000,
+        "x": 1860,
         "y": 680,
         "wires": [
             [
@@ -14170,7 +16707,7 @@
         "g": "18e263da0ce661a2",
         "name": "",
         "command": "node",
-        "args": "/home/vicky/.node-red/projects/techscorangepi/child.js",
+        "args": "/home/perseigneUF/.node-red/projects/perseigneUF/child.js",
         "autorun": false,
         "cr": true,
         "redo": false,
@@ -19756,6 +22293,17 @@
         ]
     },
     {
+        "id": "58adc702736ecdcc",
+        "type": "comment",
+        "z": "57297ea9585b5f93",
+        "g": "18e263da0ce661a2",
+        "name": "TO DO FIRST",
+        "info": "Modify in the node below the arguments field to fit to your project path",
+        "x": 2610,
+        "y": 660,
+        "wires": []
+    },
+    {
         "id": "d851f6856439bb51",
         "type": "ui_template",
         "z": "ebafe26feeec49ee",
@@ -19859,6 +22407,7 @@
         "tls": "",
         "persist": false,
         "proxy": "",
+        "insecureHTTPParser": false,
         "authType": "",
         "senderr": false,
         "headers": [],
@@ -23100,8 +25649,8 @@
         "syntax": "mustache",
         "template": "This is the payload: {{payload}} !",
         "output": "str",
-        "x": 1120,
-        "y": 300,
+        "x": 1040,
+        "y": 280,
         "wires": [
             []
         ]
@@ -23110,6 +25659,7 @@
         "id": "9f6cd0b395da697e",
         "type": "mqtt in",
         "z": "c464cce32785f35b",
+        "d": true,
         "name": "",
         "topic": "hermes/audioServer/toggleOn",
         "qos": "2",
@@ -23148,6 +25698,7 @@
         "id": "6741c6f9884fa6d8",
         "type": "watch",
         "z": "c464cce32785f35b",
+        "d": true,
         "name": "",
         "files": "",
         "recursive": "",
@@ -24086,6 +26637,251 @@
         "wires": []
     },
     {
+        "id": "eaf1ee88e00d9406",
+        "type": "debug",
+        "z": "cda9a4b5dd195f96",
+        "g": "3769455bbb18be83",
+        "name": "debug 167",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "dc3d51f8ecedc5f1",
+        "type": "comment",
+        "z": "cda9a4b5dd195f96",
+        "g": "3769455bbb18be83",
+        "name": "Download file with  pi on pi",
+        "info": "",
+        "x": 210,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "4c6c3c86226eb43e",
+        "type": "ui_upload",
+        "z": "cda9a4b5dd195f96",
+        "g": "3769455bbb18be83",
+        "group": "272472e074141e70",
+        "title": "upload",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 5,
+        "chunk": 256,
+        "transfer": "binary",
+        "x": 130,
+        "y": 700,
+        "wires": [
+            [
+                "a6a82660b6ace126"
+            ]
+        ]
+    },
+    {
+        "id": "a6a82660b6ace126",
+        "type": "join",
+        "z": "cda9a4b5dd195f96",
+        "g": "3769455bbb18be83",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 250,
+        "y": 760,
+        "wires": [
+            [
+                "8259d817ba4c9098"
+            ]
+        ]
+    },
+    {
+        "id": "8259d817ba4c9098",
+        "type": "file",
+        "z": "cda9a4b5dd195f96",
+        "g": "3769455bbb18be83",
+        "name": "",
+        "filename": "\"home/perseigneUF/Downloads/\" & file.name",
+        "filenameType": "jsonata",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 620,
+        "y": 900,
+        "wires": [
+            [
+                "eaf1ee88e00d9406"
+            ]
+        ]
+    },
+    {
+        "id": "a104ed35b61b7c4a",
+        "type": "ui_template",
+        "z": "cda9a4b5dd195f96",
+        "group": "18cdadd15d72d136",
+        "name": "OCR",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n    function progressUpdate(packet){\n\tvar log = document.getElementById('log');\n\n\tif(log.firstChild && log.firstChild.status === packet.status){\n\t\tif('progress' in packet){\n\t\t\tvar progress = log.firstChild.querySelector('progress')\n\t\t\tprogress.value = packet.progress\n\t\t}\n\t}else{\n\t\tvar line = document.createElement('div');\n\t\tline.status = packet.status;\n\t\tvar status = document.createElement('div')\n\t\tstatus.className = 'status'\n\t\tstatus.appendChild(document.createTextNode(packet.status))\n\t\tline.appendChild(status)\n\n\t\tif('progress' in packet){\n\t\t\tvar progress = document.createElement('progress')\n\t\t\tprogress.value = packet.progress\n\t\t\tprogress.max = 1\n\t\t\tline.appendChild(progress)\n\t\t}\n\n\n\t\tif(packet.status == 'done'){\n\t\t\tvar pre = document.createElement('pre')\n\t\t\tpre.appendChild(document.createTextNode(packet.data.data.text))\n\t\t\tline.innerHTML = ''\n\t\t\tline.appendChild(pre)\n\n\t\t}\n\n\t\tlog.insertBefore(line, log.firstChild)\n\t}\n}\n\nasync function recognizeFile(file) {\n\tdocument.querySelector(\"#log\").innerHTML = ''\n  const lang = document.querySelector('#langsel').value\n  const data = await Tesseract.recognize(file, lang, {\n    logger: progressUpdate,\n  });\n  progressUpdate({ status: 'done', data });\n}\n</script>\n<select id=\"langsel\" onchange=\"window.lastFile && recognizeFile(window.lastFile)\">\n<option value='afr'     > Afrikaans             </option>\n<option value='ara'     > Arabic                </option>\n<option value='aze'     > Azerbaijani           </option>\n<option value='bel'     > Belarusian            </option>\n<option value='ben'     > Bengali               </option>\n<option value='bul'     > Bulgarian             </option>\n<option value='cat'     > Catalan               </option>\n<option value='ces'     > Czech                 </option>\n<option value='chi_sim' > Chinese               </option>\n<option value='chi_tra' > Traditional Chinese   </option>\n<option value='chr'     > Cherokee              </option>\n<option value='dan'     > Danish                </option>\n<option value='deu'     > German                </option>\n<option value='ell'     > Greek                 </option>\n<option value='eng'     selected> English                </option>\n<option value='enm'     > English (Old)         </option>\n<option value='meme'     > Internet Meme                </option>\n<option value='epo'     > Esperanto             </option>\n<option value='epo_alt' > Esperanto alternative </option>\n<option value='est'     > Estonian              </option>\n<option value='eus'     > Basque                </option>\n<option value='fin'     > Finnish               </option>\n<option value='fra'     > French                </option>\n<option value='frk'     > Frankish              </option>\n<option value='frm'     > French (Old)          </option>\n<option value='glg'     > Galician              </option>\n<option value='grc'     > Ancient Greek         </option>\n<option value='heb'     > Hebrew                </option>\n<option value='hin'     > Hindi                 </option>\n<option value='hrv'     > Croatian              </option>\n<option value='hun'     > Hungarian             </option>\n<option value='ind'     > Indonesian            </option>\n<option value='isl'     > Icelandic             </option>\n<option value='ita'     > Italian               </option>\n<option value='ita_old' > Italian (Old)         </option>\n<option value='jpn'     > Japanese              </option>\n<option value='kan'     > Kannada               </option>\n<option value='kor'     > Korean                </option>\n<option value='lav'     > Latvian               </option>\n<option value='lit'     > Lithuanian            </option>\n<option value='mal'     > Malayalam             </option>\n<option value='mkd'     > Macedonian            </option>\n<option value='mlt'     > Maltese               </option>\n<option value='msa'     > Malay                 </option>\n<option value='nld'     > Dutch                 </option>\n<option value='nor'     > Norwegian             </option>\n<option value='pol'     > Polish                </option>\n<option value='por'     > Portuguese            </option>\n<option value='ron'     > Romanian              </option>\n<option value='rus'     > Russian               </option>\n<option value='slk'     > Slovakian             </option>\n<option value='slv'     > Slovenian             </option>\n<option value='spa'     > Spanish               </option>\n<option value='spa_old' > Old Spanish           </option>\n<option value='sqi'     > Albanian              </option>\n<option value='srp'     > Serbian (Latin)       </option>\n<option value='swa'     > Swahili               </option>\n<option value='swe'     > Swedish               </option>\n<option value='tam'     > Tamil                 </option>\n<option value='tel'     > Telugu                </option>\n<option value='tgl'     > Tagalog               </option>\n<option value='tha'     > Thai                  </option>\n<option value='tur'     > Turkish               </option>\n<option value='ukr'     > Ukrainian             </option>\n<option value='vie'     > Vietnamese            </option>\n</select>\n\n<button onclick=\"recognizeFile('../../tests/assets/images/simple.png')\">Sample Image</button>\n<input type=\"file\" onchange=\"recognizeFile(window.lastFile=this.files[0])\">\n\n<div id=\"log\"></div>\n\n\n<style>\n    #log>div {\n        color: white;\n        border-top: 1px solid #dadada;\n        padding: 9px;\n        display: flex;\n    }\n\n    #log>div:first-child {\n        border: 0;\n    }\n\n\n    .status {\n        min-width: 250px;\n    }\n\n    #log {\n        border: 1px solid #dadada;\n        padding: 10px;\n        margin-top: 20px;\n        min-height: 100px;\n    }\n\n    body {\n        font-family: sans-serif;\n        margin: 30px;\n    }\n\n    progress {\n        display: block;\n        width: 100%;\n        transition: opacity 0.5s linear;\n    }\n\n    progress[value=\"1\"] {\n        opacity: 0.5;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 150,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b697053add0e9fa5",
+        "type": "ui_template",
+        "z": "cda9a4b5dd195f96",
+        "group": "297b1964920fbcef",
+        "name": "Load local cdn",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "format": "<script src=\"/cdn/tesseract/tesseract.min.js\"></script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 180,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06993af6cbe9302f",
+        "type": "inject",
+        "z": "cda9a4b5dd195f96",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1160,
+        "wires": [
+            [
+                "802e46c42ca005ea"
+            ]
+        ]
+    },
+    {
+        "id": "802e46c42ca005ea",
+        "type": "function",
+        "z": "cda9a4b5dd195f96",
+        "name": "function 19",
+        "func": "let cdns = [\n    \"https://unpkg.com/tesseract.js@4.0.0/dist/tesseract.min.js\"\n]\nfor(let i=0; i<cdns.length;i++){\n    let filename = cdns[i].substring(cdns[i].lastIndexOf(\"/\")+1);\n    let cdn = {}\n    msg.url = cdns[i]\n    msg.filename = global.get(\"projectDir\")+'/cdn/tesseract/'+filename\n    node.send(msg)\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1160,
+        "wires": [
+            [
+                "04615031c7f74fc6"
+            ]
+        ]
+    },
+    {
+        "id": "04615031c7f74fc6",
+        "type": "http request",
+        "z": "cda9a4b5dd195f96",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 610,
+        "y": 1160,
+        "wires": [
+            [
+                "0d35e9f522a4dc93"
+            ]
+        ]
+    },
+    {
+        "id": "0d35e9f522a4dc93",
+        "type": "file",
+        "z": "cda9a4b5dd195f96",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 800,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "518b12c441185f2a",
+        "type": "comment",
+        "z": "cda9a4b5dd195f96",
+        "name": "Get the cdn",
+        "info": "",
+        "x": 190,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "0a8828d00519de30",
+        "type": "comment",
+        "z": "cda9a4b5dd195f96",
+        "name": "Load cdn in the header of the app. No choice actually with template node",
+        "info": "",
+        "x": 360,
+        "y": 1240,
+        "wires": []
+    },
+    {
         "id": "1c8a38ef422e6f80",
         "type": "ui_worldmap",
         "z": "11571c3a0d218a3e",
@@ -24128,6 +26924,176 @@
         "info": "",
         "x": 190,
         "y": 60,
+        "wires": []
+    },
+    {
+        "id": "967f7c93b79bb2c0",
+        "type": "inject",
+        "z": "2acb5f6dedaa6446",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "c028d17efd4e0bce"
+            ]
+        ]
+    },
+    {
+        "id": "8ddfbb0f430b83fc",
+        "type": "subflow:c38e097dab2ac14e",
+        "z": "2acb5f6dedaa6446",
+        "name": "",
+        "x": 310,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ec11d4fd27db3e5",
+        "type": "subflow:54526e03f83ee9e5",
+        "z": "2acb5f6dedaa6446",
+        "name": "",
+        "x": 310,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c028d17efd4e0bce",
+        "type": "subflow:e0b88d23ec56febb",
+        "z": "2acb5f6dedaa6446",
+        "name": "",
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "63c20b8843d2d499"
+            ]
+        ]
+    },
+    {
+        "id": "63c20b8843d2d499",
+        "type": "debug",
+        "z": "2acb5f6dedaa6446",
+        "name": "debug 170",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7193a4bdc416d737",
+        "type": "http in",
+        "z": "9ede64b79636f3da",
+        "name": "",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "32dc87dcf31c12f0",
+                "2825793943e079d7"
+            ]
+        ]
+    },
+    {
+        "id": "32dc87dcf31c12f0",
+        "type": "debug",
+        "z": "9ede64b79636f3da",
+        "name": "debug 168",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c318ed42d6586b80",
+        "type": "http in",
+        "z": "9ede64b79636f3da",
+        "name": "",
+        "url": "/test",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "5f616e0552374e9b",
+                "dea9274b5514b71b"
+            ]
+        ]
+    },
+    {
+        "id": "5f616e0552374e9b",
+        "type": "debug",
+        "z": "9ede64b79636f3da",
+        "name": "debug 169",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2825793943e079d7",
+        "type": "http response",
+        "z": "9ede64b79636f3da",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 400,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "dea9274b5514b71b",
+        "type": "http response",
+        "z": "9ede64b79636f3da",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 300,
         "wires": []
     }
 ]

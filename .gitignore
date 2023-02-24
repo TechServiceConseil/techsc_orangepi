@@ -1,6 +1,7 @@
 *.backup
 /secrets/
 flows_cred.json
-/node_module
-child.js
+/node_modules
+/child.js
 /tmp
+/mysql-data

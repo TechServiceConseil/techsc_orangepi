@@ -10,12 +10,13 @@
         }
     },
     "dependencies": {
+        "node-red-contrib-buffer-parser": "3.2.2",
         "node-red-contrib-credentials": "^0.2.2",
+        "node-red-contrib-projectdir": "2.0.5",
         "node-red-contrib-sox-utils": "^0.5.2",
+        "node-red-contrib-web-worldmap": "^2.31.0",
         "node-red-dashboard": "^3.1.7",
         "node-red-node-daemon": "^0.4.0",
-        "node-red-contrib-buffer-parser": "3.2.2",
-        "node-red-contrib-projectdir": "2.0.5",
         "node-red-node-ui-list": "0.3.6"
     }
 }

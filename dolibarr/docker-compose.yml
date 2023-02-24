@@ -1,61 +1,49 @@
-version: '3.8'
+version: "3.6"
+
 networks:
   internal-pod:
     internal: true
   external-pod:
     internal: false
+
 volumes:
-  dolibarr-docs: null
-  dolibarr-custom: null
-  mysql-data: null
-secrets:
-  mysql-user:
-    file: ../secrets/mysql_user.secret
-  mysql-password:
-    file: ../secrets/mysql_password.secret
-  dolibarr-admin-user:
-    file: ../secrets/dolibarr_admin_username.secret
-  dolibarr-admin-password:
-    file: ../secrets/dolibarr_admin_password.secret
+  dolibarr-custom:
+  dolibarr-docs:
+  mysql-data:
+
 services:
   dolibarr:
-    image: tuxgasy/dolibarr:15
-    secrets:
-      - dolibarr-admin-user
-      - dolibarr-admin-password
-      - mysql-user
-      - mysql-password
-    env_file:
-      - ./env/dolibarr.env
+    image: tuxgasy/dolibarr:16.0.3
     environment:
-      DOLI_DB_USER_FILE: /run/secrets/mysql-user
-      DOLI_DB_PASSWORD_FILE: /run/secrets/mysql-password
-      DOLI_ADMIN_LOGIN_FILE: /run/secrets/dolibarr-admin-user
-      DOLI_ADMIN_PASSWORD_FILE: /run/secrets/dolibarr-admin-password
-    restart: unless-stopped
+      DOLI_DB_HOST: "mariadb"
+      DOLI_DB_HOST_PORT: "3306"
+      DOLI_DB_USER: "root"
+      DOLI_DB_PASSWORD: "perseigne1"
+      DOLI_DB_NAME: "perseigneUF"
+      DOLI_ADMIN_LOGIN: "perseigneUF"
+      DOLI_ADMIN_PASSWORD: "perseigne1"
     ports:
-      - '8300:80'
+      - 8300:80
+      - 8380:8080
+      - 22:22
+    restart: unless-stopped
     volumes:
-      - ../../../../dolibarr/dolibarr-docs:/var/www/documents
-      - ../../../../dolibarr/dolibarr-custom:/var/www/html/custom
+      - /home/perseigneUF/dolibarr/dolibarr-docs:/var/www/documents
+      - /home/perseigneUF/dolibarr/dolibarr-custom:/var/www/html/custom
     networks:
       - internal-pod
       - external-pod
-    container_name: dolibarr
-  mysql:
+
+  mariadb:
     image: library/mariadb:latest
-    secrets:
-      - mysql-user
-      - mysql-password
-    env_file:
-      - ./env/mysql.env
     environment:
-      MYSQL_USER_FILE: /run/secrets/mysql-user
-      MYSQL_PASSWORD_FILE: /run/secrets/mysql-password
+      MARIADB_DATABASE: "perseigneUF"
+      MARIADB_ROOT_PASSWORD: "perseigne1"
+    ports:
+      - 3308:3306
     restart: unless-stopped
     volumes:
-      - ../../../../dolibarr/mysql-data:/var/lib/mysql
+      - /home/perseigneUF/dolibarr/mysql-data:/var/lib/mysql
     networks:
       - internal-pod
-    container_name: dolibarr-mysql
-
+      - external-pod
