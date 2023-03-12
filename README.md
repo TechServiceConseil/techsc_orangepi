@@ -59,10 +59,7 @@ Use examples liberally, and show the expected output if you can. It's helpful to
 Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
 ## Roadmap
- - Jusqu'au 25/07/2022 publication des vidéos d'essaies pour me familiariser avec la méthode de travail
- - A partir du 26/07/2022 publication à un rythmes régulier soutenable. A ce stade je pense un vidéo tous les 2 jours
- - Deux semaine plus tard réalisation des premier essaie de live pour le support et la récolte d'informations par les viewers pour dévelloper mes compétences
-
+ - WIP
 ## Contributing
 State if you are open to contributions and what your requirements are for accepting them.
 
